@@ -1,0 +1,24 @@
+<%= flash[:error]%>
+
+<h1>Login</h1>
+
+<div>
+	<% form_for :user, :url => request.url do |f| -%>
+		<p>
+			<label for="username">Username:</label>
+			<%= f.text_field :login %>
+		</p>
+		<p>
+			<label for="password">Password:</label>
+			<%= f.password_field :password %>
+		</p>
+		
+		<input type="checkbox" name="remember" id="remember" value="true" />
+		Remember Me
+		<span><%= link_to "Forgot your password?", "#" %></span>
+			
+		<p class="submit">
+			<%= f.submit("Login") %>
+		</p>
+	<% end %>
+</div>
