@@ -1,18 +1,20 @@
-<div class="title">
-	<h1><%= current_user.name %></h1>
-	<span class="avatars">
-		<%= image_tag(avatar(:thumb)) %>
+<div id="title">
+	<span>
+		<h1><%= current_user.name %></h1>
 	</span>
 </div>
 
-<div id="feed">
-	<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
-	  <p><%= f.text_field :message, :class => "status" %></p>
-		<%= f.submit "Post" %>
-	<% end %>
+<div id="main">
 
-	<% for activity in @activities %>
-		<p><%= explanation_of activity  %></p>
-	<% end %>
+	<div id="feed">
+		<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
+		  <p><%= f.text_field :message, :class => "status" %></p>
+			<%= f.submit "Post" %>
+		<% end %>
+
+		<% for activity in @activities %>
+			<p><%= explanation_of activity  %></p>
+		<% end %>
+	</div>
+
 </div>
-

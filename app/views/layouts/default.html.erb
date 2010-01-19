@@ -16,7 +16,7 @@
 		
 		<div id="header">
 			<span>
-				<%= image_tag('/images/logo.png') %>
+				<%= image_tag('/images/logo.png', :class => "logo") %>
 				<% if logged_in? %>
 				<ul>
 					<li><%= image_tag("/images/icons/users.png") %>Users</li>
@@ -27,7 +27,7 @@
 			</span>
 		</div>
 		
-		<div id="content" class="round shadow">
+		<div id="content">
 			<%= @content_for_layout %>
 		</div>
 		

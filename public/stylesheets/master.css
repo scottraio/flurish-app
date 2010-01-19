@@ -4,7 +4,7 @@
 body {
 	font-family: "helvetica";
 	margin:0;
-	background:#f0f0f0;
+	background:#fff;
 	font-size:0.85em;
 }
 
@@ -104,9 +104,13 @@ img.avatar_thumb {
 div#header {
 	overflow:auto;
 	color:#fff;
-	border-bottom:1px solid #fff;
-	background:#222;
+	padding:5px;
 	background:#111 url('/images/header_slice.png') repeat-x;
+}
+
+div#header img.logo {
+	position:relative;
+	top:3px;
 }
 
 div#header span {
@@ -146,38 +150,36 @@ div#header ul li img {
 }
 
 div#content {
-	margin:50px auto;
-	width:950px;
+	overflow:auto;
+}
+
+div#main {
 	background-color:#fff;
-	border:1px solid #bbb;
-	overflow:auto;
-}
-
-div.title {
-	background:#444 url("/images/header_slice.png") repeat-x;
-	padding:5px;
-	overflow:auto;
-	-moz-border-radius:6px 6px 0px 0px;
-	-webkit-border-radius:6px 6px 0px 0px;
-}
-
-div.title h1 {
-	color:#fff;
-	float:left;
+	width:950px;
 	position:relative;
-	top:8px;
-	font-size:1.6em;
+	top:-20px;
+	margin:0px auto;
+}
+
+div#title {
+	background:#ccc;
+	border-bottom:1px solid #999;
+	height:60px;
+	padding:10px;
+}
+
+div#title span {
+	width:950px;
+	display:block;
+	margin:0 auto;
+}
+
+div#title h1 {
+	color:#222;
+	position:relative;
+	top:10px;
+	font-size:2em;
 	font-weight:normal;
-}
-
-div.title span.avatars {
-	float:right;
-	height:36px;
-}
-
-div.title span.avatars img {
-	width:36px;
-	height:36px;
 }
 
 /* Feed */
