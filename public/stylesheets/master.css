@@ -104,12 +104,14 @@ img.avatar_thumb {
 div#header {
 	overflow:auto;
 	color:#fff;
+	padding:5px;
 	background:#111 url('/images/header_slice.png') repeat-x;
 }
 
 div#header img.logo {
 	position:relative;
 	top:3px;
+	
 }
 
 div#header span {

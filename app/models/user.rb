@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
 	has_many		:notes
 	has_many		:tasks
 	
-  attr_accessor :password_confirmation
+  attr_accessor 	:password_confirmation
+	attr_protected 	:password
 
 	validates_presence_of 		:name
   validates_presence_of 		:login
