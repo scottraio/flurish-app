@@ -20,6 +20,10 @@ div.notice {
 	border:2px solid #839B86;
 	padding:5px;
 	-moz-border-radius:6px;
+	float:left;
+	position:relative;
+	top:5px;
+	left:300px;
 }
 
 div.error {
@@ -111,7 +115,7 @@ div#header {
 div#header img.logo {
 	position:relative;
 	top:3px;
-	
+	float:left;
 }
 
 div#header span {
@@ -130,6 +134,7 @@ div#header ul {
 	width:50%;
 	text-align:right;
 	line-height:2.6em;
+	float:right;
 }
 
 div#header ul li {
@@ -171,7 +176,7 @@ div#title {
 	background:#dfdfdf;
 	border-bottom:1px solid #999;
 	height:60px;
-	padding:10px;
+	padding:20px;
 }
 
 div#title span {
@@ -180,24 +185,34 @@ div#title span {
 	margin:0 auto;
 }
 
+div#title span p input {
+	float:right;
+	font-size:1.4em;
+	width:500px;
+	margin-top:-35px;
+}
+
+div#title span small {
+	float:right;
+	display:block;
+}
+
 div#title h1 {
-	color:#222;
-	position:relative;
-	top:10px;
+	color:#222; 
 	font-size:2em;
 	font-weight:normal;
+	line-height:1.5em;
+}
+
+div#title h1 img {
+	float:left;
+	margin-right:10px;
 }
 
 /* Feed */
 
 div#feed {
 	padding:15px;
-}
-
-
-div#feed input.status {
-	width:500px;
-	font-size:1.4em;
 }
 
 div#feed div.activity {

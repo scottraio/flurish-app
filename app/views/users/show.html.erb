@@ -1,17 +1,19 @@
 <div id="title">
 	<span>
-		<h1><%= current_user.name %></h1>
+		<h1><%= image_tag(avatar('small')) %><%= current_user.name %></h1>
+		<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
+		  <p onclick="$('#status_options').css('display', '')"><%= f.text_field :message, :class => "status", :value => "What are you working on?" %></p>
+			<small id="status_options" style="display:none">
+				<%= f.submit "Post" %>
+			</small>
+		<% end %>
+		
 	</span>
 </div>
 
 <div id="main">
 
 	<div id="feed">
-		<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
-		  <p><%= f.text_field :message, :class => "status" %></p>
-			<%= f.submit "Post" %>
-		<% end %>
-
 		<% for activity in @activities %>
 			<p><%= explanation_of activity  %></p>
 		<% end %>
