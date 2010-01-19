@@ -20,6 +20,10 @@ div.notice {
 	border:2px solid #839B86;
 	padding:5px;
 	-moz-border-radius:6px;
+	float:left;
+	position:relative;
+	top:5px;
+	left:300px;
 }
 
 div.error {
@@ -110,6 +114,7 @@ div#header {
 div#header img.logo {
 	position:relative;
 	top:3px;
+	float:left;
 }
 
 div#header span {
@@ -128,6 +133,7 @@ div#header ul {
 	width:50%;
 	text-align:right;
 	line-height:2.6em;
+	float:right;
 }
 
 div#header ul li {

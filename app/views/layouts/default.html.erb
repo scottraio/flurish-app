@@ -11,12 +11,11 @@
 		<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" width="16px" height="16px" /> 
   </head>
   <body>
-		
-		<%= display_standard_flashes %>
-		
+
 		<div id="header">
 			<span>
 				<%= image_tag('/images/logo.png', :class => "logo") %>
+				<%= display_standard_flashes %>
 				<% if logged_in? %>
 				<ul>
 					<li><%= image_tag("/images/icons/users.png") %>Users</li>
