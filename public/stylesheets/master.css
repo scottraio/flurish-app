@@ -104,7 +104,6 @@ img.avatar_thumb {
 div#header {
 	overflow:auto;
 	color:#fff;
-	padding:5px;
 	background:#111 url('/images/header_slice.png') repeat-x;
 }
 
@@ -141,6 +140,10 @@ div#header ul li {
 	background:url('/images/button_highlight_topright.png') no-repeat top right;
 }
 
+div#header ul li:hover {
+	background:#111 url('/images/header_slice.png') repeat-x;
+}
+
 div#header ul li img {
 	height:16px;
 	width:16px;
@@ -154,15 +157,16 @@ div#content {
 }
 
 div#main {
-	background-color:#fff;
+	background:#fff url('/images/content_top.png') no-repeat top;
 	width:950px;
 	position:relative;
 	top:-20px;
 	margin:0px auto;
+	margin-top:-4px;
 }
 
 div#title {
-	background:#ccc;
+	background:#dfdfdf;
 	border-bottom:1px solid #999;
 	height:60px;
 	padding:10px;
