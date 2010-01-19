@@ -4,7 +4,6 @@
 body {
 	font-family: "helvetica";
 	margin:0;
-	
 	background:#f0f0f0;
 	font-size:0.85em;
 }
@@ -104,8 +103,16 @@ img.avatar_thumb {
 
 div#header {
 	overflow:auto;
-	background:#111 url("/images/header_slice.png") repeat-x;
 	color:#fff;
+	border-bottom:1px solid #fff;
+	background:#222;
+	background:#111 url('/images/header_slice.png') repeat-x;
+}
+
+div#header span {
+	display:block;
+	width:950px;
+	margin:0 auto;
 }
 
 div#header h1 {
@@ -115,18 +122,27 @@ div#header h1 {
 
 div#header ul {
 	float:right;
-	line-height:2em;
 	width:50%;
 	text-align:right;
-	line-height:2.3em;
+	line-height:2.6em;
 }
 
 div#header ul li {
-	display:inline-block;
-	padding:0 20px;
-	border-left:1px solid #444;
+	float:right;
+	display:inline;
+	padding:5px 10px 5px 10px;
 	color:#ccc;
-	
+	border-left:1px solid #333;
+	border-right:1px solid #000;
+	background:url('/images/button_highlight_topright.png') no-repeat top right;
+}
+
+div#header ul li img {
+	height:16px;
+	width:16px;
+	float:left;
+	padding-right:5px;
+	margin-top:7px;
 }
 
 div#content {

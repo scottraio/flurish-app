@@ -11,3 +11,4 @@ src/*
 .svn/*
 lucene/*
 public/tmp/*
+vendor/plugins/*

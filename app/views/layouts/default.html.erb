@@ -15,14 +15,16 @@
 		<%= display_standard_flashes %>
 		
 		<div id="header">
-			<h1>flurish</h1>
-			<% if logged_in? %>
-			<ul>
-				<li>Profile</li>
-				<li>Branches</li>
-				<li>Users</li>
-			</ul>
-			<% end %>
+			<span>
+				<%= image_tag('/images/logo.png') %>
+				<% if logged_in? %>
+				<ul>
+					<li><%= image_tag("/images/icons/users.png") %>Users</li>
+					<li><%= image_tag("/images/icons/branches.png") %>Branches</li>
+					<li style="border-left:0"><%= image_tag(avatar(:thumb)) %>Profile</li>				
+				</ul>
+				<% end %>
+			</span>
 		</div>
 		
 		<div id="content" class="round shadow">
