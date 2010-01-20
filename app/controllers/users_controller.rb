@@ -2,15 +2,22 @@ class UsersController < ApplicationController
 	
 	before_filter :authenticated?, 	:except 	=> [:login,:logout,:reset_password,:forgot_password]
 	before_filter :set_user, 				:only 		=> [:new, :create]
-	before_filter :get_user, 				:only 		=> [:follow, :stop_following, :destroy, :update, :show, :edit]
+	before_filter :get_user, 				:only 		=> [:index, :follow, :stop_following, :destroy, :update, :show, :edit]
 
 	def follow
-		@user.follow 
+		# @user is the user who wishes to follow the user with id = params[:id]
+		@user.follow User.find(params[:id])
+		redirect_to users_url
+	end
+	
+	def stop_following
+		# @user is the user who wishes to stop following the user with id = params[:id]
+		@user.stop_following User.find(params[:id])
 		redirect_to users_url
 	end
 	
 	def index
-		@users = User.find_all_by_company_id(current_user.company_id)
+		@users = User.find_all_by_company_id(current_user.company_id, :conditions => ["users.id != ?", current_user.id])
 	end
 	
 	def new
@@ -63,6 +70,7 @@ private
 	end
 	
 	def get_user
+		# The @user is always assumed to be the user who is logged in 
 		@user = User.get(current_user,params)
 	end
 	

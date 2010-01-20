@@ -10,7 +10,11 @@
 			<div class="item" style="background:url('<%= avatar_url(user, :thumb) %>') no-repeat;">
 				<h2><%= user.name %></h2>
 				<%= user.current_status %>
-				<%= link_to "Follow", ""%>
+				<% if @user.following? user %>
+					<%= link_to "Stop Following", stop_following_user_path(user) %>
+				<% else %>
+					<%= link_to "Follow", follow_user_path(user) %>
+				<% end %>
 			</div>
 			<% end %>
 	</div>
