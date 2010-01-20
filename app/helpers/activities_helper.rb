@@ -29,7 +29,7 @@ module ActivitiesHelper
 	
 	def status
 		status = @activity.activible 
- 		content_tag :div, :class => "item" do 
+ 		content_tag :div, :class => "activible" do 
 			image_tag(avatar_url(@activity.creator, :thumb), :align => "top", :class => "avatar_thumb") + stamp(status.message)
 		end 
 	end

@@ -85,9 +85,9 @@ b.small {
 }
 
 a.add, input.add, a.button, input.button {
-	padding:5px 20px 5px 20px;
+	padding:8px 20px 5px 20px;
 	background:#eee url('/images/header_background_slice.png') repeat-x scroll 50% 50%;
-	line-height:1.6em;
+	line-height:1.8em;
 	color:green;
 	font-weight:bold;
 	border:1px solid #ccc;
@@ -122,7 +122,6 @@ div#header a {
 
 div#header img.logo {
 	position:relative;
-	top:3px;
 	float:left;
 }
 
@@ -242,13 +241,16 @@ div#title h1 {
 	text-shadow: #fff 0px 1px 0px;
 }
 
-div#title h1 a {
-	font-size:0.6em;
+div#title h1 a.button {
+	position:relative;
+	top:-4px;
+	font-size:0.5em;
 	text-shadow:none;
 } 
 
 div#title h1 img {
 	float:left;
+	margin-left:4px;
 	margin-right:10px;
 }
 
@@ -258,22 +260,17 @@ div#feed {
 	overflow:auto;
 }
 
-div#feed img {
-	width:32px;
-	height:32px;
-}
-
 div#feed div.activity {
 	background-color:#f0f0f0;
 	margin:2px 0;
 }
 
-div#feed div.activity div.item {
+div#feed div.activity div.activible {
 	padding:3px;
 
 }
 
-div#feed div.activity div.item div.stamp {
+div#feed div.activity div.activible div.stamp {
 	display:inline-block;
 	position:relative;
 	top:7px;
