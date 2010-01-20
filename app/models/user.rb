@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
   attr_accessor 	:password, :password_confirmation
 	attr_protected 	:hashed_password
 
-	validates_presence_of 		:name
+	validates_presence_of 		:first_name
+	validates_presence_of 		:last_name
   validates_presence_of 		:login
   validates_presence_of 		:password, 								:if => :password_required?
   validates_presence_of 		:password_confirmation, 	:if => :password_required?
@@ -43,6 +44,10 @@ class User < ActiveRecord::Base
 	
 	def self.set(user,params={})
 		u = self.new(params[:user])
+	end
+	
+	def name
+		"#{self.first_name} #{self.last_name}"
 	end
 	
 	def follow(something)
