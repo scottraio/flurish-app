@@ -151,7 +151,7 @@ div#header ul li {
 	padding:5px 10px 5px 10px;
 	border-left:1px solid #333;
 	border-right:1px solid #000;
-	background:url('/images/button_highlight_topright.png') no-repeat top right;
+	background:url('/images/button_highlight_bottomright.png') no-repeat bottom right;
 	cursor:pointer;
 }
 
