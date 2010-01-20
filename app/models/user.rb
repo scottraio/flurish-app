@@ -2,7 +2,7 @@ require 'digest/sha2'
 
 class User < ActiveRecord::Base
 	
-	has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "48x48#", :small => "32x32#" }, :url => "/:class/:attachment/:id/:style_:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:style_:basename.:extension"
+	has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "48x48#" }, :url => "/:class/:attachment/:id/:style_:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:style_:basename.:extension"
 	
 	has_and_belongs_to_many :followers, :class_name => "User", :foreign_key => "followee_id", :association_foreign_key => "follower_id"
 	has_and_belongs_to_many :leaders, 	:class_name => "User", :foreign_key => "follower_id", :association_foreign_key => "followee_id"
@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
 	has_many		:notes
 	has_many		:tasks
 	
-  attr_accessor :password_confirmation
+  attr_accessor 	:password, :password_confirmation
+	attr_protected 	:hashed_password
 
 	validates_presence_of 		:name
   validates_presence_of 		:login
@@ -65,11 +66,11 @@ class User < ActiveRecord::Base
 	#
 	
   def before_save
-    self.password = User.encrypt(password) if not self.password.blank?
+    self.hashed_password = User.encrypt(password) if not self.password.blank?
   end
   
   def password_required?
-    self.password.blank?
+    self.hashed_password.blank? || !self.password.blank?
   end
   
   def self.encrypt(string)
@@ -77,7 +78,7 @@ class User < ActiveRecord::Base
   end
   
   def self.authenticate(username, password)
-    find_by_login_and_password(username, self.encrypt(password))
+    find_by_login_and_hashed_password(username, self.encrypt(password))
   end
 	
 end

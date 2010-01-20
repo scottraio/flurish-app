@@ -1,22 +1,16 @@
-<% form_for @user, :html => { :multipart => true } do |f| %>
-  <p><%= f.text_field :name %></p>
-	<p><%= f.text_field :login %></p>
-	<p><%= f.file_field :avatar %></p>
-	<%= image_tag(avatar('medium'), :id => "avatar") %>
-	<%= f.submit "Save" %>
-	<input type="hidden" name="x1" value="" />  
-	<input type="hidden" name="y1" value="" />  
-	<input type="hidden" name="x2" value="" />  
-	<input type="hidden" name="y2" value="" />  
-<% end %>
+<div id="title">
+	<span>
+		<h1><%= image_tag(avatar(:thumb)) %> Editing <%= current_user.name %></h1>
+	</span>
+</div>
 
-
-<script type="text/javascript"> 
-$(document).ready(function () { 
-	$('#avatar').imgAreaSelect({ 
-		aspectRatio: '1:1', 
-		handles: true,
-		onSelectEnd: function (img, selection) { $('input[name=x1]').val(selection.x1); $('input[name=y1]').val(selection.y1); $('input[name=x2]').val(selection.x2); $('input[name=y2]').val(selection.y2); } 
-	}); 
-});
-</script>
+<div id="main">
+	<div id="edit_user" class="padded">
+		<% form_for @user, :html => { :multipart => true } do |f| %>
+		  <p><%= f.text_field :name %></p>
+			<p><%= f.text_field :login %></p>
+			<p><%= f.file_field :avatar %></p>
+			<%= f.submit "Save" %>
+		<% end %>
+	</div>
+</div>
