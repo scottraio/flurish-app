@@ -1,5 +1,6 @@
 @import "ui.css";
 @import "facebox.css";
+@import "login.css";
 
 body {
 	font-family: "Helvetica";
@@ -38,6 +39,15 @@ a {
 	border:0;
 	text-decoration:none;
 	color:#536C99;
+}
+
+.button {
+	border:1px solid #ccc;
+	padding:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px 5px;
+	background:#D6F2D2 url('/images/header_slice.png') repeat-x;
+	color:#444;
 }
 
 p, h1, h2, h3, ul {

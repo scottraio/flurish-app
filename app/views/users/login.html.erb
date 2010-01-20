@@ -1,24 +1,23 @@
 <%= flash[:error]%>
-
-<h1>Login</h1>
-
-<div>
-	<% form_for :user, :url => request.url do |f| -%>
-		<p>
-			<label for="username">Username:</label>
-			<%= f.text_field :login %>
-		</p>
-		<p>
-			<label for="password">Password:</label>
-			<%= f.password_field :password %>
-		</p>
-		
-		<input type="checkbox" name="remember" id="remember" value="true" />
-		Remember Me
-		<span><%= link_to "Forgot your password?", "#" %></span>
+<div id="login" class="round">
+	<h2>Login <small class="button">Signup</small></h2>
+	<div class="login_fields">
+		<% form_for :user, :url => request.url do |f| -%>
+			<p>
+				<label for="username">Username:</label>
+				<%= f.text_field :login, :class => "field" %>
+			</p>
+			<p>
+				<label for="password">Password: <%= link_to "(forgot password)", "#" %> </label>
+				<%= f.password_field :password, :class => "field" %>
+			</p>
+		</div>
+			<p class="submit button">
+				<input type="checkbox" name="remember" id="remember" value="true" />
+				Remember Me
+				<%= f.submit("Login", :class => "submit")	%>
+			</p>
 			
-		<p class="submit">
-			<%= f.submit("Login") %>
-		</p>
-	<% end %>
+		<% end %>
+
 </div>

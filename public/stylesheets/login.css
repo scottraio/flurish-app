@@ -1,0 +1,47 @@
+div#login {
+	overflow:auto;
+	width:400px;
+	margin:50px auto 50px auto;
+	padding:20px;
+	border:1px solid #ddd;
+}
+
+div#login h2 {
+	margin-bottom:20px;
+	margin-top:0;
+	color:#555;
+}
+
+div#login h2 small {
+	float:right;
+	font-weight:normal;
+	font-size:0.6em;
+}
+
+div#login p {
+	padding:10px;
+}
+
+div#login label {
+	margin-bottom:5px;
+	display:block;
+}
+
+div#login p input.field {
+	display:block;
+	width:100%;
+	padding:5px;
+	max-width:380px;
+	font-size:1.2em;
+	border:1px solid #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px 5px;
+}
+
+div#login p.submit {
+	margin-top:20px;
+}
+
+div#login p.submit input.submit {
+	float:right;
+}
