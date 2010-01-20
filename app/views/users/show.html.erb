@@ -1,6 +1,6 @@
 <div id="title">
 	<span>
-		<h1><%= image_tag(avatar('small')) %><%= current_user.name %></h1>
+		<h1><%= image_tag(avatar(:thumb)) %><%= current_user.name %></h1>
 		<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
 		  <p onclick="$('#status_options').css('display', '')"><%= f.text_field :message, :class => "status", :value => "What are you working on?" %></p>
 			<small id="status_options" style="display:none">

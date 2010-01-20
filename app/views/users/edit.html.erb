@@ -2,5 +2,21 @@
   <p><%= f.text_field :name %></p>
 	<p><%= f.text_field :login %></p>
 	<p><%= f.file_field :avatar %></p>
+	<%= image_tag(avatar('medium'), :id => "avatar") %>
 	<%= f.submit "Save" %>
+	<input type="hidden" name="x1" value="" />  
+	<input type="hidden" name="y1" value="" />  
+	<input type="hidden" name="x2" value="" />  
+	<input type="hidden" name="y2" value="" />  
 <% end %>
+
+
+<script type="text/javascript"> 
+$(document).ready(function () { 
+	$('#avatar').imgAreaSelect({ 
+		aspectRatio: '1:1', 
+		handles: true,
+		onSelectEnd: function (img, selection) { $('input[name=x1]').val(selection.x1); $('input[name=y1]').val(selection.y1); $('input[name=x2]').val(selection.x2); $('input[name=y2]').val(selection.y2); } 
+	}); 
+});
+</script>
