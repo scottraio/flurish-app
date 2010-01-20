@@ -13,7 +13,6 @@ ActionController::Routing::Routes.draw do |map|
 	map.root :controller => 'users', :action => 'show'
 	map.login 	'/login', 	:controller => 'users', 		:action => 'login'
 	map.logout 	'/logout', 	:controller => 'users', 		:action => 'logout'
-	map.branches '/branches', :controller => 'branches', :action => 'show'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
@@ -39,6 +38,8 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :users do |user|
 		user.resources :statuses
 	end
+	
+	map.resources :branches
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"

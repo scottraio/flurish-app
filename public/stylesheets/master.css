@@ -280,21 +280,21 @@ div#feed div.activity div.item div.stamp {
 	text-indent:10px;
 }
 
-div.branches {
+/* Branches */
+
+div.list {
 	padding:20px;
 	overflow:auto;
 }
 
-div.branches h2 {
+div.list h2 {
 	color:#333;
 }
 
-div.branches img {
-	float:right;
-	margin-top:-20px;
+div.list img {
 }
 
-div.branches h2 small {
+div.list h2 small {
 	color:#888;
 	margin-left:10px;
 	font-size:0.6em;
@@ -327,10 +327,16 @@ div.list_filter h3 {
 	color:#333;
 }
 
-div.branch {
-	background:url('/images/icons/branches32x32.png') no-repeat;
+/* Branches */
+
+div.item {
 	padding-left:40px;
 	float:left;
 	margin-bottom:20px;
 	width:550px;
+}
+
+
+div.branch {
+	background:url('/images/icons/branches32x32.png') no-repeat;
 }

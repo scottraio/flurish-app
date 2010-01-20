@@ -1,9 +1,9 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 	
-	def avatar(size=nil)
-		if @user.avatar.file?
-			@user.avatar.url(size)
+	def avatar_url(user,size=nil)
+		if user.avatar.file?
+			user.avatar.url(size)
 		else
 			"/images/default_avatar.jpg"
 		end

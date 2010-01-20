@@ -1,8 +1,8 @@
 class BranchesController < ApplicationController
   
-  before_filter :set_user, 				:only 		=> [:new, :create]
-  before_filter :get_user, 				:only 		=> [:destroy, :update, :show, :edit]
-  	
+	def index
+	end
+
   def new
   end
   
@@ -23,7 +23,4 @@ class BranchesController < ApplicationController
 
 private
 	
-	def get_user
-		@user = User.get(current_user,params)
-	end
 end

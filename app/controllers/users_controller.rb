@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 	before_filter :get_user, 				:only 		=> [:destroy, :update, :show, :edit]
 	
 	def index
+		@users = User.find_all_by_company_id(current_user.company_id)
 	end
 	
 	def new
