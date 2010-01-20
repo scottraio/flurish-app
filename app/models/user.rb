@@ -51,14 +51,29 @@ class User < ActiveRecord::Base
 	end
 	
 	def follow(something)
-		if 		something.is_a? User	then (self.leaders << something)
-		elsif something.is_a? Group	then (self.groups << something)
-		elsif something.is_a? Topic	then (self.topics << something)
+		if 		something.is_a? User		then (self.leaders << something)
+		elsif something.is_a? Group		then (self.groups << something)
+		elsif something.is_a? Branch	then (self.branches << something)
+		end
+	end
+	
+	def stop_following(something)
+		if 		something.is_a? User		then (self.leaders.delete something)
+		elsif something.is_a? Group		then (self.groups.delete something)
+		elsif something.is_a? Branch	then (self.branches.delete something)
+		end
+	end
+	
+	def following?(something)
+		if 		something.is_a? User		then (return true if self.leaders.include? something)
+		elsif something.is_a? Group		then (return true if self.groups.include? something)
+		elsif something.is_a? Branch	then (return true if self.branches.include? something)
 		end
 	end
 	
 	def feed
-		self.activities.find(:all, :include => [:activible, {:element => :branch}], :order => "activities.created_at DESC")
+		users = (self.leaders.collect{|user| user.id } << self.id).join(",")
+		Activity.find(:all, :include => [:creator, :activible, {:element => :branch}], :conditions => ["activities.created_by IN (#{users})"], :order => "activities.created_at DESC")
 	end
 	
 	def current_status

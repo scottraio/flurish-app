@@ -35,7 +35,7 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
-	map.resources :users do |user|
+	map.resources :users, :member => [:follow, :stop_following] do |user|
 		user.resources :statuses
 	end
 	
