@@ -20,7 +20,7 @@
 				<ul>
 					<li><%= image_tag("/images/icons/users.png") %>Users</li>
 					<li><%= image_tag("/images/icons/branches.png") %><%= link_to "Branches", "/branches" %></li>
-					<li style="border-left:0"><%= image_tag(avatar(:thumb)) %><%= link_to "Profile", "/users/#{current_user.id}" %></li>				
+					<li style="border-left:0" onclick="location.href='/users/<%= current_user.id %>'"><%= image_tag(avatar(:thumb)) %><Profile><%= current_user.first_name %></li>				
 				</ul>
 				<% end %>
 			</span>
