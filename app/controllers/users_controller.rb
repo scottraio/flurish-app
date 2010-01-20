@@ -2,7 +2,12 @@ class UsersController < ApplicationController
 	
 	before_filter :authenticated?, 	:except 	=> [:login,:logout,:reset_password,:forgot_password]
 	before_filter :set_user, 				:only 		=> [:new, :create]
-	before_filter :get_user, 				:only 		=> [:destroy, :update, :show, :edit]
+	before_filter :get_user, 				:only 		=> [:follow, :stop_following, :destroy, :update, :show, :edit]
+
+	def follow
+		@user.follow 
+		redirect_to users_url
+	end
 	
 	def index
 		@users = User.find_all_by_company_id(current_user.company_id)

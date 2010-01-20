@@ -1,0 +1,17 @@
+<div id="title">
+	<span>
+		<h1>Users</h1>
+	</span>
+</div>
+
+<div id="main">
+	<div id="users" class="list padded">
+			<% for user in @users %>
+			<div class="item" style="background:url('<%= avatar_url(user, :thumb) %>') no-repeat;">
+				<h2><%= user.name %></h2>
+				<%= user.current_status %>
+				<%= link_to "Follow", ""%>
+			</div>
+			<% end %>
+	</div>
+</div>
