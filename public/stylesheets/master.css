@@ -80,6 +80,10 @@ b.small {
 	box-shadow: 2px 2px 6px #bbb;
 }
 
+.padded {
+	padding:15px;
+}
+
 a.add, input.add, a.button, input.button {
 	padding:5px 20px 5px 20px;
 	background:#eee url('/images/header_background_slice.png') repeat-x scroll 50% 50%;
@@ -171,6 +175,7 @@ div#main {
 	width:950px;
 	position:relative;
 	top:-20px;
+
 	margin:0px auto;
 }
 
@@ -236,6 +241,11 @@ div#title h1 {
 	text-shadow: #fff 0px 1px 0px;
 }
 
+div#title h1 a {
+	font-size:0.6em;
+	text-shadow:none;
+} 
+
 div#title h1 img {
 	float:left;
 	margin-right:10px;
@@ -244,7 +254,7 @@ div#title h1 img {
 /* Feed */
 
 div#feed {
-	padding:15px;
+	
 }
 
 div#feed img {

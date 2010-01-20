@@ -1,11 +1,11 @@
 <div id="title">
 	<span>
-		<h1><%= image_tag(avatar(:thumb)) %><%= current_user.name %></h1>
+		<h1><%= image_tag(avatar(:thumb)) %><%= current_user.name %> <%= link_to "Edit", edit_user_path(@user) %></h1>
+		
 		<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
-		  <p onclick="$('#status_options').css('display', '')"><%= f.text_field :message, :class => "status", :value => "What are you working on?" %></p>
-			<small id="status_options" style="display:none">
-				<%= f.submit "Post" %>
-			</small>
+		  <p id="status">
+				<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
+			</p>
 		<% end %>
 		
 	</span>
@@ -13,10 +13,24 @@
 
 <div id="main">
 
-	<div id="feed">
+	<div id="feed" class="padded">
 		<% for activity in @activities %>
 			<p><%= explanation_of activity  %></p>
 		<% end %>
 	</div>
 
 </div>
+
+
+<script>
+	$("document").ready(function(){
+		$("input#statuses_message").focus(function(){
+			if($(this).val() == "What are you working on?") $(this).val("");
+		})
+		
+		$("input#statuses_message").blur(function(){
+			if($(this).val() == "") $(this).val("What are you working on?");
+		})
+		
+	})
+</script>
