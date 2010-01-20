@@ -152,10 +152,11 @@ div#header ul li {
 	border-left:1px solid #333;
 	border-right:1px solid #000;
 	background:url('/images/button_highlight_topright.png') no-repeat top right;
+	cursor:pointer;
 }
 
 div#header ul li:hover {
-	background:#111 url('/images/header_slice.png') repeat-x;
+	background:transparent;
 }
 
 div#header ul li img {
@@ -254,7 +255,7 @@ div#title h1 img {
 /* Feed */
 
 div#feed {
-	
+	overflow:auto;
 }
 
 div#feed img {
