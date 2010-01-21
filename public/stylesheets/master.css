@@ -164,7 +164,6 @@ div#main {
 	width:950px;
 	position:relative;
 	top:-20px;
-
 	margin:0px auto;
 }
 
@@ -184,8 +183,6 @@ div#title span {
 /* Title - with status bar */
 
 div#title span p#status {
-	position:relative;
-	top:3px;
 	padding:5px;
 	border:1px solid #ccc;
 	-moz-border-radius:5px;
@@ -222,6 +219,14 @@ div#title h1 img {
 	float:left;
 	margin-left:4px;
 	margin-right:10px;
+}
+
+div#title h1 small {
+	font-size:0.6em;
+	text-shadow:none;
+	position:relative;
+	top:2px;
+	margin-left:5px;
 }
 
 /* Feed */
