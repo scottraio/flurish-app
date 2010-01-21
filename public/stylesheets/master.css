@@ -186,6 +186,13 @@ div#title span {
 div#title span p#status {
 	position:relative;
 	top:3px;
+	padding:5px;
+	border:1px solid #ccc;
+	-moz-border-radius:5px;
+	background:#D6F2D2 url('/images/header_slice.png') repeat-x;
+	color:#444;
+	cursor:pointer;
+	float:right;
 }
 
 div#title span p#status input {
