@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	end
 	
 	def index
-		@users = User.find_all_by_company_id(current_user.company_id, :conditions => ["users.id != ?", current_user.id])
+		@users = User.find_all_by_organization_id(current_user.organization_id, :conditions => ["users.id != ?", current_user.id])
 	end
 	
 	def new

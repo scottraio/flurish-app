@@ -1,7 +1,7 @@
 <div id="title">
 	<span>
 		<h1>Users</h1>
-		<p class="button right"><%= link_to "Add a User", "#", :class => "icon users right" %></p>
+		<p class="button right"><%= link_to "Add a User", "#", :class => "icon users" %></p>
 	</span>
 </div>
 
@@ -11,6 +11,7 @@
 			<div class="item" style="background:url('<%= avatar_url(user, :thumb) %>') no-repeat;">
 				<h2><%= user.name %></h2>
 				<%= user.current_status %>
+				<p class="button_metal right">
 				<% if @user.following? user %>
 					<%= link_to "Stop Following", stop_following_user_path(user) %>
 				<% else %>

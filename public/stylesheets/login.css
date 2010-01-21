@@ -12,7 +12,7 @@ div#login h2 {
 	color:#555;
 }
 
-div#login h2 small {
+div#login h2 p {
 	float:right;
 	font-weight:normal;
 	font-size:0.6em;
@@ -40,8 +40,15 @@ div#login p input.field {
 
 div#login p.submit {
 	margin-top:20px;
+	overflow:auto;
 }
 
-div#login p.submit input.submit {
-	float:right;
+div#login p.submit span {
+	float:left;
+	margin-top:2px;
+}
+
+div#login p.submit span input {
+	position:relative;
+	top:-1px;
 }

@@ -1,6 +1,6 @@
 <%= flash[:error]%>
 <div id="login" class="round">
-	<h2>Login <small class="button">Signup</small></h2>
+	<h2>Login<p class="right"><%= link_to "Signup", "#", :class => "button" %></p></h2>
 	<div class="login_fields">
 		<% form_for :user, :url => request.url do |f| -%>
 			<p>
@@ -13,9 +13,11 @@
 			</p>
 		</div>
 			<p class="submit button">
-				<input type="checkbox" name="remember" id="remember" value="true" />
-				Remember Me
-				<%= f.submit("Login", :class => "submit")	%>
+				<span>
+					<input type="checkbox" name="remember" id="remember" value="true" />
+					Remember Me
+				</span>
+				<%= f.submit("Login", :class => "right")	%>
 			</p>
 			
 		<% end %>

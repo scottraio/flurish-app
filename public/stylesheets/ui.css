@@ -19,48 +19,64 @@ p.field input {
 
 /* Buttons */
 
-p.button {
-	padding:3px;
+.button {
+	padding:5px;
 	border:1px solid #ccc;
 	-moz-border-radius:5px;
 	background:#D6F2D2 url('/images/header_slice.png') repeat-x;
 	color:#444;
-	display:inline-block;
 	cursor:pointer;
 }
 
-p.button:hover {
+.button:hover {
 	border:1px solid #ccc;
-	background:#eee;
+	background:#E1FFDD;
 	-moz-border-radius:5px;
 }
 
 
-p.button a, p.button input {
-	background-color:#D6F2D2;
+.button a, .button input {
+	background-color:#eee;
 	font-weight:bold; 
 	display:inline-block;
-	border:0;
-	padding:7px 5px 5px 5px;
+	border:1px solid #ccc;
+	padding:3px;
 	text-shadow: #fff 0px 1px 0px;
 	color:#444;
 	cursor:pointer;
+	-moz-border-radius:5px;
+}
+
+.button a, .button input:hover {
+	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
 }
 
 /* Icons */
 
-p.button .icon {
-	padding-left:30px; 
+.button .icon {
+	padding:5px 5px 2px 30px; 
+	border:0;
 }
 
-p.button .branch {
-	background:#D6F2D2 url('/images/icons/branches.png') no-repeat scroll 6px 4px; 
+.button .branch {
+	background:#D6F2D2 url('/images/icons/branches.png') no-repeat scroll 5px 2px; 
 }
 
-p.button .users {
-	background:#D6F2D2 url('/images/icons/users.png') no-repeat scroll 6px 4px; 
+.button .users {
+	background:#D6F2D2 url('/images/icons/users.png') no-repeat scroll 5px 2px; 
 }
 
+.button_metal a {
+	background-color:#eee;
+	font-weight:bold; 
+	border:1px solid #ccc;
+	padding:5px;
+	text-shadow: #fff 0px 1px 0px;
+	color:#444;
+	cursor:pointer;
+	-moz-border-radius:5px;
+}
 
-
-	
+.button_metal a:hover {
+	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
+}	
