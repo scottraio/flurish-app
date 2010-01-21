@@ -1,5 +1,8 @@
 class Branch < ActiveRecord::Base
 	
+	belongs_to 	:organization
+	belongs_to 	:creator, 	:class_name => "User", :foreign_key => "created_by"
+	
 	has_and_belongs_to_many :users
 	
 	has_many		:elements
@@ -17,5 +20,18 @@ class Branch < ActiveRecord::Base
 	
 	validates_presence_of 	:name
 	validates_presence_of 	:description
+	
+	def self.get(user,params)
+		b	 						= self.find(params[:id])
+		b.attributes 	= params[:branch]
+		b
+	end
+	
+	def self.set(user,params)
+		b 							= self.new(params[:branch])
+		b.creator 			= user
+		b.organization 	= user.organization
+		b
+	end
 	
 end

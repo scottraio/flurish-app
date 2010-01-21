@@ -1,6 +1,10 @@
 <div id="title">
 	<span>
-		<h1><%= image_tag(avatar_url(@user, :thumb)) %><%= current_user.first_name %> <%= current_user.last_name %> <%= link_to "Edit", edit_user_path(@user), :class => "button" %></h1>
+		<h1>
+			<%= image_tag(avatar_url(@user, :thumb)) %><%= current_user.first_name %> <%= current_user.last_name %> 
+		</h1>
+		
+		
 		
 		<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
 		  <p id="status">
@@ -12,8 +16,9 @@
 </div>
 
 <div id="main">
-
+	
 	<div id="feed" class="padded">
+		<%= link_to "Edit Profile", edit_user_path(@user) %>
 		<% for activity in @activities %>
 			<p><%= explanation_of activity  %></p>
 		<% end %>

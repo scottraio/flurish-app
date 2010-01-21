@@ -1,1 +1,66 @@
 @import "jquery-ui/ui.css";
+
+/* Fields */
+
+p.field {
+	margin-bottom:10px;	
+}
+
+p.field label {
+	color:#555;
+	margin-bottom:5px;
+	display:block;
+	font-size:1.4em;
+}
+
+p.field input {
+	font-size:1.2em;
+}
+
+/* Buttons */
+
+p.button {
+	padding:3px;
+	border:1px solid #ccc;
+	-moz-border-radius:5px;
+	background:#D6F2D2 url('/images/header_slice.png') repeat-x;
+	color:#444;
+	display:inline-block;
+	cursor:pointer;
+}
+
+p.button:hover {
+	border:1px solid #ccc;
+	background:#eee;
+	-moz-border-radius:5px;
+}
+
+
+p.button a, p.button input {
+	background-color:#D6F2D2;
+	font-weight:bold; 
+	display:inline-block;
+	border:0;
+	padding:7px 5px 5px 5px;
+	text-shadow: #fff 0px 1px 0px;
+	color:#444;
+	cursor:pointer;
+}
+
+/* Icons */
+
+p.button .icon {
+	padding-left:30px; 
+}
+
+p.button .branch {
+	background:#D6F2D2 url('/images/icons/branches.png') no-repeat scroll 6px 4px; 
+}
+
+p.button .users {
+	background:#D6F2D2 url('/images/icons/users.png') no-repeat scroll 6px 4px; 
+}
+
+
+
+	

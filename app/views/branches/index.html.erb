@@ -1,7 +1,7 @@
 <div id="title">
 	<span>
 		<h1>Branches</h1>
-		<p><%= link_to "Create a Branch", "#", :style => "background:#D6F2D2 url('/images/icons/branches.png') no-repeat scroll 6px 4px; font-weight:bold; padding:7px 5px 5px 30px; text-shadow: #fff 0px 1px 0px;" %></p>
+		<p class="button right"><%= link_to "Create a Branch", new_branch_path, :class => "icon branch right" %></p>
 	</span>
 </div>
 
@@ -18,26 +18,11 @@
 				<li><input type="checkbox" /> Idea</li>
 			</ul>	
 		</div>
+		<% for branch in @branches %>
 		<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
-			<h2>Flurish Website<small><b>by Brandon Dek</b></small></h2>
-			This branch is dedicated the the on-going development of the Flurish website. Follow this to keep up-to-date on it's progress and discuss ideas.
+			<h2><%= link_to branch.name, branch_path(branch) %><small><b>by <%= link_to branch.creator.name, user_path(branch.creator) %></b></small></h2>
+			<%= branch.description %>
 		</div>
-		<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
-			<h2>Flurish Website<small><b>by Brandon Dek</b></small></h2>
-			This branch is dedicated the the on-going development of the Flurish website. Follow this to keep up-to-date on it's progress and discuss ideas.
-		</div>
-		<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
-			<h2>Flurish Website<small><b>by Brandon Dek</b></small></h2>
-			This branch is dedicated the the on-going development of the Flurish website. Follow this to keep up-to-date on it's progress and discuss ideas.
-		</div>
-		<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
-			<h2>Flurish Website<small><b>by Brandon Dek</b></small></h2>
-			This branch is dedicated the the on-going development of the Flurish website. Follow this to keep up-to-date on it's progress and discuss ideas.
-		</div>
-		<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
-			<h2>Flurish Website<small><b>by Brandon Dek</b></small></h2>
-			This branch is dedicated the the on-going development of the Flurish website. Follow this to keep up-to-date on it's progress and discuss ideas.
-		</div>
-	</div>
+		<% end %>
 	
 </div>
