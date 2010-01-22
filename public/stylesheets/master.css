@@ -190,15 +190,27 @@ div#title span p#status {
 	color:#444;
 	cursor:pointer;
 	float:right;
+	margin:0;
 }
 
-div#title span p#status input {
-	float:right;
+div#title span p#status input.status {
 	font-size:1.4em;
 	width:500px;
 	color:#777;
 	border:1px solid #ccc;
 	padding:5px;
+}
+
+input#submit_status {
+	background:url('/images/set_status.png') no-repeat;
+	width:90px;
+	height:24px;
+	border:0;
+	position:relative;
+	left:550px;
+	top:47px;
+	z-index:9999;
+	cursor:pointer;
 }
 
 div#title span small {
