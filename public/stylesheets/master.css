@@ -131,6 +131,7 @@ div#header ul {
 	text-align:right;
 	line-height:2.6em;
 	float:right;
+	cursor:pointer;
 }
 
 div#header ul li {
@@ -325,4 +326,39 @@ div.item {
 
 div.branch {
 	background:url('/images/icons/branches32x32.png') no-repeat;
+}
+
+div#edit_user {
+	overflow:auto;
+}
+
+div#edit_user h2 {
+	color:#888;
+	font-weight:normal;
+	margin-bottom:20px;
+}
+
+div#edit_user p.field input {
+	width:400px;
+}
+
+div#edit_user div#about {
+	float:left;
+	padding-right:10px;
+	width:445px;
+}
+
+div#edit_user div#admin {
+	float:left;
+	width:445px;
+	float:right;
+	background:#FAFAFB url('/images/panel_background.png') repeat-x top;
+	padding:10px 0 0 10px;
+	border:1px solid #ddd;
+}
+
+div#edit_user p.button {
+	float:left;
+	clear:both;
+	width:100%;
 }

@@ -18,7 +18,7 @@
 				<%= display_standard_flashes %>
 				<% if logged_in? %>
 				<ul>
-					<li onclick="location.href='<%= logout_path %>'">Logout</li>
+					<li onclick="location.href='<%= logout_path %>'"><%= image_tag("/images/icons/logout.png") %>Logout</li>
 					<li onclick="location.href='<%= users_path %>'"><%= image_tag("/images/icons/users.png") %> Users</li>
 					<li onclick="location.href='<%= branches_path %>'"><%= image_tag("/images/icons/branches.png") %>Branches</li>
 					<li onclick="location.href='<%= user_path(current_user) %>'"><%= image_tag(avatar_url(current_user, :thumb)) %><%= current_user.first_name %></li>				
