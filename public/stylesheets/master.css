@@ -199,12 +199,6 @@ div#title span {
 /* Title - with status bar */
 
 div#title span p#status {
-	padding:5px;
-	border:1px solid #ccc;
-	-moz-border-radius:5px;
-	background:#D6F2D2 url('/images/header_slice.png') repeat-x;
-	color:#444;
-	cursor:pointer;
 	float:right;
 	margin:0;
 }
@@ -214,22 +208,32 @@ div#title span p#status input.status {
 	width:500px;
 	color:#777;
 	border:1px solid #ccc;
-	padding:5px;
+	padding:5px 100px 5px 5px;
+	background:#fff;
+	cursor:text;
+	text-shadow:0;
 }
 
 input#submit_status {
-	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
-	height:34px;
+	background:#eee;
+	height:33px;
 	color:#555;
-	font-size:1em;
-	line-height:1.4em;
+	font-size:1.0em;
 	border:0;
 	border-left:1px solid #ccc;
-	position:relative;
-	left:630px;
-	top:7px;
 	z-index:9999;
 	cursor:pointer;
+	float:right;
+	position:relative;
+	left:-7px;
+	margin-top:-40px;
+	-moz-border-radius-topright:5px;
+	-moz-border-radius-bottomright:5px;
+}
+
+input#submit_status:hover {
+	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
+	text-shadow:#fff 0px 1px 0px;
 }
 
 div#title span small {

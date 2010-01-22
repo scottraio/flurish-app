@@ -6,7 +6,7 @@
 		
 		
 		<% form_for :statuses, :id => "status", :url => user_statuses_path(@user) do |f| %>
-		  <p id="status">
+		  <p id="status" class="button">
 				<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
 			</p>
 			<%= f.submit("Set Status", :id => "submit_status", :style => "display:none;")	%>

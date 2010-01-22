@@ -46,7 +46,6 @@ input.find {
 .button:hover {
 	border:1px solid #ccc;
 	background:#E1FFDD;
-	-moz-border-radius:5px;
 }
 
 
