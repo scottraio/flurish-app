@@ -6,23 +6,25 @@
 </div>
 
 <div id="main">
-
-	<div class="list">
-		<div class="list_header">
-			<input value="Search for a branch" />
+		
+		<div class="left_pane list">
+			<input class="find" value="Search for a branch" />
+			<% for branch in @branches %>
+			<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
+				<h2><%= link_to branch.name, branch_path(branch) %><small><b>by <%= link_to branch.creator.name, user_path(branch.creator) %></b></small></h2>
+				<%= branch.description %>
+			</div>
+			<% end %>
 		</div>
-		<div class="list_filter round">
-			<h3>Filter</h3>
-			<h4>Tags:</h4>
-			<ul>
-				<li><input type="checkbox" /> Idea</li>
-			</ul>	
+		
+		<div class="right_pane">
+			<div class="boxy">
+				<h2>Filter</h2>
+				<h4>Tags:</h4>
+				<ul>
+					<li><input type="checkbox" /> Idea</li>
+				</ul>	
+			</div>
 		</div>
-		<% for branch in @branches %>
-		<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
-			<h2><%= link_to branch.name, branch_path(branch) %><small><b>by <%= link_to branch.creator.name, user_path(branch.creator) %></b></small></h2>
-			<%= branch.description %>
-		</div>
-		<% end %>
-	
+		
 </div>

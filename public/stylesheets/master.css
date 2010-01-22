@@ -62,6 +62,19 @@ img {
 	float:right;
 }
 
+.clear {
+	clear:both;
+}
+
+.full {
+	width:100%;
+}
+
+.center {
+	text-align:center;
+	margin:0 auto;
+}
+
 .inline {
 	display:inline;
 }
@@ -166,6 +179,7 @@ div#main {
 	position:relative;
 	top:-20px;
 	margin:0px auto;
+	overflow:auto;
 }
 
 div#title {
@@ -242,6 +256,22 @@ div#title h1 small {
 	margin-left:5px;
 }
 
+.left_pane {
+	float:left;
+	width:563px;
+	padding:20px 10px 20px 20px;
+}
+
+.right_pane {
+	float:right;
+	width:325px;
+	padding:20px 20px 20px 10px;
+}
+
+.full_pane {
+	padding:20px;
+}
+
 /* Feed */
 
 div#feed {
@@ -269,12 +299,6 @@ div#feed div.activity div.activible div.stamp {
 /* Main List */
 
 div.list {
-	padding:20px;
-	overflow:auto;
-}
-
-div.list h2 {
-	color:#333;
 }
 
 div.list img {
@@ -286,79 +310,16 @@ div.list h2 small {
 	font-size:0.6em;
 }
 
-div.list_header {
-	width:550px;
-	float:left;
-	margin-bottom:20px;
-}
-
-div.list_header input {
-	padding:5px;
-	border:1px solid #ccc;
-	-moz-border-radius:5px;
-	color:#888;
-	font-size:1.2em;
-	width:300px;
-}
-
-div.list_filter {
-	float:right;
-	width:280px;
-	background:#FAFAFB url('/images/panel_background.png') repeat-x top;
-	padding:15px 10px 10px 10px;
-	border:1px solid #ddd;
-}
-
-div.list_filter h3 {
-	color:#333;
-}
-
 /* Branches */
 
 div.item {
 	padding-left:55px;
 	float:left;
 	margin-bottom:20px;
-	width:550px;
 	min-height:55px;
 }
 
 
 div.branch {
 	background:url('/images/icons/branches32x32.png') no-repeat;
-}
-
-div#edit_user {
-	overflow:auto;
-}
-
-div#edit_user h2 {
-	color:#888;
-	font-weight:normal;
-	margin-bottom:20px;
-}
-
-div#edit_user p.field input {
-	width:400px;
-}
-
-div#edit_user div#about {
-	float:left;
-	padding-right:10px;
-	width:445px;
-}
-
-div#edit_user div#admin {
-	float:left;
-	width:445px;
-	float:right;
-	background:#FAFAFB url('/images/panel_background.png') repeat-x top;
-	padding:10px 0 0 10px;
-	border:1px solid #ddd;
-}
-
-div#edit_user p.button {
-	float:left;
-	clear:both;
-	width:100%;
 }

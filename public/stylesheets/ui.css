@@ -1,4 +1,5 @@
 @import "jquery-ui/ui.css";
+@import "uploadify.css";
 
 /* Fields */
 
@@ -19,6 +20,16 @@ p.field input {
 	color:#444;
 	padding:5px;
 	margin-bottom:10px;
+}
+
+input.find {
+	padding:5px;
+	border:1px solid #ccc;
+	-moz-border-radius:5px;
+	color:#888;
+	font-size:1.2em;
+	width:300px;
+	margin-bottom:20px;
 }
 
 /* Buttons */
@@ -43,7 +54,7 @@ p.field input {
 	background-color:#eee;
 	font-weight:bold; 
 	display:inline-block;
-	border:1px solid #ccc;
+	border:0;
 	padding:3px;
 	text-shadow: #fff 0px 1px 0px;
 	color:#444;
@@ -51,26 +62,7 @@ p.field input {
 	-moz-border-radius:5px;
 }
 
-.button a, .button input:hover {
-	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
-}
-
-/* Icons */
-
-.button .icon {
-	padding:5px 5px 2px 30px; 
-	border:0;
-}
-
-.button .branch {
-	background:#D6F2D2 url('/images/icons/branches.png') no-repeat scroll 5px 2px; 
-}
-
-.button .users {
-	background:#D6F2D2 url('/images/icons/users.png') no-repeat scroll 5px 2px; 
-}
-
-.button_metal a {
+.metal {
 	background-color:#eee;
 	font-weight:bold; 
 	border:1px solid #ccc;
@@ -81,6 +73,36 @@ p.field input {
 	-moz-border-radius:5px;
 }
 
-.button_metal a:hover {
+.metal:hover {
 	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
 }	
+
+
+/* Icons */
+
+.button .icon {
+	padding:5px 5px 2px 30px; 
+}
+
+.button .branch {
+	background:#D6F2D2 url('/images/icons/branches.png') no-repeat scroll 5px 2px; 
+}
+
+.button .users {
+	background:#D6F2D2 url('/images/icons/users.png') no-repeat scroll 5px 2px; 
+}
+
+/* Boxy */
+
+.boxy {
+	background:#FAFAFB url('/images/panel_background.png') repeat-x top;
+	border:1px solid #ddd;
+	padding:10px;
+}
+
+.boxy h2 {
+	margin-bottom:20px;
+	color:#444;
+	font-weight:normal;
+}
+

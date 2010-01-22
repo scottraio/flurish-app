@@ -5,10 +5,9 @@
 </div>
 
 <div id="main">
-	<div id="edit_user" class="padded">
 		<% form_for @user, :html => { :multipart => true } do |f| %>
 		
-			<div id="about">
+			<div class="full_pane">
 			  <p class="field">
 					<label>First Name</label><%= f.text_field :first_name %>
 				</p>
@@ -19,18 +18,14 @@
 				<p class="field">
 						<label>Avatar</label><%= f.file_field :avatar %>
 				</p>
+					<p class="field">
+						<label>Login</label><%= f.text_field :login %>
+					</p>
+					<p class="field">
+						<label>Password</label><%= f.text_field :password %>
+					</p>
 			</div>
-			<div id="admin" class="round">
-				<h2>Administrative</h2>
-				<p class="field">
-					<label>Login</label><%= f.text_field :login %>
-				</p>
-				<p class="field">
-					<label>Password</label><%= f.text_field :password %>
-				</p>
-			</div>
-			
-			<p class="button"><%= f.submit "Save" %></p>
+			<p class="full center left clear"><%= f.submit "Update Information", :class => "metal" %></p>
 		<% end %>
-	</div>
 </div>
+
