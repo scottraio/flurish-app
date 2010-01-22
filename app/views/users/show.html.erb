@@ -5,11 +5,11 @@
 		</h1>
 		
 		
-		<% form_for :statuses, :url => user_statuses_path(@user) do |f| %>
+		<% form_for :statuses, :id => "status", :url => user_statuses_path(@user) do |f| %>
 		  <p id="status">
 				<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
 			</p>
-			<%= f.submit("", :id => "submit_status", :style => "display:none;")	%>
+			<%= f.submit("Set Status", :id => "submit_status", :style => "display:none;")	%>
 		<% end %>
 		
 	</span>
