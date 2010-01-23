@@ -307,6 +307,11 @@ div#feed div.activity div.activible div.stamp {
 /* Main List */
 
 div.list {
+	color:#555;
+}
+
+div.list h2 {
+	color:#333;
 }
 
 div.list img {
@@ -318,8 +323,6 @@ div.list h2 small {
 	font-size:0.6em;
 }
 
-/* Branches */
-
 div.item {
 	padding-left:55px;
 	float:left;
@@ -327,7 +330,15 @@ div.item {
 	min-height:55px;
 }
 
+/* Branches */
+
 
 div.branch {
 	background:url('/images/icons/branches32x32.png') no-repeat;
+}
+
+/* User Edit */
+
+div#avatar_field {
+	
 }

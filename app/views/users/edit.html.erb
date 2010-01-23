@@ -14,16 +14,18 @@
 				<p class="field">
 					<label>Last Name</label><%= f.text_field :last_name %>
 				</p>
-				
 				<p class="field">
-						<label>Avatar</label><%= f.file_field :avatar %>
+					<label>Login</label><%= f.text_field :login %>
 				</p>
-					<p class="field">
-						<label>Login</label><%= f.text_field :login %>
-					</p>
-					<p class="field">
-						<label>Password</label><%= f.text_field :password %>
-					</p>
+				<p class="field">
+					<label>Password</label><%= f.text_field :password %>
+				</p>
+				<p class="field">
+					<label>Avatar</label>
+					<div style="margin-bottom:20px">
+						<%= f.file_field :avatar %>
+					</div>
+				</p>
 			</div>
 			<p class="full center left clear"><%= f.submit "Update Information", :class => "metal" %></p>
 		<% end %>
