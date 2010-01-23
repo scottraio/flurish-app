@@ -313,6 +313,7 @@ div#feed div.activity div.activible div.stamp {
 
 div.list div.item h2 {
 	color:#333;
+	margin-top:5px;
 	margin-bottom:5px;
 }
 
@@ -328,7 +329,6 @@ div.list div.item {
 	padding-left:55px;
 	padding-bottom:10px;
 	margin-bottom:10px;
-	margin-bottom:20px;
 	width:855px;
 	overflow:auto;
 	border-bottom:1px solid #ddd;
@@ -345,7 +345,7 @@ div.item div.details {
 
 div.item div.follow {
 	float:right;
-	margin-top:6px;
+	margin-top:15px;
 	margin-right:2px;
 }
 
