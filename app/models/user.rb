@@ -2,7 +2,7 @@ require 'digest/sha2'
 
 class User < ActiveRecord::Base
 	
-	has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "48x48#" }, :url => "/:class/:attachment/:id/:style_:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:style_:basename.:extension"
+	has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "32x32#", :tiny => "16x16#" }, :url => "/:class/:attachment/:id/:style_:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:style_:basename.:extension"
 	
 	belongs_to :organization
 	

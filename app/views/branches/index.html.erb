@@ -16,7 +16,7 @@
 				<div class="details">
 					<h2>
 						<%= link_to branch.name, branch_path(branch) %>
-						<small><b>by <%= link_to branch.creator.name, user_path(branch.creator) %></b></small>
+						<small><b>by <%= link_to branch.creator.name, user_path(branch.creator), :class => "created_by", :style => "background:url(#{avatar_url(branch.creator, :tiny)}) no-repeat;" %></b></small>
 					</h2>
 					<%= branch.description %>
 				</div>
