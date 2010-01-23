@@ -7,32 +7,27 @@
 
 <div id="main">
 		
-		<div class="left_pane list">
+		<div class="list full_pane">
 			<input class="find" value="Search for a branch" />
+			
 			<% for branch in @branches %>
 			<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
-				<h2>
-					<%= link_to branch.name, branch_path(branch) %>
-					<small><b>by <%= link_to branch.creator.name, user_path(branch.creator) %></b>
-					
-					</small>
-				</h2>
-				<%= branch.description %>
+				
+				<div class="details">
+					<h2>
+						<%= link_to branch.name, branch_path(branch) %>
+						<small><b>by <%= link_to branch.creator.name, user_path(branch.creator) %></b></small>
+					</h2>
+					<%= branch.description %>
+				</div>
+				
+				<div class="follow">
+					<%= link_to "Follow", "#", :class => "metal" %>
+				</div>
+				
 			</div>
-			<p class="right">
-				<%= link_to "Follow", "#", :class => "metal" %>
-			</p>
 			<% end %>
 		</div>
-		
-		<div class="right_pane">
-			<div class="boxy round">
-				<h2>Filter</h2>
-				<h4>Tags:</h4>
-				<ul>
-					<li><input type="checkbox" /> Idea</li>
-				</ul>	
-			</div>
-		</div>
+
 		
 </div>

@@ -9,14 +9,18 @@
 	<div class="list full_pane">
 			<% for user in @users %>
 			<div class="item" style="background:url('<%= avatar_url(user, :thumb) %>') no-repeat;">
-				<h2><%= user.name %></h2>
-				<%= user.current_status %>
-				<p class="right">
-				<% if @user.following? user %>
-					<%= link_to "Stop Following", stop_following_user_path(user), :class => "metal" %>
-				<% else %>
-					<%= link_to "Follow", follow_user_path(user), :class => "metal" %>
-				<% end %>
+				<div class="details">
+					<h2><%= user.name %></h2>
+					<%= user.current_status %>
+				</div>
+				
+				<div class="follow">
+					<% if @user.following? user %>
+						<%= link_to "Stop Following", stop_following_user_path(user), :class => "metal" %>
+					<% else %>
+						<%= link_to "Follow", follow_user_path(user), :class => "metal" %>
+					<% end %>
+				</div>
 			</div>
 			<% end %>
 	</div>
