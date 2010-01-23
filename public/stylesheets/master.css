@@ -334,6 +334,9 @@ div.list div.item {
 div.item div.details {
 	float:left;
 	width:70%;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
 }
 
 div.item div.follow {
