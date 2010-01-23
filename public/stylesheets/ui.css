@@ -74,6 +74,7 @@ input.find {
 
 .metal:hover {
 	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
+	text-decoration:none;
 }	
 
 
