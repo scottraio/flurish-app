@@ -14,18 +14,19 @@
 				<h2>
 					<%= link_to branch.name, branch_path(branch) %>
 					<small><b>by <%= link_to branch.creator.name, user_path(branch.creator) %></b>
-					<p class="clear right">
-						<%= link_to "Follow", "#", :class => "metal" %>
-					</p>
+					
 					</small>
 				</h2>
 				<%= branch.description %>
 			</div>
+			<p class="right">
+				<%= link_to "Follow", "#", :class => "metal" %>
+			</p>
 			<% end %>
 		</div>
 		
 		<div class="right_pane">
-			<div class="boxy">
+			<div class="boxy round">
 				<h2>Filter</h2>
 				<h4>Tags:</h4>
 				<ul>

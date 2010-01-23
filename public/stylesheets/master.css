@@ -212,6 +212,7 @@ div#title span p#status input.status {
 	background:#fff;
 	cursor:text;
 	text-shadow:0;
+	font-weight:normal;
 }
 
 input#submit_status {
@@ -318,16 +319,27 @@ div.list img {
 }
 
 div.list h2 small {
-	color:#888;
-	margin-left:10px;
+	color:#555;
+	margin-left:5px;
 	font-size:0.6em;
 }
 
-div.item {
+div.left_pane div.item {
 	padding-left:55px;
-	float:left;
 	margin-bottom:20px;
 	min-height:55px;
+	width:415px;
+	float:left;
+	clear:both;
+}
+
+div.full_pane div.item {
+	padding-left:55px;
+	margin-bottom:20px;
+	min-height:55px;
+	width:855px;
+	float:left;
+	clear:both;
 }
 
 /* Branches */
@@ -335,10 +347,4 @@ div.item {
 
 div.branch {
 	background:url('/images/icons/branches32x32.png') no-repeat;
-}
-
-/* User Edit */
-
-div#avatar_field {
-	
 }
