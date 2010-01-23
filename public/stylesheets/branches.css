@@ -1,0 +1,31 @@
+ul.element_types {
+	background:#222 url('/images/header_slice.png') repeat-x;	
+	color:#f0f0f0;
+	margin:2px;
+	position:relative;
+	top:2px;
+	-moz-border-radius-topright:4px;
+	-moz-border-radius-topleft:4px;
+}
+
+ul.element_types li {
+	display:inline;
+	padding:10px 10px 10px 10px;
+
+	border-right:1px solid #000;
+	background:url('/images/button_highlight_bottomright.png') no-repeat bottom right;
+	cursor:pointer;
+	line-height:2.8em;
+}
+
+ul.element_types li:hover {
+	background:transparent;
+}
+
+ul.element_types li img {
+	height:16px;
+	width:16px;
+	padding-right:5px;
+	position:relative;
+	top:4px;
+}

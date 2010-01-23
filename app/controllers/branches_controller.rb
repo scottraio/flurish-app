@@ -24,6 +24,7 @@ class BranchesController < ApplicationController
   end
   
   def edit 
+		@element_types = ElementType.find :all
   end 
   
   def update

@@ -1,6 +1,7 @@
 @import "ui.css";
 @import "facebox.css";
 @import "login.css";
+@import "branches.css";
 
 body {
 	font-family: "Helvetica";
@@ -239,6 +240,8 @@ input#submit_status:hover {
 	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
 	text-shadow:#fff 0px 1px 0px;
 }
+
+/* end status bar */
 
 div#title span small {
 	float:right;

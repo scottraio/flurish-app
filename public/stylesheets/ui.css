@@ -65,7 +65,7 @@ input.find {
 	background-color:#eee;
 	font-weight:bold; 
 	border:1px solid #ccc;
-	padding:5px;
+	padding:8px 5px 5px 5px;
 	text-shadow: #fff 0px 1px 0px;
 	color:#444;
 	cursor:pointer;
@@ -77,11 +77,22 @@ input.find {
 	text-decoration:none;
 }	
 
+/* Metal buttons for use within title bars */
+
+.in_title {
+	position:relative;
+	top:10px;
+}
+
 
 /* Icons */
 
 .button .icon {
 	padding:5px 5px 2px 30px; 
+}
+
+.button .add_element {
+	background:#D6F2D2 url('/images/icons/add_element.png') no-repeat scroll 5px 3px; 
 }
 
 .button .branch {

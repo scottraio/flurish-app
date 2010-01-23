@@ -1,6 +1,8 @@
 <div id="title">
 	<span>
 		<h1><%= @branch.name %></h1>
+		<%= link_to "Design", edit_branch_path(@branch), :class => "left metal in_title" %>
+		<%= link_to "Follow", edit_branch_path(@branch), :class =>  "right metal in_title" %>
 	</span>
 </div>
 
