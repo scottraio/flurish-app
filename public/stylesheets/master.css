@@ -209,7 +209,7 @@ div#title span p#status {
 
 div#title span p#status input.status {
 	font-size:1.4em;
-	width:500px;
+	width:400px;
 	color:#777;
 	border:1px solid #ccc;
 	padding:5px 100px 5px 5px;
@@ -228,10 +228,9 @@ input#submit_status {
 	border-left:1px solid #ccc;
 	z-index:9999;
 	cursor:pointer;
-	float:right;
-	position:relative;
-	left:-7px;
-	margin-top:-40px;
+	margin-left:630px;
+	margin-top:8px;
+	position:absolute;
 	-moz-border-radius-topright:5px;
 	-moz-border-radius-bottomright:5px;
 }
