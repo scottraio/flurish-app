@@ -8,7 +8,7 @@
 <div id="main">
 		
 		<div class="list full_pane">
-			<input class="find" value="Search for a branch" />
+			<%= text_field :branches, :keyword, :class => "find", :value => "Search for a branch" %>
 			
 			<% for branch in @branches %>
 			<div class="item" style="background:url('/images/icons/branches32x32.png') no-repeat;">
@@ -22,7 +22,11 @@
 				</div>
 				
 				<div class="follow">
-					<%= link_to "Follow", "#", :class => "metal" %>
+					<% if @user.following? branch %>
+						<%= link_to "Stop Following", stop_following_branch_path(branch), :class =>  "metal" %>
+					<% else %>
+						<%= link_to "Follow", follow_branch_path(branch), :class =>  "metal" %>
+					<% end %>
 				</div>
 				
 			</div>
@@ -32,4 +36,23 @@
 		
 </div>
 
+<script>
+	$("document").ready(function(){
+		
+		var focusable = $("input#branches_keyword");
+		var default_value = focusable.val();
+		
+		focusable.focus(function(){
+			if($(this).val() == default_value) $(this).val("");
+			$("input#submit_status").css('display', '');
+		})
+		
+		focusable.blur(function(){
+			if($(this).val() == "") {
+				$(this).val(default_value); $("input#submit_status").css('display', 'none');	
+			}
+		})
+		
+	})
+</script>
 

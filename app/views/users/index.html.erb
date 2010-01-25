@@ -15,11 +15,11 @@
 				</div>
 				
 				<div class="follow">
-					<% if @user.following? user %>
-						<%= link_to "Stop Following", stop_following_user_path(user), :class => "metal" %>
-					<% else %>
-						<%= link_to "Follow", follow_user_path(user), :class => "metal" %>
-					<% end %>
+				<% if @user.following? user %>
+					<%= link_to "Stop Following", stop_following_user_path(user), :class => "metal" %>
+				<% else %>
+					<%= link_to "Follow", follow_user_path(user), :class => "metal" %>
+				<% end %>
 				</div>
 			</div>
 			<% end %>

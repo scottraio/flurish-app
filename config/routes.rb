@@ -39,7 +39,9 @@ ActionController::Routing::Routes.draw do |map|
 		user.resources :statuses
 	end
 	
-	map.resources :branches
+	map.resources :branches, :member => [:follow, :stop_following] do |branch|
+		branch.resources :elements
+	end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
