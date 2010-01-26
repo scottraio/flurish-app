@@ -20,10 +20,10 @@ module ActivitiesHelper
 	end
 	
 	def stamp(text)
-		actions 	= link_to("Comment", "")
+		actions 	= link_to("Comment", "#", :id => "comments_#{@activity.id}", :class => "comment_link")
 		metadata 	= content_tag(:div,time_ago_in_words(@activity.created_at)+" ago "+actions, :class => "metadata")
 		content_tag :div, :class => "stamp" do 
-			text+metadata
+			"<b>"+(link_to @activity.creator.name, "/users/#{@activity.creator.id}")+"</b>" + " " +text+metadata
 		end
 	end
 	
