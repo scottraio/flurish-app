@@ -39,7 +39,7 @@ div.error {
 a {
 	border:0;
 	text-decoration:none;
-	color:#536C99;
+	color:#31418D;
 }
 
 a:hover {
@@ -294,13 +294,11 @@ div#feed {
 }
 
 div#feed div.activity {
-	background-color:#f0f0f0;
 	margin:2px 0;
 }
 
 div#feed div.activity div.activible {
-	padding:3px;
-
+	padding:3px
 }
 
 div#feed div.activity div.activible div.stamp {
@@ -309,6 +307,11 @@ div#feed div.activity div.activible div.stamp {
 	top:7px;
 	line-height:1.5em;
 	text-indent:10px;
+}
+
+div#feed div.activity div.activible div.stamp div.metadata {
+	font-size:0.8em;
+	color:#777;
 }
 
 /* Main List */
@@ -349,6 +352,36 @@ div.item div.follow {
 	float:right;
 	margin-top:15px;
 	margin-right:2px;
+}
+
+/* Comments */
+
+div.comments {
+	background:#E1FFDD;
+	width:300px;
+	margin-left:60px;
+}
+
+div.comments p {
+	clear:both;
+	padding:5px;
+	font-size:0.8em;
+}
+
+div.comments p span {
+	display:block;
+	padding-left:30px;
+}
+
+div.comments p small {
+	display:block;
+	color:#777;
+}
+
+div.comments p input {
+	border:1px solid #C4E9C9;
+	padding:3px;
+	color:#777;
 }
 
 /* Branches */

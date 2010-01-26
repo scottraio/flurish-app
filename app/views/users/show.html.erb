@@ -18,8 +18,30 @@
 <div id="main">
 	
 	<div id="feed" class="padded">
-		<% for activity in @activities %>
-			<p><%= explanation_of activity  %></p>
+			<% for activity in @activities %>
+			<p>
+				<%= explanation_of activity  %>
+			</p>
+			<div id="comments_<%= activity.id %>" class="comments round" style="display:none">
+				
+				<p style="border-bottom:1px solid #fff">
+					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat">
+						<b><%= link_to "Brandon Dek", "#" %></b> 
+						Hello Hello
+						<small>28 mins ago</small>
+					</span>
+				</p>
+				
+				<p style="border-bottom:1px solid #fff">
+					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat">
+						<b><%= link_to "Brandon Dek", "#" %></b> 
+						Ha, its facebook!
+						<small>28 mins ago</small>
+					</span>
+				</p>
+				
+				<p><input value="Write a comment" /></p>
+			</div>	
 		<% end %>
 	</div>
 
@@ -31,14 +53,18 @@
 		$("input#statuses_message").focus(function(){
 			if($(this).val() == "What are you working on?") $(this).val("");
 			$("input#submit_status").css('display', '');
-		})
+		});
 		
 		$("input#statuses_message").blur(function(){
 			
 			if($(this).val() == "") {
 				$(this).val("What are you working on?"); $("input#submit_status").css('display', 'none');	
 			}
-		})
+		});
+		
+		$(".comment_link").click(function() {
+			$("div#"+$(this).attr("id")).css("display", "")
+		});
 		
 	})
 </script>
