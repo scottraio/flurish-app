@@ -24,6 +24,10 @@
 			</p>
 			<div id="comments_<%= activity.id %>" class="comments round" style="display:none">
 				
+				<p>
+					<small><%= link_to "View all 7 comments" %></small>
+				</p>	
+				
 				<p style="border-bottom:1px solid #fff">
 					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
 						Rearranged it a bit and increased the font size. I think it looks pretty good.
@@ -52,9 +56,9 @@
 					</span>
 				</p>
 				
-				<p class="add_comment"><input value="Write a comment" /></p>
+				<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
 				<p class="new_comment" style="display:none">
-					<input class="new_comment" />
+					<textarea class="new_comment"></textarea>
 					<input type="submit" class="metal" value="post comment" />
 				</p>
 			</div>	

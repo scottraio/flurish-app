@@ -330,11 +330,15 @@ div.list h2 small {
 	font-size:0.6em;
 }
 
-div.list div.item {
+div.list .with_icon {
 	padding-left:55px;
+	max-width:855px;
+}
+
+div.list div.item {
 	padding-bottom:10px;
 	margin-bottom:10px;
-	width:855px;
+	width:100%;
 	overflow:auto;
 	border-bottom:1px solid #ddd;
 	color:#555;
@@ -357,8 +361,8 @@ div.item div.follow {
 /* Comments */
 
 div.comments {
-	background:#E1FFDD;
-	width:300px;
+	background:#f0f0f0;
+	width:50%;
 	margin-left:60px;
 }
 
@@ -374,18 +378,25 @@ div.comments p span {
 div.comments p small {
 	display:block;
 	color:#777;
+	margin-top:5px;
 }
 
 div.comments p input {
-	border:1px solid #C4E9C9;
-	padding:3px;
-	color:#777;
 	width:100%;
 	max-width:100%;
 }
 
-div.comments p.new_comment input {
+div.comments p input.add_comment {
+	border:1px solid #C4E9C9;
+	padding:3px;
+	color:#777;
+}
+
+div.comments p.new_comment textarea {
 	height:30px;
+	width:100%;
+	max-width:100%;
+	border:1px solid #C4E9C9;
 }
 
 /* Branches */

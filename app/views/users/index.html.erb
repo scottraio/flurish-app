@@ -8,7 +8,7 @@
 <div id="main">
 	<div class="list full_pane">
 			<% for user in @users %>
-			<div class="item" style="background:url('<%= avatar_url(user, :thumb) %>') no-repeat;">
+			<div class="item with_icon" style="background:url('<%= avatar_url(user, :thumb) %>') no-repeat;">
 				<div class="details">
 					<h2><%= user.name %></h2>
 					<%= user.current_status %>
