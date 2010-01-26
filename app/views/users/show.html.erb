@@ -24,23 +24,43 @@
 			</p>
 			<div id="comments_<%= activity.id %>" class="comments round" style="display:none">
 				
+				<p>
+					<small><%= link_to "View all 7 comments" %></small>
+				</p>	
+				
 				<p style="border-bottom:1px solid #fff">
-					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat">
-						<b><%= link_to "Brandon Dek", "#" %></b> 
-						Hello Hello
-						<small>28 mins ago</small>
+					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
+						Rearranged it a bit and increased the font size. I think it looks pretty good.
+						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
 					</span>
 				</p>
 				
 				<p style="border-bottom:1px solid #fff">
-					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat">
-						<b><%= link_to "Brandon Dek", "#" %></b> 
-						Ha, its facebook!
-						<small>28 mins ago</small>
+					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
+						Better this way IMO.
+						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
 					</span>
 				</p>
 				
-				<p><input value="Write a comment" /></p>
+				<p style="border-bottom:1px solid #fff">
+					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
+						Maybe really?
+						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
+					</span>
+				</p>
+				
+				<p style="border-bottom:1px solid #fff">
+					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
+						Ya really
+						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
+					</span>
+				</p>
+				
+				<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
+				<p class="new_comment" style="display:none">
+					<textarea class="new_comment"></textarea>
+					<input type="submit" class="metal" value="post comment" />
+				</p>
 			</div>	
 		<% end %>
 	</div>
@@ -66,5 +86,10 @@
 			$("div#"+$(this).attr("id")).css("display", "")
 		});
 		
-	})
+		$("p.add_comment").click(function() {
+			$(this).css("display","none")
+			$("p.new_comment").css("display", "");
+		});
+		
+	});
 </script>
