@@ -35,11 +35,13 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
+	map.resources :activities, :has_many => [:comments]
+
 	map.resources :users, :member => [:follow, :stop_following] do |user|
 		user.resources :statuses
 	end
 	
-	map.resources :branches, :member => [:follow, :stop_following] do |branch|
+	map.resources :branches, :member => [:follow, :stop_following], :has_many => [:comments] do |branch|
 		branch.resources :elements
 	end
 
