@@ -365,12 +365,10 @@ div.comments {
 div.comments p {
 	clear:both;
 	padding:5px;
-	font-size:0.8em;
 }
 
 div.comments p span {
 	display:block;
-	padding-left:30px;
 }
 
 div.comments p small {
@@ -382,6 +380,12 @@ div.comments p input {
 	border:1px solid #C4E9C9;
 	padding:3px;
 	color:#777;
+	width:100%;
+	max-width:100%;
+}
+
+div.comments p.new_comment input {
+	height:30px;
 }
 
 /* Branches */
