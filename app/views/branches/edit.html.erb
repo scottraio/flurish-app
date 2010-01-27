@@ -2,7 +2,7 @@
 <div id="title">
 	<span>
 		<p class="field left"><%= f.text_field :name, :class => "branch_name_field" %></p>
-		<%= link_to "Finished", branch_path(@branch), :class => "right metal in_title" %>
+		<%= f.submit "Finished", :class => "right metal in_title", :style => "font-size:1.0em" %>
 	</span>
 </div>
 
@@ -18,13 +18,14 @@
 					<p class="field">
 						<label>Description</label><%= f.text_area :description %>
 					</p>
+
 			</div>
 		</div>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
-		<p class="full center left clear"><%= f.submit "Update Branch", :class => "metal" %></p>
+		
 	</div>
 </div>
 <% end %>
