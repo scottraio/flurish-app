@@ -18,14 +18,18 @@ div.notice, div.error {
 
 div.notice {
 	color:#43813E;
-	background-color:#D6FFDC;
+	background:#D6FFDC;
 	border:2px solid #839B86;
-	padding:5px;
+	padding:10px;
 	-moz-border-radius:6px;
 	float:left;
 	position:relative;
-	top:5px;
 	left:300px;
+	top:200px;
+	z-index:9999;
+	-moz-box-shadow: black 0px 0px 10px;
+	-webkit-box-shadow: black 0px 0px 10px;
+	
 }
 
 div.error {
