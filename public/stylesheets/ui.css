@@ -62,7 +62,7 @@ input.find {
 }
 
 .metal {
-	background-color:#eee;
+	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
 	font-weight:bold; 
 	border:1px solid #ccc;
 	padding:8px 5px 5px 5px;
@@ -70,11 +70,17 @@ input.find {
 	color:#444;
 	cursor:pointer;
 	-moz-border-radius:5px;
+	text-decoration:none;
 }
 
 .metal:hover {
-	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
 	text-decoration:none;
+}
+
+.metal:active {
+	background:#eee;
+	text-decoration:none;
+	text-shadow:0;
 }	
 
 /* Metal buttons for use within title bars */

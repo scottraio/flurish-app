@@ -1,7 +1,8 @@
+<% form_for @branch do |f| %>
 <div id="title">
 	<span>
-		<h1><%= @branch.name %></h1>
-		<%= link_to "Finished", branch_path(@branch), :class => "right metal in_title" %>
+		<p class="field left"><%= f.text_field :name, :class => "branch_name_field" %></p>
+		<%= f.submit "Finished", :class => "right metal in_title", :style => "font-size:1.0em" %>
 	</span>
 </div>
 
@@ -11,7 +12,15 @@
 		<ul class="element_types">
 			<% for element_type in @element_types %><li><%= image_tag("/images/icons/add_#{element_type.name.downcase}.png") %> <%= element_type.name %></li><% end %>	
 		</ul>
-		
+			
+		<div class="right_pane">
+			<div class="description">
+					<p class="field">
+						<label>Description</label><%= f.text_area :description %>
+					</p>
+
+			</div>
+		</div>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
@@ -19,3 +28,4 @@
 		
 	</div>
 </div>
+<% end %>

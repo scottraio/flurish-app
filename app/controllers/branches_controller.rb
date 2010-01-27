@@ -41,6 +41,13 @@ class BranchesController < ApplicationController
   end 
   
   def update
+    if @branch.save
+			flash[:notice] = "#{@branch.name} updated successfully"
+			redirect_to branch_path(@branch)
+		else
+			flash[:error] = @branch.errors
+			render :new
+		end
   end
   
   def destroy 
