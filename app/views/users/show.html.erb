@@ -59,7 +59,7 @@
 				<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
 				<% form_for :comments, :url => activity_comments_path(activity) do |f| %>
 				<p class="new_comment" style="display:none">
-					<%= f.text_area :message, :class => :new_comment %>
+					<%= f.text_area :message, :class => "new_comment round" %>
 					<%= f.submit "post comment", :class => "metal" %>
 				</p>
 				<% end %>

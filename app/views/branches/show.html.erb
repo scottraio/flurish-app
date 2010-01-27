@@ -11,7 +11,13 @@
 </div>
 
 <div id="main">
-	<div id="show_branch" class="padded">
-
+	<div id="show_branch">
+		<div class="right_pane">
+			<div class="description"> 
+				<h4><i>Author:</i> <b><%= link_to @branch.creator.name, user_path(@branch.creator), :class => "created_by", :style => "background:url(#{avatar_url(@branch.creator, :tiny)}) no-repeat;" %></b> <%= @branch.creator.position %></h4>
+				<h4><i>Title:</i> <b>Flurish Website</b></h4>
+				<%= @branch.description %>
+			</div>
+		</div>
 	</div>
 </div>

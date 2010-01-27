@@ -330,7 +330,6 @@ div.list h2 small {
 }
 
 div.list .with_icon {
-	padding-left:55px;
 	max-width:855px;
 }
 
@@ -396,6 +395,7 @@ div.comments p.new_comment textarea {
 	width:100%;
 	max-width:100%;
 	border:1px solid #C4E9C9;
+	padding:5px;
 }
 
 /* Branches */
