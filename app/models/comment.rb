@@ -5,4 +5,10 @@ class Comment < ActiveRecord::Base
 
 	validates_presence_of 	:message
 	
+	def self.set(parent,user,options={})
+		c 				= parent.comments.new options[:comment]
+		c.creator = user
+		c
+	end
+	
 end

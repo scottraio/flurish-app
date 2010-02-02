@@ -237,6 +237,8 @@ input#submit_status {
 	position:absolute;
 	-moz-border-radius-topright:5px;
 	-moz-border-radius-bottomright:5px;
+	-webkit-border-radius-topright:5px;
+	-webkit-border-radius-bottomright:5px;
 }
 
 input#submit_status:hover {
@@ -245,11 +247,6 @@ input#submit_status:hover {
 }
 
 /* end status bar */
-
-div#title span small {
-	float:right;
-	display:block;
-}
 
 div#title h1 {
 	color:#444; 
@@ -269,10 +266,11 @@ div#title h1 img {
 div#title h1 small {
 	font-size:0.6em;
 	text-shadow:none;
-	position:relative;
-	top:2px;
 	margin-left:5px;
+	position:relative;
+	top:-3px;
 }
+
 
 .left_pane {
 	float:left;
@@ -397,7 +395,6 @@ div.comments p input.add_comment {
 div.comments p.new_comment textarea {
 	height:30px;
 	width:100%;
-	max-width:100%;
 	border:1px solid #C4E9C9;
 	padding:5px;
 }

@@ -19,51 +19,8 @@
 	
 	<div id="feed" class="padded">
 			<% for activity in @activities %>
-			<p>
-				<%= explanation_of activity  %>
-			</p>
-			<div id="comments_<%= activity.id %>" class="comments round" style="display:none">
-				
-				<p>
-					<small><%= link_to "View all 7 comments" %></small>
-				</p>	
-				
-				<p style="border-bottom:1px solid #fff">
-					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
-						Rearranged it a bit and increased the font size. I think it looks pretty good.
-						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
-					</span>
-				</p>
-				
-				<p style="border-bottom:1px solid #fff">
-					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
-						Better this way IMO.
-						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
-					</span>
-				</p>
-				
-				<p style="border-bottom:1px solid #fff">
-					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
-						Maybe really?
-						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
-					</span>
-				</p>
-				
-				<p style="border-bottom:1px solid #fff">
-					<span style="background:url(<%= avatar_url(@user, :small) %>) no-repeat; padding-left:30px">
-						Ya really
-						<small><b><%= link_to "Brandon Dek", "#" %></b> said 23 mins ago</small>
-					</span>
-				</p>
-				
-				<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
-				<% form_for :comments, :url => activity_comments_path(activity) do |f| %>
-				<p class="new_comment" style="display:none">
-					<%= f.text_area :message, :class => "new_comment round" %>
-					<%= f.submit "post comment", :class => "metal" %>
-				</p>
-				<% end %>
-			</div>	
+			<%= explanation_of activity  %>
+			<%= render :partial => "activities/ui/comments", :locals => {:activity => activity} %>
 		<% end %>
 	</div>
 
@@ -72,25 +29,38 @@
 
 <script>
 	$("document").ready(function(){
+		
+		// Status Message
 		$("input#statuses_message").focus(function(){
 			if($(this).val() == "What are you working on?") $(this).val("");
 			$("input#submit_status").css('display', '');
 		});
 		
 		$("input#statuses_message").blur(function(){
-			
 			if($(this).val() == "") {
 				$(this).val("What are you working on?"); $("input#submit_status").css('display', 'none');	
 			}
 		});
 		
+		// Comment links 
 		$(".comment_link").click(function() {
 			$("div#"+$(this).attr("id")).css("display", "")
 		});
-		
+
 		$("p.add_comment").click(function() {
 			$(this).css("display","none")
 			$("p.new_comment").css("display", "");
+		});
+
+		// Ajax Comment form
+		$("form.comments_form").submit(function(){
+			var append_to = $(this).attr("rel");
+			$(this).ajaxSubmit({
+				success: function(data) {
+					$(append_to).append(data);
+				}
+			})
+			return false;
 		});
 		
 	});

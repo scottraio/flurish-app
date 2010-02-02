@@ -26,6 +26,7 @@ input.find {
 	padding:5px;
 	border:1px solid #ccc;
 	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 	color:#888;
 	font-size:1.2em;
 	width:300px;
@@ -38,6 +39,7 @@ input.find {
 	padding:5px;
 	border:1px solid #ccc;
 	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 	background:#D6F2D2 url('/images/header_slice.png') repeat-x;
 	color:#444;
 	cursor:pointer;
@@ -59,6 +61,7 @@ input.find {
 	color:#444;
 	cursor:pointer;
 	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 
 .metal {
@@ -70,6 +73,7 @@ input.find {
 	color:#444;
 	cursor:pointer;
 	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 	text-decoration:none;
 }
 
@@ -87,7 +91,7 @@ input.find {
 
 .in_title {
 	position:relative;
-	top:10px;
+	top:4px;
 }
 
 

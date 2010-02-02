@@ -1,0 +1,14 @@
+<div id="comments_<%= activity.id %>" class="comments round" <%= "style='display:none'" if activity.comments.empty? %>>
+	<% for comment in activity.comments %>
+		<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+	<% end %>
+	<div id="comment_lander_<%= activity.id %>"></div>
+	
+	<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
+	<% form_for :comment, :url => activity_comments_path(activity), :html => { :class => "comments_form", :rel => "#comment_lander_#{activity.id}" } do |f| %>
+	<p class="new_comment" style="display:none">
+		<%= f.text_area :message, :class => "new_comment round" %>
+		<%= f.submit "post comment", :class => "metal" %>
+	</p>
+	<% end %>
+</div>
