@@ -26,6 +26,7 @@ input.find {
 	padding:5px;
 	border:1px solid #ccc;
 	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 	color:#888;
 	font-size:1.2em;
 	width:300px;
@@ -90,7 +91,7 @@ input.find {
 
 .in_title {
 	position:relative;
-	top:10px;
+	top:4px;
 }
 
 
