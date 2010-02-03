@@ -11,7 +11,7 @@ module ApplicationHelper
 	
 	def display_standard_flashes(message = 'There were some problems with your submission:')
 		errors 	= flash[:error] || @errors
-		notice 	= flash[:notice] || @notice
+		notice 	= (flash[:notice]) || @notice
 		warning = flash[:warning] || @warning
     if notice
       flash_to_display, level = notice, 'notice'
