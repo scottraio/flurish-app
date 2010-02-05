@@ -79,6 +79,7 @@ input.find {
 
 .metal:hover {
 	text-decoration:none;
+	opacity:0.85;
 }
 
 .metal:active {
