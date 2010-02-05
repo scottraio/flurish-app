@@ -1,3 +1,32 @@
+/* Branches Feed */
+
+div#branches_feed {
+	overflow:auto;
+	color:#999;
+}
+
+div#branches_feed a {
+	font-weight:normal;
+}
+
+div#branches_feed div.activity {
+	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
+	padding-left:30px;
+}
+
+div#branches_feed div.activity div.activible {
+	padding-bottom:10px;
+}
+
+div#branches_feed div.activity div.activible div.stamp {
+	display:inline-block;
+}
+
+div#branches_feed div.activity div.activible div.stamp div.metadata {
+	font-size:0.8em;
+	color:#777;
+}
+
 /* Branch Edit */
 
 ul.element_types {
@@ -36,7 +65,6 @@ ul.element_types li img {
 
 div.description {
 	color:#777;
-	line-height:1.6em;
 }
 
 div.description h4 {
@@ -55,4 +83,17 @@ div.description textarea {
 	max-width:100%;
 	padding:5px;
 	height:70px;
+}
+
+.branch_panel {
+	background:#eee url('/images/branch_panel_background.png') repeat-x top; /* this image has a gradient from #eee to transparent */
+	font-size:0.8em;
+}
+
+.branch_panel h1.header {
+	font-size:1.2em;
+	color:#999;
+	text-transform:uppercase;
+	margin-bottom:25px;
+	margin-top:1px;
 }

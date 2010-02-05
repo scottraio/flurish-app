@@ -13,23 +13,27 @@
 <div id="main">
 	<div id="show_branch">
 		<div class="right_pane">
-			<div class="description"> 
+			
+			<div class="description padded branch_panel"> 
+				<h1 class="header">Description</h1>
 				<h4><i>Author:</i> <b><%= link_to @branch.creator.name, user_path(@branch.creator), :class => "created_by", :style => "background:url(#{avatar_url(@branch.creator, :tiny)}) no-repeat;" %></b> <%= @branch.creator.position %></h4>
 				<h4><i>Title:</i> <b>Flurish Website</b></h4>
 				<%= @branch.description %>
 			</div>
+			
+			<div id="branches_feed" class="padded branch_panel"> 
+				<h1 class="header">Feed</h1>
+						<div class="activity"><div class="activible"><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> posted a comment <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
+						<div class="activity"><div class="activible"><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> uploaded an attachment: <a>700045J8.jpg</a> <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
+						<div class="activity"><div class="activible"><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> is working on the comments section of the flurish website <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
+						<div class="activity"><div class="activible"><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> posted a comment <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
+						<div class="activity"><div class="activible"><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> is working on getting the attachments widget for the flurish website <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
+
+			</div>
 		</div>
 		
 		<div class="left_pane">
-			<div id="branches_feed" class="padded"> 
-
-						<div class="activity"><div class="activible"><img align="top" alt="Thumb_4-up_on_2009-12-11_at_00" class="avatar_small" src="/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg" /><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> posted a comment <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
-						<div class="activity"><div class="activible"><img align="top" alt="Thumb_4-up_on_2009-12-11_at_00" class="avatar_small" src="/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg" /><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> uploaded an attachment: <a>700045J8.jpg</a> <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
-						<div class="activity"><div class="activible"><img align="top" alt="Thumb_4-up_on_2009-12-11_at_00" class="avatar_small" src="/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg" /><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> is working on the comments section of the flurish website <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
-						<div class="activity"><div class="activible"><img align="top" alt="Thumb_4-up_on_2009-12-11_at_00" class="avatar_small" src="/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg" /><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> posted a comment <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
-						<div class="activity"><div class="activible"><img align="top" alt="Thumb_4-up_on_2009-12-11_at_00" class="avatar_small" src="/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg" /><div class="stamp"><b><a href="/users/1">Brandon Dek</a></b> is working on getting the attachments widget for the flurish website <div class="metadata">7 days ago <a href="#" class="comment_link" id="comments_42">Comment</a></div></div></div></div> 
-
-
+			
 		</div>
 		
 	</div>
