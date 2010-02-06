@@ -1,10 +1,14 @@
 <div id="title">
 	<span>
 		<h1><%= @branch.name %> <small><%= link_to "(design)", edit_branch_path(@branch) %></small></h1>
-		<% if @user.following? @branch %>
-			<%= link_to "Stop Following", stop_following_branch_path(@branch), :class =>  "right metal in_title" %>
+		<% if @branch.created_by == @user.id %>
+			<%= link_to "design", edit_branch_path(@branch), :class => "right metal in_title" %>
 		<% else %>
-			<%= link_to "Follow", follow_branch_path(@branch), :class =>  "right metal in_title" %>
+			<% if @user.following? @branch %>
+				<%= link_to "Stop Following", stop_following_branch_path(@branch), :class =>  "right metal in_title" %>
+			<% else %>
+				<%= link_to "Follow", follow_branch_path(@branch), :class =>  "right metal in_title" %>
+			<% end %>
 		<% end %>
 		
 	</span>
