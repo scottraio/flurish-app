@@ -14,6 +14,10 @@ class ElementsController < ApplicationController
 		end 
 	end
 	
+	def destroy 
+	  
+	end
+	
 private
 
 	def get_branch
