@@ -1,30 +1,29 @@
 /* Branches Feed */
 
-div#branches_feed {
+div#branch_feed {
 	overflow:auto;
-	color:#999;
+	color:#555;
 }
 
-div#branches_feed a {
-	font-weight:normal;
+div#branch_feed a {
+	font-weight:bold;
 }
 
-div#branches_feed div.activity {
+div#branch_feed p {
 	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
-	padding-left:30px;
+	padding:0 0 10px 30px;
+	margin-top:10px;
+	border-bottom:1px solid #ccc;
+	line-height:1.5em;
 }
 
-div#branches_feed div.activity div.activible {
-	padding-bottom:10px;
+div#branch_feed p img {
+	margin-right:5px;
+	position:relative;
+	top:3px;
 }
 
-div#branches_feed div.activity div.activible div.stamp {
-	display:inline-block;
-}
-
-div#branches_feed div.activity div.activible div.stamp div.metadata {
-	font-size:0.8em;
-	color:#777;
+div#branch_feed small {
 }
 
 /* Branch Edit */
@@ -86,14 +85,29 @@ div.description textarea {
 }
 
 .branch_panel {
-	background:#eee url('/images/branch_panel_background.png') repeat-x top; /* this image has a gradient from #eee to transparent */
-	font-size:0.8em;
+	margin-bottom:40px;
 }
 
 .branch_panel h1.header {
 	font-size:1.2em;
-	color:#999;
+	color:#000;
 	text-transform:uppercase;
 	margin-bottom:25px;
 	margin-top:1px;
+}
+
+div.branch_attachments {
+	overflow:auto;
+}
+
+div.branch_attachments label {
+	color:#777;
+	font-size:0.8em;
+	float:left;
+	cursor:pointer;
+	padding-right:20px;
+}
+
+div.branch_attachments label img {
+	display:block;
 }

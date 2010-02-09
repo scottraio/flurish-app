@@ -280,6 +280,8 @@ div#title h1 small {
 	margin:3px 2px 0 0;
 	-moz-border-radius:0 5px 0 0;
 	-webkit-border-radius:0 5px 0 0;
+	font-size:0.8em;
+	padding:20px 20px 20px 10px;
 }
 
 .full_pane {
