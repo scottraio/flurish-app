@@ -14,6 +14,10 @@ class Element < ActiveRecord::Base
 	has_many		:videos
 	has_one			:note
 	
-	
+	def self.set(type,user,options={})
+		e 							= self.new(options[:elements])
+		e.element_type 	= type
+		e
+	end
 	
 end

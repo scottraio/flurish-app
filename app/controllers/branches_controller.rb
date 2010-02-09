@@ -36,10 +36,6 @@ class BranchesController < ApplicationController
   def show
   end
   
-  def edit 
-		@element_types = ElementType.find :all
-  end 
-  
   def update
     if @branch.save
 			flash[:notice] = "#{@branch.name} updated successfully"

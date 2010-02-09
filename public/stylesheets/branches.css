@@ -29,27 +29,16 @@ div#branch_feed small {
 /* Branch Edit */
 
 ul.element_types {
-	background:#222 url('/images/header_slice.png') repeat-x;	
-	color:#f0f0f0;
-	position:relative;
-	top:2px;
-	border:1px solid #e5e5e5;
-	-moz-border-radius-topright:4px;
-	-moz-border-radius-topleft:4px;
+	color:#333;
+	padding:10px;
 }
 
 ul.element_types li {
-	display:inline;
-	padding:10px 10px 10px 10px;
-
-	border-right:1px solid #000;
-	background:url('/images/button_highlight_bottomright.png') no-repeat bottom right;
 	cursor:pointer;
-	line-height:2.8em;
 }
 
 ul.element_types li:hover {
-	background:transparent;
+	font-weight:bold;
 }
 
 ul.element_types li img {

@@ -39,6 +39,7 @@
 
 	<script>
 		$(document).ready(function(){
+			$('[rel*=facebox]').unbind('click').facebox();
 			$("div.item div.details").ellipsis();
 			$("div.notice").fadeOut(3000);
 		});
