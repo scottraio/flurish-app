@@ -105,9 +105,16 @@ div.branch_attachments label {
 	font-size:0.8em;
 	float:left;
 	cursor:pointer;
-	padding-right:20px;
+	padding:10px;
+	text-align:center;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 
 div.branch_attachments label img {
 	display:block;
+}
+
+div.branch_attachments label:hover {
+	background:#ddd; 
 }
