@@ -1,8 +1,8 @@
 <div id="title">
 	<span>
-		<h1><%= @branch.name %> <small><%= link_to "(design)", edit_branch_path(@branch) %></small></h1>
+		<h1><%= @branch.name %></h1>
 		<% if @branch.created_by == @user.id %>
-			<%= link_to "design", edit_branch_path(@branch), :class => "right metal in_title" %>
+			<%= link_to "Add Element", branch_elements_path(@branch), :rel => "facebox", :class => "right metal in_title" %>
 		<% else %>
 			<% if @user.following? @branch %>
 				<%= link_to "Stop Following", stop_following_branch_path(@branch), :class =>  "right metal in_title" %>
@@ -29,48 +29,10 @@
 		</div>
 		
 		<div class="left_pane">
-			
-			<div class="branch_attachments branch_panel">
-				<%= link_to "upload", "#", :class => "metal right" %>
-				<h1 class="header">Attachments</h1>
-				<label>
-					<%= image_tag('/images/icons/document_128x128.png') %>
-					Website_Layout_Feb022010.PDF
-				</label>
-				<label>
-					<%= image_tag('/images/icons/photo_128x128.png') %>
-					Website_template204.PNG
-				</label>
-			</div>
-			
-			<div id="branch_feed" class="branch_panel"> 
-				<h1 class="header">Feed</h1>
-						<p>
-							<%= image_tag('/images/icons/add_images.png') %><%= link_to "Brandon Dek", "#", :style => "color:#555" %> <b style="color:#6DBE2A">added</b> the file <%= link_to "JP3435ds34.jpg", "#" %>
-							<small>2 hours ago</small>
-						</p>
-						<p>
-							<%= image_tag('/images/icons/add_comments.png') %><%= link_to "Scott Raio", "#", :style => "color:#555" %> <b style="color:#549988">posted</b> a comment
-							<small>Feb 2, 5:45pm</small>
-						</p>
-						<p>
-							<%= image_tag('/images/icons/add_element.png') %><%= link_to "Michael Shader", "#", :style => "color:#555" %> <b style="color:#994040">changed</b> the branch details
-							<small>Feb 1, 6:45pm</small>
-						</p>
-						<p>
-							<%= image_tag('/images/icons/add_images.png') %><%= link_to "Brandon Dek", "#", :style => "color:#555" %> <b style="color:#6DBE2A">added</b> the file <%= link_to "JP3435ds34.jpg", "#" %>
-							<small>2 hours ago</small>
-						</p>
-						<p>
-							<%= image_tag('/images/icons/add_comments.png') %><%= link_to "Scott Raio", "#", :style => "color:#555" %> <b style="color:#549988">posted</b> a comment
-							<small>Feb 2, 5:45pm</small>
-						</p>
-						<p style="border-bottom:0">
-							<%= image_tag('/images/icons/add_element.png') %><%= link_to "Michael Shader", "#", :style => "color:#555" %> <b style="color:#994040">changed</b> the branch details
-							<small>Feb 1, 6:45pm</small>
-						</p>
-
-			</div>
+			<div id="staging"></div>
+			<% for element in @branch.elements %>
+				<%= render :partial => "/#{element.element_type.name.downcase}/index", :locals => {:element => element} %>
+			<% end %>
 		</div>
 		
 	</div>

@@ -6,6 +6,7 @@ class Branch < ActiveRecord::Base
 	has_and_belongs_to_many :users
 	
 	has_many		:elements
+	has_many		:element_types, :through => :elements
 	
 	has_many		:activities, 	:through => :elements
 	has_many		:attachments, :through => :elements
@@ -32,6 +33,11 @@ class Branch < ActiveRecord::Base
 		b.creator 			= user
 		b.organization 	= user.organization
 		b
+	end
+	
+	def attach(element)
+		elements << element
+		self.save
 	end
 	
 end

@@ -10,22 +10,32 @@
 	<div id="full_pane">
 		
 		<ul class="element_types">
-			<% for element_type in @element_types %><li><%= image_tag("/images/icons/add_#{element_type.name.downcase}.png") %> <%= element_type.name %></li><% end %>	
+			<% for element_type in @element_types %><li rel="<%= element_type.id %>"><%= image_tag("/images/icons/add_#{element_type.name.downcase}.png") %> <%= element_type.name %></li><% end %>	
 		</ul>
+		
+		<div class="left_pane">
+			<div id="staging"></div>
+		</div>
 			
 		<div class="right_pane">
 			<div class="description">
-					<p class="field">
-						<label>Description</label><%= f.text_area :description %>
-					</p>
-
+				<p class="field">
+					<label>Description</label><%= f.text_area :description %>
+				</p>
 			</div>
 		</div>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
 		
 	</div>
 </div>
 <% end %>
+
+<script>
+	$(document).ready(function(){
+		$("ul.element_types li").click(function(){
+			var type = $(this).attr("rel");
+			$.post("<%= branch_elements_path(@branch) %>?type_id="+type, function(data) {
+			  $('div#staging').html(data);
+			});
+		})
+	})
+</script>
