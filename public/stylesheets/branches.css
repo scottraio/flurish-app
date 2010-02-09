@@ -107,3 +107,37 @@ div.branch_attachments label img {
 div.branch_attachments label:hover {
 	background:#ddd; 
 }
+
+/* Elements */
+
+div.element_header {
+	overflow:auto;
+	padding:5px 0 5px 0;
+	margin-bottom:10px;
+}
+
+div.element_header:hover {
+	border-bottom:1px solid #eee;
+	margin-bottom:9px;
+}
+
+div.element_header h1 {
+	float:left;
+	font-size:1.2em;
+	color:#333;
+	letter-spacing:0.05em;
+}
+
+div.element_header a.element_exit {
+	float:right;
+	margin-right:10px;
+}
+
+div.branch_footer {
+	width:100%;
+	border-top:1px solid #ddd;
+	background:#eee;
+	overflow:auto;
+	padding:5px;
+	-webkit-border-radius:0 0 5px 5px;
+}
