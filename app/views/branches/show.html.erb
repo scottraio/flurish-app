@@ -18,20 +18,22 @@
 	<div id="show_branch">
 		<div class="right_pane">
 			
-			<div class="description branch_panel"> 
-				<h1 class="header">Description</h1>
+			<div class="description"> 
+				<div class="element_header">
+					<h1 style="font-size:1.4em">Description</h1>
+				</div>
 				<h4><i>Author:</i> <b><%= link_to @branch.creator.name, user_path(@branch.creator), :class => "created_by", :style => "background:url(#{avatar_url(@branch.creator, :tiny)}) no-repeat;" %></b> <%= @branch.creator.position %></h4>
 				<h4><i>Title:</i> <b>Flurish Website</b></h4>
 				<%= @branch.description %>
 			</div>
 			
-			
 		</div>
 		
 		<div class="left_pane">
+			
 			<div id="staging"></div>
 			<% for element in @branch.elements %>
-				<div class="element<%= element.id %>">
+				<div class="round element_frame element<%= element.id %>">
 					<div class="element_header" rel="element<%= element.id %>">
 						<h1><%= element.element_type.name %></h1>
 						<%= link_to_function( "x",
@@ -43,6 +45,7 @@
 					<%= render :partial => "/#{element.element_type.name.downcase}/index", :locals => {:element => element} %>
 				</div>
 			<% end %>
+			
 		</div>
 		
 	</div>

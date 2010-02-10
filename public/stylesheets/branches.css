@@ -1,31 +1,3 @@
-/* Branches Feed */
-
-div#branch_feed {
-	overflow:auto;
-	color:#555;
-}
-
-div#branch_feed a {
-	font-weight:bold;
-}
-
-div#branch_feed p {
-	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
-	padding:0 0 10px 30px;
-	margin-top:10px;
-	border-bottom:1px solid #ccc;
-	line-height:1.5em;
-}
-
-div#branch_feed p img {
-	margin-right:5px;
-	position:relative;
-	top:3px;
-}
-
-div#branch_feed small {
-}
-
 /* Branch Edit */
 
 ul.element_types {
@@ -73,42 +45,11 @@ div.description textarea {
 	height:70px;
 }
 
-.branch_panel {
+/* Elements */
+
+div.element_frame {
 	margin-bottom:40px;
 }
-
-.branch_panel h1.header {
-	font-size:1.2em;
-	color:#000;
-	text-transform:uppercase;
-	margin-bottom:25px;
-	margin-top:1px;
-}
-
-div.branch_attachments {
-	overflow:auto;
-}
-
-div.branch_attachments label {
-	color:#777;
-	font-size:0.8em;
-	float:left;
-	cursor:pointer;
-	padding:10px;
-	text-align:center;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-}
-
-div.branch_attachments label img {
-	display:block;
-}
-
-div.branch_attachments label:hover {
-	background:#ddd; 
-}
-
-/* Elements */
 
 div.element_header {
 	overflow:auto;
@@ -134,10 +75,66 @@ div.element_header a.element_exit {
 }
 
 div.branch_footer {
-	width:100%;
+	width:auto;
+	clear:both;
 	border-top:1px solid #ddd;
 	background:#eee;
 	overflow:auto;
 	padding:5px;
 	-webkit-border-radius:0 0 5px 5px;
+}
+
+/* Branches Feed */
+
+div#branch_feed {
+	overflow:auto;
+	color:#555;
+}
+
+div#branch_feed a {
+	font-weight:bold;
+}
+
+div#branch_feed p {
+	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
+	padding:0 0 10px 30px;
+	margin-top:10px;
+	border-bottom:1px solid #ccc;
+	line-height:1.5em;
+}
+
+div#branch_feed p img {
+	margin-right:5px;
+	position:relative;
+	top:3px;
+}
+
+div#branch_feed small {
+}
+
+/* Element Attachments */
+
+div.branch_attachments {
+	overflow:auto;
+}
+
+div.branch_attachments label {
+	color:#777;
+	display:block;
+	font-size:0.8em;
+	float:left;
+	cursor:pointer;
+	padding:10px;
+	text-align:center;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	margin-bottom:10px;
+}
+
+div.branch_attachments label img {
+	display:block;
+}
+
+div.branch_attachments label:hover {
+	background:#ddd; 
 }

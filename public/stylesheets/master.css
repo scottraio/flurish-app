@@ -8,6 +8,7 @@ body {
 	margin:0;
 	background:#fff;
 	font-size:0.85em;
+	width:100%;
 }
 
 div.notice, div.error {
