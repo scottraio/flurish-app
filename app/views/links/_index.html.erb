@@ -1,1 +1,31 @@
-Links!
+<div class="branch_links">
+	<p>
+		<span class="expand_link left" style="background:url('/images/icons/arrow_right.png') no-repeat"></span>
+		<a>http://onehub.com/products/</a>
+		<span class="right"><%= image_tag('/images/icons/thumbs_up.png') %></span>
+		
+		<small style="display:none" class="link_description">
+			<label>added by <a>Brandon Dek</a></label>
+			This page shows a good example of the look and feel we're going for. Notice the colors and use of subtle gradients.
+		</small>
+	</p>
+	<p><span class="left" style="background:url('/images/icons/arrow_right.png') no-repeat"></span><a>http://www.iconfinder.net/search/?q=iconset:fatcow</a><span class="right"><%= image_tag('/images/icons/thumbs_up.png') %></span></p>
+	<p><span class="left" style="background:url('/images/icons/arrow_right.png') no-repeat"></span><a>http://www.facebook.com</a><span class="right"><%= image_tag('/images/icons/thumbs_up.png') %></span></p>
+	
+	<div class="branch_footer">
+		<%= link_to "add link", "#", :class => "metal right" %>
+	</div>
+</div>
+
+<script>
+	$("document").ready(function(){
+		$('.expand_link').toggle(function(){
+			$('.link_description').css('display', '');
+			$('.expand_link').css('background', 'url(/images/icons/arrow_down.png)')
+		},
+		function(){
+			$('.link_description').css('display', 'none');
+			$('.expand_link').css('background', 'url(/images/icons/arrow_right.png)')
+		});
+	})
+</script>

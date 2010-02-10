@@ -53,13 +53,14 @@ div.element_frame {
 
 div.element_header {
 	overflow:auto;
-	padding:5px 0 5px 0;
+	padding-top:5px;
+	height:25px;
+	cursor:move;
 	margin-bottom:10px;
 }
 
 div.element_header:hover {
-	border-bottom:1px solid #eee;
-	margin-bottom:9px;
+	background:#efefef url('/images/gradient_fffto0_1x34.png') repeat-x top;
 }
 
 div.element_header h1 {
@@ -71,7 +72,14 @@ div.element_header h1 {
 
 div.element_header a.element_exit {
 	float:right;
-	margin-right:10px;
+	margin-right:5px;
+	width:16px;
+	height:16px;
+	text-align:center;
+}
+
+div.element_header a.element_exit:hover {
+	background:#efefef;
 }
 
 div.branch_footer {
@@ -81,6 +89,7 @@ div.branch_footer {
 	background:#eee;
 	overflow:auto;
 	padding:5px;
+	margin-top:10px;
 	-webkit-border-radius:0 0 5px 5px;
 }
 
@@ -139,4 +148,33 @@ div.branch_attachments label img {
 
 div.branch_attachments label:hover {
 	background:#ddd; 
+}
+
+/* Branch Links */
+
+div.branch_links {
+	
+}
+
+div.branch_links p {
+	padding:5px 0;
+	border-bottom:1px solid #eee;
+}
+
+div.branch_links p span {
+	width:16px;
+	height:16px;
+	cursor:pointer;
+}
+
+div.branch_links p small {
+	display:block;
+	margin-left:16px;
+	color:#444;
+}
+
+div.branch_links p small label {
+	display:block;
+	color:#777;
+	margin-bottom:5px;
 }
