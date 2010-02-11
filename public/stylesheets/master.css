@@ -362,10 +362,13 @@ div.item div.follow {
 
 /* Comments */
 
+div#feed div.comments {
+	margin-left:60px;
+}
+
 div.comments {
 	background:#f0f0f0;
-	width:50%;
-	margin-left:60px;
+	
 }
 
 div.comments p {

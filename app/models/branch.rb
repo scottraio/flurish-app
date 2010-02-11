@@ -5,12 +5,13 @@ class Branch < ActiveRecord::Base
 	
 	has_and_belongs_to_many :users
 	
+	has_many		:comments, :as => :commentable
+	
 	has_many		:elements
 	has_many		:element_types, :through => :elements
 	
 	has_many		:activities, 	:through => :elements
 	has_many		:attachments, :through => :elements
-	has_many		:comments,		:through => :elements
 	has_many		:events, 			:through => :elements
 	has_many		:images,			:through => :elements
 	has_many		:links,				:through => :elements

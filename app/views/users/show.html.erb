@@ -16,12 +16,16 @@
 </div>
 
 <div id="main">   
-	
-	<div id="feed" class="padded">
+	<div class="left_pane">
+	<div id="feed">
 			<% for activity in @activities %>
 			<%= explanation_of activity  %>
 			<%= render :partial => "activities/ui/comments", :locals => {:activity => activity} %>
 		<% end %>
+	</div>
+	</div>
+	
+	<div class="left_pane">
 	</div>
 
 </div>

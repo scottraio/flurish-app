@@ -10,15 +10,14 @@
 				<%= link_to "Follow", follow_branch_path(@branch), :class =>  "right metal in_title" %>
 			<% end %>
 		<% end %>
-		
 	</span>
 </div>
 
 <div id="main">
 	<div id="show_branch">
 		<div class="right_pane">
-			
-			<%= render :partial => "/links/index"%>
+
+			<%= render :partial => "/links/index" %>
 			<%= render :partial => "/attachments/index"%>
 			<%= render :partial => "/images/index"%>
 			<%= render :partial => "/feed/index"%>
@@ -30,10 +29,49 @@
 			<div class="description element_frame"> 
 				<%= @branch.description %>
 			</div>
-			<%= render :partial => "/maps/index"%>
+			<div id="comments" class="comments round">
+				<% for comment in @branch.comments %>
+					<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+				<% end %>
+				<div id="comment_lander"></div>
+
+				<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
+				<% form_for :comment, :url => branch_comments_path(@branch), :html => { :class => "comments_form", :rel => "#comment_lander" } do |f| %>
+				<p class="new_comment" style="display:none">
+					<%= f.text_area :message, :class => "new_comment round" %>
+					<%= f.submit "post comment", :class => "metal" %>
+				</p>
+				<% end %>
+			</div>
+			
+			<%# render :partial => "/maps/index"%>
 			
 		</div>
 		
 	</div>
 </div>
 
+<script>
+	$(document).ready(function(){
+		// Comment links 
+		$(".comment_link").click(function() {
+			$("div#"+$(this).attr("id")).css("display", "")
+		});
+
+		$("p.add_comment").click(function() {
+			$(this).css("display","none")
+			$("p.new_comment").css("display", "");
+		});
+
+		// Ajax Comment form
+		$("form.comments_form").submit(function(){
+			var append_to = $(this).attr("rel");
+			$(this).ajaxSubmit({
+				success: function(data) {
+					$(append_to).append(data);
+				}
+			})
+			return false;
+		});
+	});
+</script>
