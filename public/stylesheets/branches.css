@@ -23,8 +23,15 @@ ul.element_types li img {
 
 /* Branch Show */
 
+div#show_branch h1 {
+	color:#555;
+	margin-bottom:10px;
+}
+
 div.description {
 	color:#777;
+	font-size:1.4em;
+	margin-bottom:10px;
 }
 
 div.description h4 {
@@ -48,7 +55,7 @@ div.description textarea {
 /* Elements */
 
 div.element_frame {
-	margin-bottom:40px;
+	margin-bottom:20px;
 }
 
 div.element_header {
@@ -68,6 +75,7 @@ div.element_header h1 {
 	font-size:1.2em;
 	color:#333;
 	letter-spacing:0.05em;
+	margin:0;
 }
 
 div.element_header a.element_exit {
@@ -80,6 +88,11 @@ div.element_header a.element_exit {
 
 div.element_header a.element_exit:hover {
 	background:#efefef;
+}
+
+div.element_sort {
+	font-size:0.8em;
+	margin-bottom:10px;
 }
 
 div.branch_footer {
@@ -106,19 +119,24 @@ div#branch_feed a {
 
 div#branch_feed p {
 	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
-	padding:0 0 10px 30px;
-	margin-top:10px;
+	padding:10px 0 10px 30px;
 	border-bottom:1px solid #ccc;
-	line-height:1.5em;
+	margin-top:10px;
 }
 
-div#branch_feed p img {
+div#branch_feed p span {
+	margin-top:-18px;
+	display:block;
+}
+div#branch_feed p span img {
 	margin-right:5px;
 	position:relative;
-	top:3px;
+	top:8px;
 }
 
 div#branch_feed small {
+	display:block;
+	margin-left:22px;
 }
 
 /* Element Attachments */
@@ -127,27 +145,40 @@ div.branch_attachments {
 	overflow:auto;
 }
 
-div.branch_attachments label {
+div.branch_attachments p {
+	padding:5px 5px 5px 20px;
+}
+
+div.branch_attachments label:hover {
+	background:#ddd; 
+}
+
+/* Element Images */
+
+div.branch_images {
+	overflow:auto;
+}
+
+div.branch_images label {
 	color:#777;
 	display:block;
 	font-size:0.8em;
 	float:left;
 	cursor:pointer;
-	padding:10px;
+	padding:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	margin-bottom:10px;
+	margin-bottom:2px;
 	text-align:center;
 }
 
-div.branch_attachments label img {
+div.branch_images label img {
 	display:block;
 	width:64px;
-	margin:0 auto;
 }
 
-div.branch_attachments label:hover {
-	background:#ddd; 
+div.branch_images label:hover {
+	background:#bbb; 
 }
 
 /* Branch Links */
@@ -177,4 +208,14 @@ div.branch_links p small label {
 	display:block;
 	color:#777;
 	margin-bottom:5px;
+}
+
+/* Branch maps */
+
+div.branch_maps {
+	
+}
+
+div.branch_maps img {
+	width:100%;
 }
