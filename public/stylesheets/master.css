@@ -371,33 +371,34 @@ div.comments {
 	
 }
 
-div.comments p {
+div#feed div.comments p {
 	clear:both;
 	padding:5px;
+	border-bottom:1px solid #fff;
 }
 
-div.comments p span {
+div#feed div.comments p span {
 	display:block;
+	
 }
 
 div.comments p small {
 	display:block;
 	color:#777;
-	margin-top:5px;
 }
 
-div.comments p input {
+div#feed div.comments p input {
 	width:450px;
 }
 
-div.comments p input.add_comment {
+div#feed div.comments p input.add_comment {
 	border:1px solid #C4E9C9;
 	padding:3px;
 	color:#777;
 	width:440px;
 }
 
-div.comments p.new_comment textarea {
+div#feed div.comments p.new_comment textarea {
 	height:30px;
 	width:437px;
 	max-width:437px;

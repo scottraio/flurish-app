@@ -219,3 +219,60 @@ div.branch_maps {
 div.branch_maps img {
 	width:100%;
 }
+
+/* Branch Comments */
+
+div#show_branch div.comments {
+	width:auto;
+	padding:10px;
+}
+
+div#show_branch div.comments p {
+	clear:both;
+	width:auto;
+}
+
+div#show_branch div.comments p span {
+	display:block;
+	width:auto;
+	margin:10px 0;
+	padding-bottom:10px;
+	border-bottom:1px solid #fff;
+}
+
+div.show_branch p small {
+	display:block;
+	color:#777;
+	margin-top:5px;
+}
+
+div#show_branch div.comments p input {
+	
+}
+
+div#show_branch div.comments p.add_comment {
+	border-bottom:1px solid #fff;
+	padding-bottom:10px;
+}
+
+div#show_branch div.comments p input.add_comment {
+	border:1px solid #C4E9C9;
+	padding:3px;
+	color:#777;
+	width:500px;
+	float:right;
+}
+
+div#show_branch div.comments p.new_comment {
+	border-bottom:1px solid #fff;
+	padding-bottom:10px;
+}
+
+div#show_branch div.comments p.new_comment textarea {
+	height:30px;
+	width:530px;
+	max-width:530px;
+	border:1px solid #C4E9C9;
+	padding:5px;
+	margin-bottom:5px;
+}

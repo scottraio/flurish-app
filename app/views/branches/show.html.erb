@@ -30,18 +30,21 @@
 				<%= @branch.description %>
 			</div>
 			<div id="comments" class="comments round">
-				<% for comment in @branch.comments %>
-					<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
-				<% end %>
-				<div id="comment_lander"></div>
-
-				<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
+				
+				<p class="add_comment"><%= image_tag(avatar_url(@user, :small)) %><input value="Write a comment" class="add_comment"/></p>
 				<% form_for :comment, :url => branch_comments_path(@branch), :html => { :class => "comments_form", :rel => "#comment_lander" } do |f| %>
 				<p class="new_comment" style="display:none">
 					<%= f.text_area :message, :class => "new_comment round" %>
 					<%= f.submit "post comment", :class => "metal" %>
 				</p>
 				<% end %>
+				
+				<div id="comment_lander"></div>
+				
+				<% for comment in @branch.comments %>
+					<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+				<% end %>
+				
 			</div>
 			
 			<%# render :partial => "/maps/index"%>
@@ -55,12 +58,18 @@
 	$(document).ready(function(){
 		// Comment links 
 		$(".comment_link").click(function() {
-			$("div#"+$(this).attr("id")).css("display", "")
+			$("div#"+$(this).attr("id")).css("display", "");
 		});
 
 		$("p.add_comment").click(function() {
-			$(this).css("display","none")
+			$(this).css("display","none");
 			$("p.new_comment").css("display", "");
+			$("textarea.new_comment").focus();
+		});
+		
+		$("textarea.new_comment").blur(function() {
+		  $("p.new_comment").css("display", "none");
+			$("p.add_comment").css("display", "");
 		});
 
 		// Ajax Comment form
@@ -69,6 +78,9 @@
 			$(this).ajaxSubmit({
 				success: function(data) {
 					$(append_to).append(data);
+					$("textarea.new_comment").attr("value", "");
+					$("p.new_comment").css("display", "none");
+					$("p.add_comment").css("display", "");
 				}
 			})
 			return false;
