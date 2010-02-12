@@ -1,5 +1,5 @@
-<div id="branch_notes element_frame">
-	<h1>Notes</h1>
+<div class="branch_notes element_frame" rel="notes">
+	<div class="element_header notes_header" style="display:none">Notes</div>
 	<% unless @branch.note.nil? %>
 		<%= @branch.note.body %>
 	<% else %>

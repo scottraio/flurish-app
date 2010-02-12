@@ -56,26 +56,17 @@ div.description textarea {
 
 div.element_frame {
 	margin-bottom:20px;
+	border-top:1px solid #e5e5e5;
+	padding-top:10px;
 }
 
 div.element_header {
-	overflow:auto;
-	cursor:move;
-}
-
-div.element_header:hover {
-	background:#efefef url('/images/gradient_fffto0_1x34.png') repeat-x top;
-}
-
-div.element_header a.element_exit {
-	float:right;
-	width:16px;
-	height:16px;
-	text-align:center;
-}
-
-div.element_header a.element_exit:hover {
-	background:#efefef;
+	color:#999;
+	position:absolute;
+	margin-top:-23px;
+	font-size:0.7em;
+	font-weight:bold;
+	text-transform:uppercase;
 }
 
 div.element_sort {

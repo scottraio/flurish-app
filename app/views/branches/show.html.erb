@@ -18,7 +18,7 @@
 		<div class="right_pane">
 			
 			<div class="branch_followers branch_frame">
-				<h1>Followers</h1>
+				
 				
 			</div>
 
@@ -31,7 +31,7 @@
 		
 		<div class="left_pane">
 			
-			<div class="description element_frame"> 
+			<div class="description"> 
 				<%= @branch.description %>
 			</div>
 			
@@ -39,7 +39,7 @@
 			<%= render :partial => "/notes/index" if @branch.has? :notes %>
 		
 			<div id="comments" class="comments round">
-				
+				<% if @branch.comments.size > 5 %>
 				<%= link_to "Show all #{@branch.comments.size} comments", "#", :class => "show_all_comments" %>
 				
 				<div id="hidden_comments" style="display:none">
@@ -47,6 +47,7 @@
 						<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
 					<% end %>
 				</div>
+				<% end %>
 	
 				<% for comment in @branch.comments.last(5) %>
 					<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
@@ -73,14 +74,15 @@
 		
 		// Element Exit 
 		
-		$('div.element_header').hover(function(){
-				element = $(this).attr('rel');
- 				$(".exit_" + element).css('display','');	
-			},
-			function() {
-				$('.exit_element').css('display','none');
-			}
-
+		
+		$('div.element_frame').hover(function(){
+			element = $(this).attr('rel');
+			$("." + element + "_header").css("display", "")
+		},
+		function() {
+			$(".element_header").css("display", "none")
+		}
+		
 		);
 		
 		// Comment links 
