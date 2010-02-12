@@ -99,7 +99,7 @@ div.branch_footer {
 	width:auto;
 	clear:both;
 	border-top:1px solid #ddd;
-	background:#eee;
+	background:#f4f4f4;
 	overflow:auto;
 	padding:5px;
 	margin-top:10px;
@@ -196,6 +196,7 @@ div.branch_links p span {
 	width:16px;
 	height:16px;
 	cursor:pointer;
+	margin-top:-2px;
 }
 
 div.branch_links p small {
