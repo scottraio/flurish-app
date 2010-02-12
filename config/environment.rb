@@ -47,6 +47,10 @@ Rails::Initializer.run do |config|
 	#
 
   config.action_controller.session_store = :mem_cache_store
-
+  config.action_controller.session = {
+          :session_key    =>      '_flurish',
+          :secret         =>      'smashbrosisthegreatestgameever',
+          :expires        =>      900
+  }
 	
 end
