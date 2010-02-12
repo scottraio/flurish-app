@@ -66,6 +66,13 @@
 			$("p.new_comment").css("display", "");
 			$("textarea.new_comment").focus();
 		});
+		
+		$("textarea.new_comment").blur(function(){
+			if($(this).val() == "") {
+				$("p.new_comment").css("display", "none");
+				$("p.add_comment").css("display", "");
+			}
+		});
 
 		// Ajax Comment form
 		$("form.comments_form").submit(function(){
