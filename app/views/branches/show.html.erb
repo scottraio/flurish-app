@@ -34,6 +34,10 @@
 			<div class="description element_frame"> 
 				<%= @branch.description %>
 			</div>
+			
+			<%= render :partial => "/maps/index" if @branch.has? :maps %>
+			<%= render :partial => "/notes/index" if @branch.has? :notes %>
+		
 			<div id="comments" class="comments round">
 				
 				<%= link_to "Show all #{@branch.comments.size} comments", "#", :class => "show_all_comments" %>
@@ -58,8 +62,6 @@
 				</p>
 				<% end %>
 			</div>
-			
-			<%# render :partial => "/maps/index"%>
 			
 		</div>
 		
