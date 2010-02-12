@@ -60,27 +60,15 @@ div.element_frame {
 
 div.element_header {
 	overflow:auto;
-	padding-top:5px;
-	height:25px;
 	cursor:move;
-	margin-bottom:10px;
 }
 
 div.element_header:hover {
 	background:#efefef url('/images/gradient_fffto0_1x34.png') repeat-x top;
 }
 
-div.element_header h1 {
-	float:left;
-	font-size:1.2em;
-	color:#333;
-	letter-spacing:0.05em;
-	margin:0;
-}
-
 div.element_header a.element_exit {
 	float:right;
-	margin-right:5px;
 	width:16px;
 	height:16px;
 	text-align:center;

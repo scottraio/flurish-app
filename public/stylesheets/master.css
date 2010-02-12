@@ -300,20 +300,19 @@ div#feed div.activity {
 }
 
 div#feed div.activity div.activible {
-	padding:3px 3px 3px 60px;
+	padding-left:60px;
+	min-height:50px;
 }
 
 div#feed div.activity div.activible div.stamp {
 	display:inline-block;
-	position:relative;
-	top:7px;
-	line-height:1.5em;
 	overflow:auto;
 }
 
 div#feed div.activity div.activible div.stamp div.metadata {
 	font-size:0.8em;
 	color:#777;
+	margin-top:3px;
 }
 
 /* Main List */

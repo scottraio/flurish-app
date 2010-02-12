@@ -42,7 +42,7 @@ module ActivitiesHelper
 	end
 	
 	def ago(actions)
-		content_tag(:div, actions + " " + time_ago_in_words(@activity.created_at) + " ago ", :class => "metadata")
+		content_tag(:div, time_ago_in_words(@activity.created_at) + " ago " + actions, :class => "metadata")
 	end
 	
 	# Status
