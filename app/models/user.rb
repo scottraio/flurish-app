@@ -74,8 +74,9 @@ class User < ActiveRecord::Base
 	end
 	
 	def feed
-		users = (self.leaders.collect{|user| user.id } << self.id).join(",")
-		Activity.find(:all, :include => [:creator, {:comments => :creator}, :activible, {:element => :branch}], :conditions => ["activities.created_by IN (#{users})"], :order => "activities.created_at DESC")
+		users 		= (self.leaders.collect{|user| user.id } << self.id).join(",")
+		branches 	= self.branches.collect{|branch| branch.id }.uniq.join(",")
+		Activity.find(:all, :include => [:creator, {:comments => :creator}, :activible, {:element => :branch}], :conditions => ["activities.created_by IN (#{users}) OR activities.branch_id IN (#{branches})"], :order => "activities.created_at DESC")
 	end
 	
 	def current_status

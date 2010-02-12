@@ -3,35 +3,60 @@ module ActivitiesHelper
 	def explanation_of(activity)
 		@activity = activity
 		case which 
-			when :status 	then render_explanation(status)
-			when :comment then comment_in_words
+			when :status 
+				render_explanation status_in_words(@activity.activible)
+			when :comment 
+				render_explanation comment_in_words(@activity.activible)
 		end
 	end
 	
 	def which
-		if @activity.activible.is_a? Status 																				then :status
-		elsif not @activity.element.nil? and @activity.activible.is_a? Comment 			then :comment
-		elsif not @activity.element.nil? and @activity.activible.is_a? Attachment 	then :attachment
+		if 			@activity.activible.is_a? Status 		then :status
+		elsif 	@activity.activible.is_a? Comment 	then :comment
 		end
 	end
+	
+	#
+	# Explanations of various activities
+	# 
+	# renders avatar and username with custome text and actions 
+	# ie:// activible( stamp( text, actions ) )
+	#
+	
+	# Builder methods
 	
 	def render_explanation(method)
 		content_tag "div", method, :class => "activity"
 	end
 	
-	def stamp(text)
-		actions 	= link_to("Comment", "#", :id => "comments_#{@activity.id}", :class => "comment_link")
-		metadata 	= content_tag(:div,time_ago_in_words(@activity.created_at)+" ago "+actions, :class => "metadata")
-		content_tag :div, :class => "stamp" do 
-			"<b>"+(link_to @activity.creator.name, "/users/#{@activity.creator.id}")+"</b>" + " " +text+metadata
+	def activible(stamped)
+		content_tag :div, :class => "activible" do 
+			image_tag(avatar_url(@activity.creator, :thumb), :align => "top", :class => "avatar_thumb") + stamped
 		end
 	end
 	
-	def status
-		status = @activity.activible 
- 		content_tag :div, :class => "activible" do 
-			image_tag(avatar_url(@activity.creator, :thumb), :align => "top", :class => "avatar_thumb") + stamp(status.message)
-		end 
+	def stamp(text,actions="")
+		content_tag :div, :class => "stamp" do 
+			"<b>" + (link_to @activity.creator.name, "/users/#{@activity.creator.id}") + "</b>" + " " + text + ago(actions)
+		end
+	end
+	
+	def ago(actions)
+		content_tag(:div, actions + " " + time_ago_in_words(@activity.created_at) + " ago ", :class => "metadata")
+	end
+	
+	# Status
+		
+	def status_in_words(status) 
+		actions = link_to("Comment", "#", :id => "comments_#{@activity.id}", :class => "comment_link")
+ 		activible stamp(status.message,actions)
+	end
+	
+	# Branch Comments
+	
+	def comment_in_words(comment) 
+		actions = "From: " + link_to(@activity.branch.name, branch_path(@activity.branch))
+ 		activible stamp(comment.message, actions)
 	end
 	
 end

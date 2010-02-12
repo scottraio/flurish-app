@@ -11,4 +11,9 @@ class Comment < ActiveRecord::Base
 		c
 	end
 	
+	def after_save
+		# Stamp the comment if it's a branch comment
+		Activity.create(:activible => self, :creator => self.creator, :branch_id => self.commentable.id) if self.commentable.is_a? Branch
+	end
+	
 end
