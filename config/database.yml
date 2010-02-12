@@ -4,24 +4,24 @@ development: &defaults
   adapter:  mysql
   database: flurish_development
   username: flurish 
-  password: c0llegat0
-  host: uplinksys.net
+  password: 0vergr0wth
+  host: getflurish.com
   port: 3306
 
 test:
   adapter:  mysql
   database: flurish_test
   username: flurish
-  password: c0llegat0
-  host: uplinksys.net
+  password: 0vergr0wth
+  host: getflurish.com
   port: 3306
  
 production:
   adapter:  mysql
   database: flurish_production
   username: flurish
-  password: c0llegat0
-  host: uplinksys.net
+  password: 0vergr0wth
+  host: getflurish.com
   port: 3306
  
 rake:
