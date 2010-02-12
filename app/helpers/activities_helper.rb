@@ -30,8 +30,8 @@ module ActivitiesHelper
 	end
 	
 	def activible(stamped)
-		content_tag :div, :class => "activible" do 
-			image_tag(avatar_url(@activity.creator, :thumb), :align => "top", :class => "avatar_thumb") + stamped
+		content_tag :div, :class => "activible", :style => "background:url(#{avatar_url(@activity.creator, :thumb)}) no-repeat" do 
+			stamped
 		end
 	end
 	
@@ -55,8 +55,7 @@ module ActivitiesHelper
 	# Branch Comments
 	
 	def comment_in_words(comment) 
-		actions = "From: " + link_to(@activity.branch.name, branch_path(@activity.branch))
- 		activible stamp(comment.message, actions)
+ 		activible stamp(" > " +  link_to(@activity.branch.name, branch_path(@activity.branch)) + " " + comment.message)
 	end
 	
 end
