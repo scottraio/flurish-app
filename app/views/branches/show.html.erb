@@ -21,15 +21,11 @@
 				<h1>Followers</h1>
 				
 			</div>
-			
-			<div class="element_header"><h1>Links</h1><a class="element_exit">x</a></div>
-			<%= render :partial => "/links/index" %>
-			<div class="element_header"><h1>Attachments</h1></div>
-			<%= render :partial => "/attachments/index"%>
-			<div class="element_header"><h1>Images</h1></div>
-			<%= render :partial => "/images/index"%>
-			<div class="element_header"><h1>News Feed</h1></div>
-			<%= render :partial => "/feed/index"%>
+
+			<%= render :partial => "/links/index" if @branch.has? :links %>
+			<%= render :partial => "/attachments/index" if @branch.has? :attachments %>
+			<%= render :partial => "/images/index" if @branch.has? :images %>
+			<%= render :partial => "/feed/index" if @branch.has? :feed %>
 			
 		</div>
 		
@@ -40,6 +36,20 @@
 			</div>
 			<div id="comments" class="comments round">
 				
+				<%= link_to "Show all #{@branch.comments.size} comments", "#", :class => "show_all_comments" %>
+				
+				<div id="hidden_comments" style="display:none">
+					<% for comment in @branch.comments.first(@branch.comments.size - 5) %>
+						<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+					<% end %>
+				</div>
+	
+				<% for comment in @branch.comments.last(5) %>
+					<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+				<% end %>
+				
+				<div id="comment_lander"></div>
+				
 				<p class="add_comment"><%= image_tag(avatar_url(@user, :small)) %><input value="Write a comment" class="add_comment"/></p>
 				<% form_for :comment, :url => branch_comments_path(@branch), :html => { :class => "comments_form", :rel => "#comment_lander" } do |f| %>
 				<p class="new_comment" style="display:none">
@@ -47,13 +57,6 @@
 					<%= f.submit "post comment", :class => "metal new_comment" %>
 				</p>
 				<% end %>
-				
-				<div id="comment_lander"></div>
-				
-				<% for comment in @branch.comments %>
-					<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
-				<% end %>
-				
 			</div>
 			
 			<%# render :partial => "/maps/index"%>
@@ -65,7 +68,27 @@
 
 <script>
 	$(document).ready(function(){
+		
+		// Element Exit 
+		
+		$('div.element_header').hover(function(){
+				element = $(this).attr('rel');
+ 				$(".exit_" + element).css('display','');	
+			},
+			function() {
+				$('.exit_element').css('display','none');
+			}
+
+		);
+		
 		// Comment links 
+		
+		$(".show_all_comments").click(function(){
+			$("#hidden_comments").show();
+			$(this).hide();
+			return false;
+		});
+		
 		$(".comment_link").click(function() {
 			$("div#"+$(this).attr("id")).css("display", "");
 		});
