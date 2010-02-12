@@ -255,3 +255,9 @@ div#show_branch div.comments p.new_comment textarea {
 	padding:5px;
 	margin-bottom:5px;
 }
+
+/* Branch Notes */
+
+div#branch_notes {
+	padding:0px 0 20px 0;
+}
