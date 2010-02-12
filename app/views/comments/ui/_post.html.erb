@@ -1,6 +1,7 @@
 <p>
 	<span style="background:url(<%= avatar_url(comment.creator, :small) %>) no-repeat; padding-left:35px">
-		<small><%= link_to comment.creator.name, "#" %> said <%= time_ago_in_words comment.created_at %> ago</small>
 		<%= comment.message %>
+		<small><%= link_to comment.creator.name, "#" %> said <%= time_ago_in_words comment.created_at %> ago</small>
+		
 	</span>
 </p>

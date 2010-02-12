@@ -62,6 +62,8 @@
 			$(this).ajaxSubmit({
 				success: function(data) {
 					$(append_to).append(data);
+					$("p.new_comment").css("display", "none");
+					$("p.add_comment").css("display", "");
 				}
 			})
 			return false;
