@@ -10,6 +10,8 @@ class Branch < ActiveRecord::Base
 	has_many		:elements
 	has_many		:element_types, :through => :elements
 	
+	has_one			:note,				:through => :elements
+	
 	has_many		:activities, 	:through => :elements
 	has_many		:attachments, :through => :elements
 	has_many		:events, 			:through => :elements
@@ -17,7 +19,6 @@ class Branch < ActiveRecord::Base
 	has_many		:links,				:through => :elements
 	has_many		:locations,		:through => :elements
 	has_many		:videos,			:through => :elements
-	has_many		:notes,				:through => :elements
 	has_many		:tasks,				:through => :elements
 	
 	validates_presence_of 	:name
@@ -39,6 +40,11 @@ class Branch < ActiveRecord::Base
 	def attach(element)
 		elements << element
 		self.save
+	end
+	
+	def has?(element)
+		names = self.element_types.collect{|et| et.name.downcase.to_sym }
+		names.include?(element) ? true : false
 	end
 	
 end

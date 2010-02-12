@@ -251,22 +251,12 @@ div#show_branch div.comments p input {
 	
 }
 
-div#show_branch div.comments p.add_comment {
-	border-bottom:1px solid #fff;
-	padding-bottom:10px;
-}
-
 div#show_branch div.comments p input.add_comment {
 	border:1px solid #C4E9C9;
 	padding:3px;
 	color:#777;
 	width:500px;
 	float:right;
-}
-
-div#show_branch div.comments p.new_comment {
-	border-bottom:1px solid #fff;
-	padding-bottom:10px;
 }
 
 div#show_branch div.comments p.new_comment textarea {
