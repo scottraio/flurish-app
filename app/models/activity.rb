@@ -13,12 +13,13 @@ class Activity < ActiveRecord::Base
 		end
 	end
 	
-	def self.build_conditions_sql(user)
+	def self.build_conditions_sql(user,sql=[])
 		# include all leaders
-		sql = 	"activities.created_by IN (#{(user.leaders.collect{|u| u.id } << user.id).uniq.join(",")})" 
+		sql << 	"activities.created_by IN (#{(user.leaders.collect{|u| u.id } << user.id).uniq.join(",")})" 
 		# only include branch activity for the stuff we're following, do not run this
 		# sql statement if the user is not following any branches
-		sql += 	"OR activities.branch_id IN (#{user.branches.collect{|b| b.id }.uniq.join(",")})" unless user.branches.empty?
+		sql << 	"OR activities.branch_id IN (#{user.branches.collect{|b| b.id }.uniq.join(",")})" unless user.branches.empty?
+		sql.join(" ")
 	end
 
 end
