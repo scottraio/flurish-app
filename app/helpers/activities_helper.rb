@@ -55,7 +55,7 @@ module ActivitiesHelper
 	# Branch Comments
 	
 	def comment_in_words(comment) 
- 		activible stamp(" > " +  link_to(@activity.branch.name, branch_path(@activity.branch)) + " " + comment.message)
+ 		activible stamp(" > " +  image_tag('/images/icons/topic16x16.png') + " " + link_to(@activity.branch.name, branch_path(@activity.branch)) + " " + comment.message)
 	end
 	
 end
