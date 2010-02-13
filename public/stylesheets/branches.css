@@ -87,33 +87,33 @@ div.branch_footer {
 
 /* Branches Feed */
 
-div#branch_feed {
+div.branch_feed {
 	overflow:auto;
 	color:#555;
 }
 
-div#branch_feed a {
+div.branch_feed a {
 	font-weight:bold;
 }
 
-div#branch_feed p {
+div.branch_feed p {
 	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
 	padding:10px 0 10px 30px;
 	border-bottom:1px solid #ccc;
 	margin-top:10px;
 }
 
-div#branch_feed p span {
+div.branch_feed p span {
 	margin-top:-18px;
 	display:block;
 }
-div#branch_feed p span img {
+div.branch_feed p span img {
 	margin-right:5px;
 	position:relative;
 	top:8px;
 }
 
-div#branch_feed small {
+div.branch_feed small {
 	display:block;
 	margin-left:22px;
 }
