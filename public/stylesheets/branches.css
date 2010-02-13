@@ -31,7 +31,7 @@ div#show_branch h1 {
 div.description {
 	color:#777;
 	font-size:1.4em;
-	margin-bottom:10px;
+	margin-bottom:20px;
 }
 
 div.description h4 {
@@ -50,6 +50,13 @@ div.description textarea {
 	max-width:100%;
 	padding:5px;
 	height:70px;
+}
+
+/* Branch Followers */
+
+div.branch_followers {
+	margin-bottom:15px;
+	text-align:right;
 }
 
 /* Elements */
@@ -249,6 +256,13 @@ div#show_branch div.comments p.new_comment textarea {
 
 /* Branch Notes */
 
-div#branch_notes {
-	padding:0px 0 20px 0;
+div.branch_notes {	
+
+}
+
+div.branch_notes div.new_notes { 
+	padding:20px;
+	text-align:center;
+	color:#999;
+	font-size:1.2em;
 }

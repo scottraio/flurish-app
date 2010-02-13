@@ -17,9 +17,10 @@
 	<div id="show_branch">
 		<div class="right_pane">
 			
-			<div class="branch_followers branch_frame">
-				
-				
+			<div class="branch_followers">
+				<% for user in @branch.users %>
+					<%= image_tag(avatar_url(user, :small)) %>
+				<% end %>
 			</div>
 
 			<%= render :partial => "/links/index" if @branch.has? :links %>

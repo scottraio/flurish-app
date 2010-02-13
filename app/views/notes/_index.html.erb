@@ -3,6 +3,6 @@
 	<% unless @branch.note.nil? %>
 		<%= @branch.note.body %>
 	<% else %>
-		<%= link_to "Add", "#" %> notes to this branch.
+		<div class="new_notes"><%= link_to "Add", "#" %> notes to this branch.</div>
 	<% end %>
 </div>

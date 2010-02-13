@@ -3,10 +3,9 @@
 		<h1>
 			<%= image_tag(avatar_url(@user, :thumb)) %><%= current_user.first_name %> <%= current_user.last_name %><small><%= link_to "(edit)", edit_user_path(@user) %></small>
 		</h1>
-		
-		
+				
 		<% form_for :statuses, :id => "status", :url => user_statuses_path(@user) do |f| %>
-		  <p id="status" class="button">
+		  <p id="status">
 				<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
 				<%= f.submit("Set Status", :id => "submit_status", :class => "metal", :style => "display:none;")	%>
 			</p>
