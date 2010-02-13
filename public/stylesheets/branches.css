@@ -55,8 +55,15 @@ div.description textarea {
 /* Branch Followers */
 
 div.branch_followers {
-	margin-bottom:15px;
+	margin-bottom:20px;
 	text-align:right;
+	background-color:#f0f0f0;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+div.branch_followers img {
+	padding:5px 5px 5px 0;
 }
 
 /* Elements */
@@ -90,6 +97,7 @@ div.branch_footer {
 	padding:5px;
 	margin-top:10px;
 	-webkit-border-radius:0 0 5px 5px;
+	-moz-border-radius:0 0 5px 5px;
 }
 
 /* Branches Feed */
