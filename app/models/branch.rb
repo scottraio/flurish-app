@@ -25,7 +25,7 @@ class Branch < ActiveRecord::Base
 	validates_presence_of 	:description
 	
 	def self.get(user,params)
-		b	 						= self.find(params[:id])
+		b	 						= self.find(params[:id], :include => [{:comments => :creator}])
 		b.attributes 	= params[:branch]
 		b
 	end

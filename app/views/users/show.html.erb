@@ -46,6 +46,13 @@
 		});
 		
 		// Comment links 
+		
+		$(".show_all_comments").click(function(){
+			$("#hidden_comments").show();
+			$(this).hide();
+			return false;
+		});
+		
 		$(".comment_link").click(function() {
 			$("div#"+$(this).attr("id")).css("display", "")
 		});

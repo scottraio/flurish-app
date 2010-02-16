@@ -5,7 +5,11 @@ class Activity < ActiveRecord::Base
 	belongs_to 	:branch
 	belongs_to	:element
 	
-	has_many		:comments, :as => :commentable
+	has_many		:comments, :as => :commentable do
+		def collaborators
+			self.collect{|comment| comment.creator }.uniq 
+		end
+	end
 	
 	def self.sql(kind,user)
 		case kind

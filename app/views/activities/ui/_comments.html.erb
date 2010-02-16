@@ -1,7 +1,19 @@
 <div id="comments_<%= activity.id %>" class="comments round" <%= "style='display:none'" if activity.comments.empty? %>>
-	<% for comment in activity.comments %>
+	
+	<% if activity.comments.size > 5 %>
+	<%= link_to "Show all #{activity.comments.size} comments", "#", :class => "show_all_comments" %>
+	
+	<div id="hidden_comments" style="display:none">
+		<% for comment in activity.comments.first(activity.comments.size - 5) %>
+			<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+		<% end %>
+	</div>
+	<% end %>
+
+	<% for comment in activity.comments.last(5) %>
 		<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
 	<% end %>
+	
 	<div id="comment_lander_<%= activity.id %>"></div>
 	
 	<p class="add_comment"><input value="Write a comment" class="add_comment"/></p>
