@@ -37,17 +37,16 @@ input.find {
 
 .button {
 	padding:5px;
-	border:1px solid #ccc;
+	border:1px solid #bbb;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	background:#D6F2D2 url('/images/header_slice.png') repeat-x;
-	color:#444;
+	background:#eee url('/images/header_slice.png') repeat-x;
+	color:#4A993F;
 	cursor:pointer;
 }
 
 .button:hover {
-	border:1px solid #ccc;
-	background:#E1FFDD;
+	background:#D6F2D2;
 }
 
 
@@ -58,7 +57,7 @@ input.find {
 	border:0;
 	padding:3px;
 	text-shadow: #fff 0px 1px 0px;
-	color:#444;
+	color:#4A993F;
 	cursor:pointer;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -106,15 +105,15 @@ input.find {
 }
 
 .button .add_element {
-	background:#D6F2D2 url('/images/icons/add_element.png') no-repeat scroll 5px 3px; 
+	background: url('/images/icons/add_element.png') no-repeat scroll 5px 3px; 
 }
 
 .button .branch {
-	background:#D6F2D2 url('/images/icons/topic16x16.png') no-repeat scroll 5px 2px; 
+	background:url('/images/icons/topic16x16.png') no-repeat scroll 5px 2px; 
 }
 
 .button .users {
-	background:#D6F2D2 url('/images/icons/users.png') no-repeat scroll 5px 2px; 
+	background: url('/images/icons/users.png') no-repeat scroll 5px 2px; 
 }
 
 .created_by {
