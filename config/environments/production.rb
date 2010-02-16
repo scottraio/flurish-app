@@ -26,3 +26,5 @@ config.log_level = :debug
 
 # Enable threaded mode
 # config.threadsafe!
+
+ActionMailer::Base.template_root 					= "#{Rails.root}/app/mailers"
