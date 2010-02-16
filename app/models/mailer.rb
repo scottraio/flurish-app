@@ -1,5 +1,7 @@
 class Mailer < ActionMailer::Base
 
+	template_root = "#{Rails.root}/app/mailers"
+	
 	#
 	# comment notification is sent out perspective users
 	#
