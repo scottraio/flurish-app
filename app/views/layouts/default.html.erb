@@ -19,7 +19,7 @@
 		<div id="header">
 			<span>
 				<%= image_tag('/images/logo.png', :class => "logo") %>
-				<%= display_standard_flashes %>
+				<%#= display_standard_flashes %>
 				<% if logged_in? %>
 				<ul>
 					<li onclick="location.href='<%= logout_path %>'"><%= image_tag("/images/icons/logout.png") %>Logout</li>

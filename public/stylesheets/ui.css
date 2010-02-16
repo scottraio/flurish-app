@@ -29,7 +29,7 @@ input.find {
 	-webkit-border-radius:5px;
 	color:#888;
 	font-size:1.2em;
-	width:300px;
+	width:278px;
 	margin-bottom:20px;
 }
 
@@ -37,16 +37,16 @@ input.find {
 
 .button {
 	padding:5px;
-	border:1px solid #bbb;
+	border:1px solid #c9c9c9;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	background:#eee url('/images/header_slice.png') repeat-x;
+	background:#C4D8AF url('/images/gradient_fffto0_1x34.png') repeat-x top;
 	color:#4A993F;
 	cursor:pointer;
 }
 
 .button:hover {
-	background:#D6F2D2;
+	background:#D6EBC0 url('/images/gradient_fffto0_1x34.png') repeat-x top;
 }
 
 
@@ -57,7 +57,7 @@ input.find {
 	border:0;
 	padding:3px;
 	text-shadow: #fff 0px 1px 0px;
-	color:#4A993F;
+	color:#597B26;
 	cursor:pointer;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -117,7 +117,7 @@ input.find {
 }
 
 .created_by {
-	padding: 3px 3px 3px 18px;
+	padding: 2px 3px 3px 18px;
 	margin-left:2px;
 }
 

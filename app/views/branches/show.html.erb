@@ -15,7 +15,7 @@
 
 <div id="main">
 	<div id="show_branch">
-		<div class="right_pane">
+		<div class="pane_right pane_small">
 			
 			<div class="branch_followers">
 				<% for user in @branch.users.first(6) %><%= image_tag(avatar_url(user, :thumb)) %><% end %>
@@ -28,7 +28,7 @@
 			
 		</div>
 		
-		<div class="left_pane">
+		<div class="pane_left pane_large">
 			
 			<div class="description"> 
 				<%= @branch.description %>
@@ -118,6 +118,7 @@
 					$("textarea.new_comment").attr("value", "");
 					$("p.new_comment").css("display", "none");
 					$("p.add_comment").css("display", "");
+					$("textarea.new_comment").val("");
 				}
 			})
 			return false;

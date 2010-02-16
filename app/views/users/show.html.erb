@@ -15,16 +15,13 @@
 </div>
 
 <div id="main">   
-	<div class="left_pane">
+	<div class="pane_left">
 	<div id="feed">
 			<% for activity in @activities %>
 			<%= explanation_of activity  %>
 			<%= render :partial => "activities/ui/comments", :locals => {:activity => activity} %>
 		<% end %>
 	</div>
-	</div>
-	
-	<div class="left_pane">
 	</div>
 
 </div>
@@ -60,6 +57,14 @@
 		$("p.add_comment").click(function() {
 			$(this).css("display","none")
 			$("p.new_comment").css("display", "");
+			$("textarea.new_comment").focus();
+		});
+		
+		$("textarea.new_comment").blur(function(){
+			if($(this).val() == "") {
+				$("p.new_comment").css("display", "none");
+				$("p.add_comment").css("display", "");
+			}
 		});
 
 		// Ajax Comment form
@@ -70,6 +75,7 @@
 					$(append_to).append(data);
 					$("p.new_comment").css("display", "none");
 					$("p.add_comment").css("display", "");
+					$("textarea.new_comment").val("");
 				}
 			})
 			return false;
