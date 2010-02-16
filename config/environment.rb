@@ -55,4 +55,13 @@ Rails::Initializer.run do |config|
 	
 end
 
-ActionMailer::Base.template_root = "#{Rails.root}/app/mailers"
+#
+# E-Mail
+#
+
+ActionMailer::Base.template_root 					= "#{Rails.root}/app/mailers"
+ActionMailer::Base.delivery_method 				= :smtp
+ActionMailer::Base.smtp_settings[:domain] = DOMAIN
+
+
+
