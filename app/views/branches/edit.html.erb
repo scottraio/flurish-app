@@ -7,23 +7,21 @@
 </div>
 
 <div id="main">
-	<div id="full_pane">
-		
-		<ul class="element_types">
-			<% for element_type in @element_types %><li rel="<%= element_type.id %>"><%= image_tag("/images/icons/add_#{element_type.name.downcase}.png") %> <%= element_type.name %></li><% end %>	
-		</ul>
-		
-		<div class="left_pane">
-			<div id="staging"></div>
-		</div>
-			
-		<div class="right_pane">
-			<div class="description">
-				<p class="field">
-					<label>Description</label><%= f.text_area :description %>
-				</p>
-			</div>
-		</div>
+	<div class="full_pane">
+	  <p class="field">
+			<label>Description</label><%= f.text_area :description %>
+		</p>
+		<p class="field">
+			<label>Elements</label>
+			<input type="checkbox">News Feed</input><br>
+			<input type="checkbox">Attachments</input><br>
+			<input type="checkbox">Images</input><br>
+			<input type="checkbox">Links</input><br>
+			<input type="checkbox">Maps</input><br>
+			<input type="checkbox">Notes</input><br>
+			<input type="checkbox">Tasks</input><br>
+			<input type="checkbox">Videos	</input><br>
+		</p>
 		
 	</div>
 </div>

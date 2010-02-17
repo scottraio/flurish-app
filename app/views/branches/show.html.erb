@@ -1,9 +1,11 @@
 <div id="title">
 	<span>
-		<h1><%= @branch.name %></h1>
+		<h1><%= @branch.name %>
 		<% if @branch.created_by == @user.id %>
-			<%= link_to "Add Element", branch_elements_path(@branch), :rel => "facebox", :class => "right metal in_title" %>
+		<small><%= link_to "(edit)", edit_branch_path(@branch) %></small></h1>
+			<%#= link_to "Add Element", branch_elements_path(@branch), :rel => "facebox", :class => "right metal in_title" %>
 		<% else %>
+		</h1>
 			<% if @user.following? @branch %>
 				<%= link_to "Stop Following", stop_following_branch_path(@branch), :class =>  "right metal in_title" %>
 			<% else %>

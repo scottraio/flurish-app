@@ -43,6 +43,8 @@ input.find {
 	background:#C4D8AF url('/images/gradient_fffto0_1x34.png') repeat-x top;
 	color:#4A993F;
 	cursor:pointer;
+	text-shadow: #fff 0px 1px 0px;
+	font-weight:bold;
 }
 
 .button:hover {
@@ -65,7 +67,6 @@ input.find {
 
 .metal {
 	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
-	font-weight:bold; 
 	border:1px solid #ccc;
 	padding:8px 5px 5px 5px;
 	text-shadow: #fff 0px 1px 0px;
