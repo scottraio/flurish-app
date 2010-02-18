@@ -22,6 +22,30 @@ p.field input {
 	margin-bottom:10px;
 }
 
+p.field textarea {
+	padding:10px;
+	font-size:1.2em;
+	width:96%;
+	max-height:100px;
+}
+
+div.edit_elements p {
+	padding:10px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+div.edit_elements p:hover {
+	background:#DBFFD1;
+}
+
+div.edit_elements p span {
+	display:block;
+	color:#444;
+	line-height:1.4em;
+	font-size:0.9em;
+}
+
 input.find {
 	padding:5px;
 	border:1px solid #ccc;

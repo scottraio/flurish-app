@@ -7,20 +7,118 @@
 </div>
 
 <div id="main">
-	<div class="full_pane">
+	<div class="pane_left pane_large">
 	  <p class="field">
 			<label>Description</label><%= f.text_area :description %>
 		</p>
+		
+		<%# These options appear when relative element is enabled %>
+		
+		<p class="field">
+			<label>Privacy</label>
+			<input type="radio">Public</input>
+			<input type="radio">Private</input>
+		</p>
+		<p class="field">
+			<label>Attachments</label>
+			Allow users to upload attachments
+			<input type="radio">Yes</input>
+			<input type="radio">No</input>
+		</p>
+		<p class="field">
+			<label>Images</label>
+			Allow users to upload images
+			<input type="radio">Yes</input>
+			<input type="radio">No</input>
+		</p>
+		<p class="field">
+			<label>Links</label>
+			Allow users to add links
+			<input type="radio">Yes</input>
+			<input type="radio">No</input>
+		</p>
+		<p class="field">
+			<label>Maps</label>
+			Allow users to add maps
+			<input type="radio">Yes</input>
+			<input type="radio">No</input>
+		</p>
+		<p class="field">
+			<label>Tasks</label>
+			Allow users to add tasks
+			<input type="radio">Yes</input>
+			<input type="radio">No</input>
+		</p>
+		<p class="field">
+			<label>Videos</label>
+			Allow users to add videos
+			<input type="radio">Yes</input>
+			<input type="radio">No</input>
+		</p>
+	</div>
+	<div class="pane_right pane_small">
 		<p class="field">
 			<label>Elements</label>
-			<input type="checkbox">News Feed</input><br>
-			<input type="checkbox">Attachments</input><br>
-			<input type="checkbox">Images</input><br>
-			<input type="checkbox">Links</input><br>
-			<input type="checkbox">Maps</input><br>
-			<input type="checkbox">Notes</input><br>
-			<input type="checkbox">Tasks</input><br>
-			<input type="checkbox">Videos	</input><br>
+			<h4>You will NOT lose any data by removing an element. Re-add an element in the future and continue where you left off. It's not witchcraft we promise.</h4>
+			<div class="edit_elements">
+				<p>
+					<input type="checkbox">
+						<b>Attachments</b>
+						<span>
+							This element gives users the ability to upload files to the Topic. These files are listed in a thumb nail view which can be sorted and downloaded.
+						</span>
+					</input>
+				</p>
+				<p>
+					<input type="checkbox">
+						<b>News Feed</b>
+						<span>
+							This element displays a log of all events related to this Topic. A list of events of the Topic's history
+						</span>
+					</input>
+				</p>
+				<p>
+					<input type="checkbox">
+						<b>Images</b>
+						<span>
+							This element displays a log of all events related to this Topic. A list of events of the Topic's history
+						</span>
+					</input>
+				</p>
+				<p>
+					<input type="checkbox">
+						<b>Links</b>
+						<span>
+							This element displays a log of all events related to this Topic. A list of events of the Topic's history
+						</span>
+					</input>
+				</p>
+				<p>
+					<input type="checkbox">
+						<b>Maps</b>
+						<span>
+							This element displays a log of all events related to this Topic. A list of events of the Topic's history
+						</span>
+					</input>
+				</p>
+				<p>
+					<input type="checkbox">
+						<b>Tasks</b>
+						<span>
+							This element displays a log of all events related to this Topic. A list of events of the Topic's history
+						</span>
+					</input>
+				</p>
+				<p>
+					<input type="checkbox">
+						<b>Videos</b>
+						<span>
+							This element displays a log of all events related to this Topic. A list of events of the Topic's history
+						</span>
+					</input>
+				</p>
+				
+			</div>
 		</p>
 		
 	</div>
