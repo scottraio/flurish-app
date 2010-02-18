@@ -19,37 +19,37 @@
 			<input type="radio">Public</input>
 			<input type="radio">Private</input>
 		</p>
-		<p class="field">
+		<p class="field options_element_attachments" style="display:none">
 			<label>Attachments</label>
 			Allow users to upload attachments
 			<input type="radio">Yes</input>
 			<input type="radio">No</input>
 		</p>
-		<p class="field">
+		<p class="field options_element_images" style="display:none">
 			<label>Images</label>
 			Allow users to upload images
 			<input type="radio">Yes</input>
 			<input type="radio">No</input>
 		</p>
-		<p class="field">
+		<p class="field options_element_links" style="display:none">
 			<label>Links</label>
 			Allow users to add links
 			<input type="radio">Yes</input>
 			<input type="radio">No</input>
 		</p>
-		<p class="field">
+		<p class="field options_element_maps" style="display:none">
 			<label>Maps</label>
 			Allow users to add maps
 			<input type="radio">Yes</input>
 			<input type="radio">No</input>
 		</p>
-		<p class="field">
+		<p class="field options_element_tasks" style="display:none">
 			<label>Tasks</label>
 			Allow users to add tasks
 			<input type="radio">Yes</input>
 			<input type="radio">No</input>
 		</p>
-		<p class="field">
+		<p class="field options_element_videos" style="display:none">
 			<label>Videos</label>
 			Allow users to add videos
 			<input type="radio">Yes</input>
@@ -61,56 +61,56 @@
 			<label>Elements</label>
 			<h4>You will NOT lose any data by removing an element. Re-add an element in the future and continue where you left off. It's not witchcraft we promise.</h4>
 			<div class="edit_elements">
-				<p>
-					<input type="checkbox">
+				<p rel="element_attachments">
+					<input type="checkbox" class="element_attachments">
 						<b>Attachments</b>
 						<span>
 							This element gives users the ability to upload files to the Topic. These files are listed in a thumb nail view which can be sorted and downloaded.
 						</span>
 					</input>
 				</p>
-				<p>
-					<input type="checkbox">
+				<p rel="element_feed">
+					<input type="checkbox" class="element_feed">
 						<b>News Feed</b>
 						<span>
 							This element displays a log of all events related to this Topic. A list of events of the Topic's history
 						</span>
 					</input>
 				</p>
-				<p>
-					<input type="checkbox">
+				<p rel="element_images">
+					<input type="checkbox" class="element_images">
 						<b>Images</b>
 						<span>
 							This element displays a log of all events related to this Topic. A list of events of the Topic's history
 						</span>
 					</input>
 				</p>
-				<p>
-					<input type="checkbox">
+				<p rel="element_links">
+					<input type="checkbox" class="element_links">
 						<b>Links</b>
 						<span>
 							This element displays a log of all events related to this Topic. A list of events of the Topic's history
 						</span>
 					</input>
 				</p>
-				<p>
-					<input type="checkbox">
+				<p rel="element_maps">
+					<input type="checkbox" class="element_maps">
 						<b>Maps</b>
 						<span>
 							This element displays a log of all events related to this Topic. A list of events of the Topic's history
 						</span>
 					</input>
 				</p>
-				<p>
-					<input type="checkbox">
+				<p rel="element_tasks">
+					<input type="checkbox" class="element_tasks">
 						<b>Tasks</b>
 						<span>
 							This element displays a log of all events related to this Topic. A list of events of the Topic's history
 						</span>
 					</input>
 				</p>
-				<p>
-					<input type="checkbox">
+				<p rel="element_videos">
+					<input type="checkbox" class="element_videos">
 						<b>Videos</b>
 						<span>
 							This element displays a log of all events related to this Topic. A list of events of the Topic's history
@@ -133,5 +133,17 @@
 			  $('div#staging').html(data);
 			});
 		})
+		
+		$(".edit_elements p").click( function (){
+			element = $(this).attr("rel");
+			if ($("." + element).attr("checked","")) {
+				$("." + element).attr("checked","checked");
+				$(".options_" + element).css("display", "")
+				
+			}
+			
+		
+		})
+		
 	})
 </script>
