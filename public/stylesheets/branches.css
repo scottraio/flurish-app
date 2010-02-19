@@ -119,13 +119,13 @@ div.branch_feed p {
 }
 
 div.branch_feed p span {
-	margin-top:-18px;
+	margin-top:-16px;
 	display:block;
 }
 div.branch_feed p span img {
 	margin-right:5px;
 	position:relative;
-	top:8px;
+	top:6px;
 }
 
 div.branch_feed small {
@@ -140,7 +140,9 @@ div.branch_attachments {
 }
 
 div.branch_attachments p {
-	padding:5px 5px 5px 20px;
+	padding:2px 5px 2px 20px;
+	margin-bottom:10px;
+	cursor:pointer;
 }
 
 div.branch_attachments label:hover {
@@ -178,7 +180,7 @@ div.branch_images label:hover {
 /* Branch Links */
 
 div.branch_links {
-	
+	cursor:pointer;
 }
 
 div.branch_links p {
@@ -196,7 +198,8 @@ div.branch_links p span {
 div.branch_links p small {
 	display:block;
 	margin-left:16px;
-	color:#444;
+	margin-top:5px;
+	color:#aaa;
 }
 
 div.branch_links p small label {
