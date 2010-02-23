@@ -19,7 +19,7 @@
 	<div id="feed">
 			<% for activity in @activities %>
 			<%= explanation_of activity  %>
-			<%= render :partial => "activities/ui/comments", :locals => {:activity => activity} %>
+			<%= render :partial => "comments/ui/activities", :locals => {:activity => activity} %>
 		<% end %>
 	</div>
 	</div>

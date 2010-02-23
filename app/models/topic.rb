@@ -1,4 +1,6 @@
-class Branch < ActiveRecord::Base
+class Topic < ActiveRecord::Base
+	
+	acts_as_taggable_on :tags
 	
 	belongs_to 	:organization
 	belongs_to 	:creator, 	:class_name => "User", :foreign_key => "created_by"
@@ -23,18 +25,28 @@ class Branch < ActiveRecord::Base
 	
 	validates_presence_of 	:name
 	validates_presence_of 	:description
+
+	attr_accessor :invitees
+	
+	named_scope :by_organization, lambda { |org_id|
+		{ :conditions => { :organization_id => org_id }, :order => "created_at DESC" }
+	}
+	
+	def after_create
+		self.users << self.creator
+	end
 	
 	def self.get(user,params)
-		b	 						= self.find(params[:id], :include => [{:comments => :creator}])
-		b.attributes 	= params[:branch]
-		b
+		t	 						= self.find(params[:id], :include => [{:comments => :creator}])
+		t.attributes 	= params[:topic]
+		t
 	end
 	
 	def self.set(user,params)
-		b 							= self.new(params[:branch])
-		b.creator 			= user
-		b.organization 	= user.organization
-		b
+		t 							= self.new(params[:topic])
+		t.creator 			= user
+		t.organization 	= user.organization
+		t
 	end
 	
 	def attach(element)
@@ -45,6 +57,12 @@ class Branch < ActiveRecord::Base
 	def has?(element)
 		names = self.element_types.collect{|et| et.name.downcase.to_sym }
 		names.include?(element) ? true : false
+	end
+	
+	def self.get_all(user,options={})
+		if options[:tag] then tagged_with(options[:tag]).by_organization(user.organization_id)
+		else by_organization(user.organization_id)
+		end 
 	end
 	
 end

@@ -27,4 +27,5 @@ config.log_level = :debug
 # Enable threaded mode
 # config.threadsafe!
 
-ActionMailer::Base.template_root 					= "#{Rails.root}/app/mailers"
+# Needs to be here or else production wont find the right files
+ActionMailer::Base.template_root = "#{Rails.root}/app/mailers"

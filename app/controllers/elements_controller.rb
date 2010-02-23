@@ -1,7 +1,7 @@
 class ElementsController < ApplicationController
 	
 	before_filter :set_element, :only => [:create]
-	before_filter	:get_branch, 	:only => [:index,:create]
+	before_filter	:get_topic, 	:only => [:index,:create]
 	
 	def index
 		@element_types = ElementType.find(:all).collect{|et| et unless @branch.element_types.include? et }.compact
@@ -20,8 +20,8 @@ class ElementsController < ApplicationController
 	
 private
 
-	def get_branch
-		@branch 	= Branch.find(params[:branch_id])
+	def get_topic
+		@branch 	= Topic.find(params[:branch_id])
 	end
 	
 	def set_element

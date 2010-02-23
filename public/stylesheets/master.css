@@ -1,7 +1,7 @@
 @import "ui.css";
 @import "facebox.css";
 @import "login.css";
-@import "branches.css";
+@import "topics.css";
 
 body {
 	font-family: "Helvetica";
@@ -434,6 +434,6 @@ div#feed div.comments p.new_comment textarea {
 /* Branches */
 
 
-div.branch {
-	background:url('/images/icons/branches32x32.png') no-repeat;
+div.topic {
+	background:url('/images/icons/topics32x32.png') no-repeat;
 }

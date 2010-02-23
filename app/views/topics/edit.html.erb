@@ -1,0 +1,112 @@
+<% form_for @topic do |f| %>
+<div id="title">
+	<span>
+		<p class="field left"><%= f.text_field :name, :class => "topic_name_field" %></p>
+		<%= f.submit "Finished", :class => "right metal in_title", :style => "font-size:1.0em" %>
+	</span>
+</div>
+
+<div id="main">
+	<div class="pane_left pane_large">
+	  
+		<p class="field">
+			<label>Tags</label><%= f.text_field :tag_list, :style => "width:98%" %>
+		</p>
+	
+		<p class="field">
+			<label>Description</label><%= f.text_area :description %>
+		</p>
+
+		<%# These options appear when relative element is enabled %>
+		
+		<p class="field">
+			<label>Privacy</label>
+			<input type="radio" /> Public
+			<input type="radio" /> Private
+		</p>
+		<p class="field"  id="attachments_options" style="display:none">
+			<label>Attachments</label>
+			Allow users to upload attachments
+			<input type="radio" /> Yes
+			<input type="radio" /> No
+		</p>
+		<p class="field" id="images_options" style="display:none">
+			<label>Images</label>
+			Allow users to upload images
+			<input type="radio" /> Yes
+			<input type="radio" /> No
+		</p>
+		<p class="field" id="links_options" style="display:none">
+			<label>Links</label>
+			Allow users to add links
+			<input type="radio" /> Yes
+			<input type="radio" /> No
+		</p>
+		<p class="field" id="maps_options" style="display:none">
+			<label>Maps</label>
+			Allow users to add maps
+			<input type="radio" /> Yes
+			<input type="radio"/> No
+		</p>
+		<p class="field" id="tasks_options" style="display:none">
+			<label>Tasks</label>
+			Allow users to add tasks
+			<input type="radio" /> Yes
+			<input type="radio" /> No
+		</p>
+		<p class="field" id="videos_options" style="display:none">
+			<label>Videos</label>
+			Allow users to add videos
+			<input type="radio" /> Yes
+			<input type="radio" /> No
+		</p>
+	</div>
+	<div class="pane_right pane_small">
+		<p class="field">
+			<label>Elements</label>
+			<h4>You will NOT lose any data by removing an element. Re-add an element in the future and continue where you left off. It's not witchcraft we promise.</h4>
+			<div class="edit_elements">
+				
+				<% for element in @element_types %>
+				<p>
+					<input type="checkbox" id="<%= element.name.downcase %>" />
+					<a href="#"rel="#<%= element.name.downcase %>"><%= element.name %></a>
+					<span>
+						<%= element.description %>
+					</span>
+				</p>
+				<% end %>
+				
+			</div>
+		</p>
+		
+	</div>
+</div>
+<% end %>
+
+<script>
+	$(document).ready(function(){
+		$("ul.element_types li").click(function(){
+			var type = $(this).attr("rel");
+			$.post("<%= topic_elements_path(@topic) %>?type_id="+type, function(data) {
+			  $('div#staging').html(data);
+			});
+		})
+		
+		$(".edit_elements a").click(function (){
+			element = $($(this).attr("rel"));
+			options	= $($(this).attr("rel") + "_options");
+			if (element.is(":checked")) {
+				element.attr("checked", false);
+				options.hide();
+			} else {
+				element.attr("checked", true);
+				options.show();
+			}
+		})
+		
+			
+
+		
+	})
+</script>

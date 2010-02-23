@@ -1,6 +1,6 @@
 class Element < ActiveRecord::Base
 	
-	belongs_to	:branch
+	belongs_to	:topic
 	belongs_to	:element_type
 	
 	has_many		:activities

@@ -12,8 +12,8 @@ class Comment < ActiveRecord::Base
 	end
 	
 	def after_create
-		# Stamp the comment if it's a branch comment
-		Activity.create(:activible => self, :creator => self.creator, :branch_id => self.commentable.id) if self.commentable.is_a? Branch
+		# Stamp the comment if it's a topic comment
+		Activity.create(:activible => self, :creator => self.creator, :topic_id => self.commentable.id) if self.commentable.is_a? Topic
 		# Deliver notification
 		deliver!
 	end
@@ -24,7 +24,7 @@ class Comment < ActiveRecord::Base
 	
 	def deliver!
 		if 		self.commentable.is_a? Activity then send_to_participants(self.commentable.creator, self.creator)
-		elsif self.commentable.is_a? Branch 	then send_to_followers(self.creator)
+		elsif self.commentable.is_a? Topic 	then send_to_followers(self.creator)
 		end
 	end
 	
@@ -33,11 +33,11 @@ class Comment < ActiveRecord::Base
 		Mailer.deliver_comment_notification(subject, to, from, self)
 	end
 	
-	# sends emails to branch followers
+	# sends emails to topic followers
 	def send_to_followers(from)
-		branch = self.commentable
-		branch.users.each do |user|
-			deliver("#{from.name} posted a comment on #{branch.name}", user, from) unless user.eql? from
+		topic = self.commentable
+		topic.users.each do |user|
+			deliver("#{from.name} posted a comment on #{topic.name}", user, from) unless user.eql? from
 		end
 	end
 	
@@ -49,7 +49,7 @@ class Comment < ActiveRecord::Base
 		self.commentable.comments.collaborators.each do |user|
 			unless user.eql? owner or user.eql? from
 				if owner.eql? from
-					deliver("#{from.name} posted a comment on his/her status", user, from) 
+					deliver("#{from.name} posted a comment on their status", user, from) 
 				else
 					deliver("#{from.name} posted a comment on #{owner.name} status", user, from) 
 				end

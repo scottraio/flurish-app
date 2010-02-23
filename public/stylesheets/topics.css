@@ -1,4 +1,4 @@
-/* Branch Edit */
+/* Topics Edit */
 
 ul.element_types {
 	color:#333;
@@ -21,9 +21,9 @@ ul.element_types li img {
 	top:4px;
 }
 
-/* Branch Show */
+/* Topics Show */
 
-div#show_branch h1 {
+div#show_topic h1 {
 	color:#555;
 	margin-bottom:10px;
 }
@@ -52,9 +52,9 @@ div.description textarea {
 	height:70px;
 }
 
-/* Branch Followers */
+/* Topics Followers */
 
-div.branch_followers {
+div.topic_followers {
 	margin-bottom:20px;
 	text-align:right;
 	background-color:#f0f0f0;
@@ -62,7 +62,7 @@ div.branch_followers {
 	-moz-border-radius:5px;
 }
 
-div.branch_followers img {
+div.topic_followers img {
 	padding:5px 5px 5px 0;
 }
 
@@ -88,7 +88,7 @@ div.element_sort {
 	margin-bottom:10px;
 }
 
-div.branch_footer {
+div.topic_footer {
 	width:auto;
 	clear:both;
 	border-top:1px solid #ddd;
@@ -100,62 +100,62 @@ div.branch_footer {
 	-moz-border-radius:0 0 5px 5px;
 }
 
-/* Branches Feed */
+/* Topicses Feed */
 
-div.branch_feed {
+div.topic_feed {
 	overflow:auto;
 	color:#555;
 }
 
-div.branch_feed a {
+div.topic_feed a {
 	font-weight:bold;
 }
 
-div.branch_feed p {
+div.topic_feed p {
 	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
 	padding:10px 0 10px 30px;
 	border-bottom:1px solid #ccc;
 	margin-top:10px;
 }
 
-div.branch_feed p span {
+div.topic_feed p span {
 	margin-top:-16px;
 	display:block;
 }
-div.branch_feed p span img {
+div.topic_feed p span img {
 	margin-right:5px;
 	position:relative;
 	top:6px;
 }
 
-div.branch_feed small {
+div.topic_feed small {
 	display:block;
 	margin-left:22px;
 }
 
 /* Element Attachments */
 
-div.branch_attachments {
+div.topic_attachments {
 	overflow:auto;
 }
 
-div.branch_attachments p {
+div.topic_attachments p {
 	padding:2px 5px 2px 20px;
 	margin-bottom:10px;
 	cursor:pointer;
 }
 
-div.branch_attachments label:hover {
+div.topic_attachments label:hover {
 	background:#ddd; 
 }
 
 /* Element Images */
 
-div.branch_images {
+div.topic_images {
 	overflow:auto;
 }
 
-div.branch_images label {
+div.topic_images label {
 	color:#777;
 	display:block;
 	font-size:0.8em;
@@ -168,69 +168,69 @@ div.branch_images label {
 	text-align:center;
 }
 
-div.branch_images label img {
+div.topic_images label img {
 	display:block;
 	width:64px;
 }
 
-div.branch_images label:hover {
+div.topic_images label:hover {
 	background:#bbb; 
 }
 
-/* Branch Links */
+/* Topics Links */
 
-div.branch_links {
+div.topic_links {
 	cursor:pointer;
 }
 
-div.branch_links p {
+div.topic_links p {
 	padding:5px 0;
 	border-bottom:1px solid #eee;
 }
 
-div.branch_links p span {
+div.topic_links p span {
 	width:16px;
 	height:16px;
 	cursor:pointer;
 	margin-top:-2px;
 }
 
-div.branch_links p small {
+div.topic_links p small {
 	display:block;
 	margin-left:16px;
 	margin-top:5px;
 	color:#aaa;
 }
 
-div.branch_links p small label {
+div.topic_links p small label {
 	display:block;
 	color:#777;
 	margin-bottom:5px;
 }
 
-/* Branch maps */
+/* Topics maps */
 
-div.branch_maps {
+div.topic_maps {
 	
 }
 
-div.branch_maps img {
+div.topic_maps img {
 	width:100%;
 }
 
-/* Branch Comments */
+/* Topics Comments */
 
-div#show_branch div.comments {
+div#show_topic div.comments {
 	width:auto;
 	padding:10px;
 }
 
-div#show_branch div.comments p {
+div#show_topic div.comments p {
 	clear:both;
 	width:auto;
 }
 
-div#show_branch div.comments p span {
+div#show_topic div.comments p span {
 	display:block;
 	width:auto;
 	margin:10px 0;
@@ -238,17 +238,17 @@ div#show_branch div.comments p span {
 	border-bottom:1px solid #fff;
 }
 
-div.show_branch p small {
+div.show_topic p small {
 	display:block;
 	color:#777;
 	margin-top:5px;
 }
 
-div#show_branch div.comments p input {
+div#show_topic div.comments p input {
 	
 }
 
-div#show_branch div.comments p input.add_comment {
+div#show_topic div.comments p input.add_comment {
 	border:1px solid #C4E9C9;
 	padding:3px;
 	color:#777;
@@ -256,7 +256,7 @@ div#show_branch div.comments p input.add_comment {
 	float:right;
 }
 
-div#show_branch div.comments p.new_comment textarea {
+div#show_topic div.comments p.new_comment textarea {
 	height:30px;
 	width:530px;
 	max-width:530px;
@@ -265,13 +265,13 @@ div#show_branch div.comments p.new_comment textarea {
 	margin-bottom:5px;
 }
 
-/* Branch Notes */
+/* Topics Notes */
 
-div.branch_notes {	
+div.topic_notes {	
 
 }
 
-div.branch_notes div.new_notes { 
+div.topic_notes div.new_notes { 
 	padding:20px;
 	text-align:center;
 	color:#999;

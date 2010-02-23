@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	has_and_belongs_to_many :leaders, 	:class_name => "User", :foreign_key => "follower_id", :association_foreign_key => "followee_id"
 	
 	has_and_belongs_to_many :groups
-	has_and_belongs_to_many :branches
+	has_and_belongs_to_many :topics
 	
 	has_many		:activities, 		:class_name => "Activity", 	:foreign_key 	=> "created_by"
 	has_many		:originals, 		:class_name => "Branch", 		:foreign_key 	=> "created_by"
@@ -55,27 +55,27 @@ class User < ActiveRecord::Base
 	def follow(something)
 		if 		something.is_a? User		then (self.leaders << something)
 		elsif something.is_a? Group		then (self.groups << something)
-		elsif something.is_a? Branch	then (self.branches << something)
+		elsif something.is_a? Topic		then (self.topics << something)
 		end
 	end
 	
 	def stop_following(something)
 		if 		something.is_a? User		then (self.leaders.delete something)
 		elsif something.is_a? Group		then (self.groups.delete something)
-		elsif something.is_a? Branch	then (self.branches.delete something)
+		elsif something.is_a? Topic		then (self.topics.delete something)
 		end
 	end
 	
 	def following?(something)
 		if 		something.is_a? User		then (return true if self.leaders.include? something)
 		elsif something.is_a? Group		then (return true if self.groups.include? something)
-		elsif something.is_a? Branch	then (return true if self.branches.include? something)
+		elsif something.is_a? Topic		then (return true if self.topics.include? something)
 		end
 	end
 	
 	def feed
 		conditions = Activity.sql(:conditions, self)
-		Activity.find(:all, :include => [:creator, {:comments => :creator}, :activible, {:element => :branch}], :conditions => conditions, :order => "activities.created_at DESC")
+		Activity.find(:all, :include => [:creator, {:comments => :creator}, :activible, {:element => :topic}], :conditions => conditions, :order => "activities.created_at DESC")
 	end
 	
 	def current_status

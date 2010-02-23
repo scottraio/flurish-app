@@ -1,0 +1,25 @@
+<div id="comments" class="comments round">
+	<% if @topic.comments.size > 5 %>
+	<%= link_to "Show all #{@topic.comments.size} comments", "#", :class => "show_all_comments" %>
+	
+	<div id="hidden_comments" style="display:none">
+		<% for comment in @topic.comments.first(@topic.comments.size - 5) %>
+			<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+		<% end %>
+	</div>
+	<% end %>
+
+	<% for comment in @topic.comments.last(5) %>
+		<%= render :partial => "comments/ui/post", :locals => { :comment => comment } %>
+	<% end %>
+	
+	<div id="comment_lander"></div>
+	
+	<p class="add_comment"><%= image_tag(avatar_url(@user, :small)) %><input value="Write a comment" class="add_comment"/></p>
+	<% form_for :comment, :url => topic_comments_path(@topic), :html => { :class => "comments_form", :rel => "#comment_lander" } do |f| %>
+	<p class="new_comment" style="display:none">
+		<%= f.text_area :message, :class => "new_comment round" %>
+		<%= f.submit "post comment", :class => "metal new_comment" %>
+	</p>
+	<% end %>
+</div>

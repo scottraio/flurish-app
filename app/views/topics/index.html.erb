@@ -1,0 +1,72 @@
+<div id="title">
+	<span>
+		<h1>Topics</h1>
+		<p class="button right"><%= link_to "Create a Topic", new_topic_path, :class => "icon topic" %></p>
+	</span>
+</div>
+
+<div id="main">
+		
+		<div class="list">
+			<div class="pane_left pane_small" style="width:288px">
+				<%= text_field :topics, :keyword, :class => "find", :value => "Search for a topic" %>
+				<div class="sort_results">
+					<%= link_to "Latest", topics_path, :class => ("selected" if params[:tag].nil?) %>
+					<% for tag in @tags %>
+						<%= link_to tag.name, { :tag => tag.name }, :class => ("selected" if params[:tag].eql? tag.name) %>
+					<% end %>
+				</div>
+			</div>
+			<div class="pane_right pane_large" style="width:600px">
+				<% for topic in @topics %>
+				<div class="item">
+				
+					<div class="details">
+						<h2>
+							
+								<%= link_to topic.name, topic_path(topic) %>
+								<small>added 14 days ago by <%= link_to topic.creator.name, user_path(topic.creator), :class => "created_by", :style => "background:url(#{avatar_url(topic.creator, :tiny)}) no-repeat;" %></small>
+						
+						</h2>
+						<%= topic.description %>
+					</div>
+				
+					<div class="follow">
+						<% if @user.following? topic %>
+							<%= link_to "Stop Following", stop_following_topic_path(topic), :class =>  "metal" %>
+						<% else %>
+							<%= link_to "Follow", follow_topic_path(topic), :class =>  "metal" %>
+						<% end %>
+					</div>
+				
+				</div>
+				<% end %>
+			</div>
+			
+		</div>
+
+		
+</div>
+
+<script>
+	$("document").ready(function(){
+		
+		var focusable = $("input#topices_keyword");
+		var default_value = focusable.val();
+		
+		focusable.focus(function(){
+			if($(this).val() == default_value) $(this).val("");
+			$("input#submit_status").css('display', '');
+		})
+		
+		focusable.blur(function(){
+			if($(this).val() == "") {
+				$(this).val(default_value); $("input#submit_status").css('display', 'none');	
+			}
+		})
+		
+		
+		
+	})
+</script>
+
