@@ -18,7 +18,7 @@ class BranchesController < ApplicationController
 	def index
 		get_user
 		@tags 		= Branch.tag_counts_on(:tags)
-		@branches = Branch.find_all_by_organization_id(current_user.organization_id)
+		@branches = Branch.get_all(current_user, params)
 	end
 
   def new

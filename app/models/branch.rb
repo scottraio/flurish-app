@@ -28,6 +28,10 @@ class Branch < ActiveRecord::Base
 
 	attr_accessor :invitees
 	
+	named_scope :by_organization, lambda { |org_id|
+		{ :conditions => { :organization_id => org_id }, :order => "created_at DESC" }
+	}
+	
 	def self.get(user,params)
 		b	 						= self.find(params[:id], :include => [{:comments => :creator}])
 		b.attributes 	= params[:branch]
@@ -50,6 +54,11 @@ class Branch < ActiveRecord::Base
 		names = self.element_types.collect{|et| et.name.downcase.to_sym }
 		names.include?(element) ? true : false
 	end
-
+	
+	def self.get_all(user,options={})
+		if options[:tag] then tagged_with(options[:tag]).by_organization(user.organization_id)
+		else by_organization(user.organization_id)
+		end 
+	end
 	
 end

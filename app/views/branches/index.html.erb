@@ -11,9 +11,9 @@
 			<div class="pane_left pane_small" style="width:288px">
 				<%= text_field :branches, :keyword, :class => "find", :value => "Search for a branch" %>
 				<div class="sort_results">
-					<%= link_to "Latest", "#", :class => "selected" %>
+					<%= link_to "Latest", branches_path, :class => ("selected" if params[:tag].nil?) %>
 					<% for tag in @tags %>
-						<%= link_to tag.name, { :action => :tag, :id => tag.name } %>
+						<%= link_to tag.name, { :tag => tag.name }, :class => ("selected" if params[:tag].eql? tag.name) %>
 					<% end %>
 				</div>
 			</div>
