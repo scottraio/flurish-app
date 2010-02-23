@@ -1,7 +1,7 @@
 <div id="title">
 	<span>
 		<h1>Topics</h1>
-		<p class="button right"><%= link_to "Create a Topic", new_branch_path, :class => "icon branch" %></p>
+		<p class="button right"><%= link_to "Create a Topic", new_topic_path, :class => "icon topic" %></p>
 	</span>
 </div>
 
@@ -9,33 +9,33 @@
 		
 		<div class="list">
 			<div class="pane_left pane_small" style="width:288px">
-				<%= text_field :branches, :keyword, :class => "find", :value => "Search for a branch" %>
+				<%= text_field :topics, :keyword, :class => "find", :value => "Search for a topic" %>
 				<div class="sort_results">
-					<%= link_to "Latest", branches_path, :class => ("selected" if params[:tag].nil?) %>
+					<%= link_to "Latest", topics_path, :class => ("selected" if params[:tag].nil?) %>
 					<% for tag in @tags %>
 						<%= link_to tag.name, { :tag => tag.name }, :class => ("selected" if params[:tag].eql? tag.name) %>
 					<% end %>
 				</div>
 			</div>
 			<div class="pane_right pane_large" style="width:600px">
-				<% for branch in @branches %>
+				<% for topic in @topics %>
 				<div class="item">
 				
 					<div class="details">
 						<h2>
 							
-								<%= link_to branch.name, branch_path(branch) %>
-								<small>added 14 days ago by <%= link_to branch.creator.name, user_path(branch.creator), :class => "created_by", :style => "background:url(#{avatar_url(branch.creator, :tiny)}) no-repeat;" %></small>
+								<%= link_to topic.name, topic_path(topic) %>
+								<small>added 14 days ago by <%= link_to topic.creator.name, user_path(topic.creator), :class => "created_by", :style => "background:url(#{avatar_url(topic.creator, :tiny)}) no-repeat;" %></small>
 						
 						</h2>
-						<%= branch.description %>
+						<%= topic.description %>
 					</div>
 				
 					<div class="follow">
-						<% if @user.following? branch %>
-							<%= link_to "Stop Following", stop_following_branch_path(branch), :class =>  "metal" %>
+						<% if @user.following? topic %>
+							<%= link_to "Stop Following", stop_following_topic_path(topic), :class =>  "metal" %>
 						<% else %>
-							<%= link_to "Follow", follow_branch_path(branch), :class =>  "metal" %>
+							<%= link_to "Follow", follow_topic_path(topic), :class =>  "metal" %>
 						<% end %>
 					</div>
 				
@@ -51,7 +51,7 @@
 <script>
 	$("document").ready(function(){
 		
-		var focusable = $("input#branches_keyword");
+		var focusable = $("input#topices_keyword");
 		var default_value = focusable.val();
 		
 		focusable.focus(function(){

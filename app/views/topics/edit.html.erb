@@ -1,7 +1,7 @@
-<% form_for @branch do |f| %>
+<% form_for @topic do |f| %>
 <div id="title">
 	<span>
-		<p class="field left"><%= f.text_field :name, :class => "branch_name_field" %></p>
+		<p class="field left"><%= f.text_field :name, :class => "topic_name_field" %></p>
 		<%= f.submit "Finished", :class => "right metal in_title", :style => "font-size:1.0em" %>
 	</span>
 </div>
@@ -88,7 +88,7 @@
 	$(document).ready(function(){
 		$("ul.element_types li").click(function(){
 			var type = $(this).attr("rel");
-			$.post("<%= branch_elements_path(@branch) %>?type_id="+type, function(data) {
+			$.post("<%= topic_elements_path(@topic) %>?type_id="+type, function(data) {
 			  $('div#staging').html(data);
 			});
 		})

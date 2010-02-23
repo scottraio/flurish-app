@@ -24,7 +24,7 @@
 				<ul>
 					<li onclick="location.href='<%= logout_path %>'"><%= image_tag("/images/icons/logout.png") %>Logout</li>
 					<li onclick="location.href='<%= users_path %>'"><%= image_tag("/images/icons/users.png") %> Users</li>
-					<li onclick="location.href='<%= branches_path %>'"><%= image_tag("/images/icons/topic16x16.png") %>Topics</li>
+					<li onclick="location.href='<%= topics_path %>'"><%= image_tag("/images/icons/topic16x16.png") %>Topics</li>
 					<li onclick="location.href='<%= user_path(current_user) %>'"><%= image_tag(avatar_url(current_user, :tiny)) %><%= current_user.first_name %></li>				
 				</ul>
 				<% end %>
