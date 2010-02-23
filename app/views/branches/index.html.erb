@@ -12,13 +12,9 @@
 				<%= text_field :branches, :keyword, :class => "find", :value => "Search for a branch" %>
 				<div class="sort_results">
 					<%= link_to "Latest", "#", :class => "selected" %>
-					<%= link_to "Concerns", "#" %>
-					<%= link_to "Events", "#" %>
-					<%= link_to "Decisions", "#" %>
-					<%= link_to "Ideas", "#" %>
-					<%= link_to "Issues", "#" %>
-					<%= link_to "Opportunities", "#" %>
-					<%= link_to "Projects", "#" %>
+					<% for tag in @tags %>
+						<%= link_to tag.name, { :action => :tag, :id => tag.name } %>
+					<% end %>
 				</div>
 			</div>
 			<div class="pane_right pane_large" style="width:600px">

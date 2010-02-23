@@ -49,7 +49,7 @@ class Comment < ActiveRecord::Base
 		self.commentable.comments.collaborators.each do |user|
 			unless user.eql? owner or user.eql? from
 				if owner.eql? from
-					deliver("#{from.name} posted a comment on his/her status", user, from) 
+					deliver("#{from.name} posted a comment on their status", user, from) 
 				else
 					deliver("#{from.name} posted a comment on #{owner.name} status", user, from) 
 				end

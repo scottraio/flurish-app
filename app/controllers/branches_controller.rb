@@ -17,6 +17,7 @@ class BranchesController < ApplicationController
 
 	def index
 		get_user
+		@tags 		= Branch.tag_counts_on(:tags)
 		@branches = Branch.find_all_by_organization_id(current_user.organization_id)
 	end
 
@@ -35,6 +36,10 @@ class BranchesController < ApplicationController
   	
   def show
   end
+
+	def edit
+		@element_types = ElementType.find(:all)
+	end
   
   def update
     if @branch.save

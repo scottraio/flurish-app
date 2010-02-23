@@ -1,5 +1,7 @@
 class Branch < ActiveRecord::Base
 	
+	acts_as_taggable_on :tags
+	
 	belongs_to 	:organization
 	belongs_to 	:creator, 	:class_name => "User", :foreign_key => "created_by"
 	
@@ -23,6 +25,8 @@ class Branch < ActiveRecord::Base
 	
 	validates_presence_of 	:name
 	validates_presence_of 	:description
+
+	attr_accessor :invitees
 	
 	def self.get(user,params)
 		b	 						= self.find(params[:id], :include => [{:comments => :creator}])
@@ -46,5 +50,6 @@ class Branch < ActiveRecord::Base
 		names = self.element_types.collect{|et| et.name.downcase.to_sym }
 		names.include?(element) ? true : false
 	end
+
 	
 end
