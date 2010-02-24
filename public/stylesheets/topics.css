@@ -54,16 +54,9 @@ div.description textarea {
 
 /* Topics Followers */
 
-div.topic_followers {
-	margin-bottom:20px;
-	text-align:right;
-	background-color:#f0f0f0;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-}
-
 div.topic_followers img {
-	padding:5px 5px 5px 0;
+	float:right;
+	padding:0 5px 5px 0;
 }
 
 /* Elements */
@@ -100,62 +93,62 @@ div.topic_footer {
 	-moz-border-radius:0 0 5px 5px;
 }
 
-/* Topicses Feed */
+/* Topics Feed */
 
-div.topic_feed {
+div#topic_feed {
 	overflow:auto;
 	color:#555;
 }
 
-div.topic_feed a {
+div#topic_feed a {
 	font-weight:bold;
 }
 
-div.topic_feed p {
+div#topic_feed p {
 	background:url('/users/avatars/3/small_Photo_on_2009-10-22_at_20.49.jpg') no-repeat;
 	padding:10px 0 10px 30px;
 	border-bottom:1px solid #ccc;
 	margin-top:10px;
 }
 
-div.topic_feed p span {
+div#topic_feed p span {
 	margin-top:-16px;
 	display:block;
 }
-div.topic_feed p span img {
+div#topic_feed p span img {
 	margin-right:5px;
 	position:relative;
 	top:6px;
 }
 
-div.topic_feed small {
+div#topic_feed small {
 	display:block;
 	margin-left:22px;
 }
 
 /* Element Attachments */
 
-div.topic_attachments {
+div#topic_attachments {
 	overflow:auto;
 }
 
-div.topic_attachments p {
+div#topic_attachments p {
 	padding:2px 5px 2px 20px;
 	margin-bottom:10px;
 	cursor:pointer;
 }
 
-div.topic_attachments label:hover {
+div#topic_attachments label:hover {
 	background:#ddd; 
 }
 
 /* Element Images */
 
-div.topic_images {
+div#topic_images {
 	overflow:auto;
 }
 
-div.topic_images label {
+div#topic_images label {
 	color:#777;
 	display:block;
 	font-size:0.8em;
@@ -168,41 +161,41 @@ div.topic_images label {
 	text-align:center;
 }
 
-div.topic_images label img {
+div#topic_images label img {
 	display:block;
 	width:64px;
 }
 
-div.topic_images label:hover {
+div#topic_images label:hover {
 	background:#bbb; 
 }
 
 /* Topics Links */
 
-div.topic_links {
+div#topic_links {
 	cursor:pointer;
 }
 
-div.topic_links p {
+div#topic_links p {
 	padding:5px 0;
 	border-bottom:1px solid #eee;
 }
 
-div.topic_links p span {
+div#topic_links p span {
 	width:16px;
 	height:16px;
 	cursor:pointer;
 	margin-top:-2px;
 }
 
-div.topic_links p small {
+div#topic_links p small {
 	display:block;
 	margin-left:16px;
 	margin-top:5px;
 	color:#aaa;
 }
 
-div.topic_links p small label {
+div#topic_links p small label {
 	display:block;
 	color:#777;
 	margin-bottom:5px;
@@ -210,11 +203,11 @@ div.topic_links p small label {
 
 /* Topics maps */
 
-div.topic_maps {
+div#topic_maps {
 	
 }
 
-div.topic_maps img {
+div#topic_maps img {
 	width:100%;
 }
 
@@ -267,11 +260,11 @@ div#show_topic div.comments p.new_comment textarea {
 
 /* Topics Notes */
 
-div.topic_notes {	
+div#topic_notes {	
 
 }
 
-div.topic_notes div.new_notes { 
+div#topic_notes div.new_notes { 
 	padding:20px;
 	text-align:center;
 	color:#999;

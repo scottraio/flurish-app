@@ -20,4 +20,8 @@ class Element < ActiveRecord::Base
 		e
 	end
 	
+	def system_name
+		self.element_type.name.downcase
+	end
+	
 end

@@ -9,7 +9,10 @@ class Topic < ActiveRecord::Base
 	
 	has_many		:comments, :as => :commentable
 	
-	has_many		:elements
+	has_many		:elements do |element|
+		def left; self.select{|e| e.element_type.float.eql? "left" }; end
+		def right; self.select{|e| e.element_type.float.eql? "right" }; end
+	end
 	has_many		:element_types, :through => :elements
 	
 	has_one			:note,				:through => :elements
@@ -37,7 +40,7 @@ class Topic < ActiveRecord::Base
 	end
 	
 	def self.get(user,params)
-		t	 						= self.find(params[:id], :include => [{:comments => :creator}])
+		t	 						= self.find((params[:topic_id]||params[:id]), :include => [:elements, {:comments => :creator}])
 		t.attributes 	= params[:topic]
 		t
 	end

@@ -42,6 +42,7 @@ class TopicsController < ApplicationController
 	end
   
   def update
+		params[:topic][:element_type_ids] ||= []
     if @topic.save
 			flash[:notice] = "#{@topic.name} updated successfully"
 			redirect_to topic_path(@topic)

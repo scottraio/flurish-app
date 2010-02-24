@@ -1,0 +1,18 @@
+<% form_for @note, :url => topic_element_note_path(@topic,@element,@note), :html => { :id => "notes_form" } do |f| %>
+	<%= f.text_area :body %>
+	<p class="full center left clear"><%= f.submit "Save Note", :class => "metal" %></p>
+<% end %>
+
+<script>
+	$(document).ready(function(){
+		// Ajax Comment form
+		$("form#notes_form").submit(function(){
+			$(this).ajaxSubmit({
+				success: function(data) {
+					$("#topic_notes").html(data);
+				}
+			})
+			return false;
+		});
+	});
+</script>
