@@ -1,8 +1,15 @@
-<div class="branch_notes element_frame" rel="notes">
+<div class="element_frame" rel="notes">
 	<div class="element_header notes_header" style="display:none">Notes</div>
-	<% unless @branch.note.nil? %>
-		<%= @branch.note.body %>
+	<% unless @topic.note.nil? %>
+		<%= @topic.note.body %>
+		<%= link_to "Edit", edit_topic_element_note_path(@topic,element,@topic.note), :class => "remote", :rel => "#topic_notes" %>
 	<% else %>
-		<div class="new_notes"><%= link_to "Add", "#" %> notes to this branch.</div>
+		<div class="new_notes"><%= link_to "Add", new_topic_element_note_path(@topic,element), :class => "remote", :rel => "#topic_notes" %> notes to this topic.</div>
 	<% end %>
 </div>
+
+<script>
+	$(document).ready(function(){
+		init();
+	})
+</script>

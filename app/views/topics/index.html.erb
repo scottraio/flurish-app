@@ -8,8 +8,7 @@
 <div id="main">
 		
 		<div class="list">
-			<div class="pane_left pane_small" style="width:288px">
-				<%= text_field :topics, :keyword, :class => "find", :value => "Search for a topic" %>
+			<div class="pane_left pane_small" style="width:150px">
 				<div class="sort_results">
 					<%= link_to "Latest", topics_path, :class => ("selected" if params[:tag].nil?) %>
 					<% for tag in @tags %>
@@ -17,7 +16,8 @@
 					<% end %>
 				</div>
 			</div>
-			<div class="pane_right pane_large" style="width:600px">
+			<div class="pane_right pane_large" style="width:738px">
+				<%= text_field :topics, :keyword, :class => "find", :value => "Search for a topic" %>
 				<% for topic in @topics %>
 				<div class="item">
 				

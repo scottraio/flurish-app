@@ -1,33 +1,22 @@
 <div id="title">
 	<span>
-		<h1><%= @topic.name %>
-		<% if @topic.created_by == @user.id %>
-		<small><%= link_to "(edit)", edit_topic_path(@topic) %></small></h1>
-			<%#= link_to "Add Element", topic_elements_path(@topic), :rel => "facebox", :class => "right metal in_title" %>
-		<% else %>
+		<h1>
+			<%= @topic.name %>
+			<% if @topic.created_by == @user.id %><small><%= link_to "(edit)", edit_topic_path(@topic) %></small><% end %>
 		</h1>
-			<% if @user.following? @topic %>
-				<%= link_to "Stop Following", stop_following_topic_path(@topic), :class =>  "right metal in_title" %>
-			<% else %>
-				<%= link_to "Follow", follow_topic_path(@topic), :class =>  "right metal in_title" %>
-			<% end %>
-		<% end %>
+		<%#= link_to "Add Element", topic_elements_path(@topic), :rel => "facebox", :class => "right metal in_title" %>
+		<div class="topic_followers">
+		<% for user in @topic.users.first(6) %><%= image_tag(avatar_url(user, :thumb)) %><% end %>
+		</div>
 	</span>
 </div>
 
 <div id="main">
 	<div id="show_topic">
 		<div class="pane_right pane_small">
-			
-			<div class="topic_followers">
-				<% for user in @topic.users.first(6) %><%= image_tag(avatar_url(user, :thumb)) %><% end %>
-			</div>
-
-			<%= render :partial => "/links/index" if @topic.has? :links %>
-			<%= render :partial => "/attachments/index" if @topic.has? :attachments %>
-			<%= render :partial => "/images/index" if @topic.has? :images %>
-			<%= render :partial => "/feed/index" if @topic.has? :feed %>
-			
+			<% for element in @topic.elements.right %>
+				<div id="topic_<%= element.system_name %>"><%= render :partial => "/#{element.system_name}/index", :locals => { :element => element } %></div>
+			<% end %>
 		</div>
 		
 		<div class="pane_left pane_large">
@@ -36,8 +25,9 @@
 				<%= @topic.description %>
 			</div>
 			
-			<%= render :partial => "/maps/index" if @topic.has? :maps %>
-			<%= render :partial => "/notes/index" if @topic.has? :notes %>
+			<% for element in @topic.elements.left %>
+				<div id="topic_<%= element.system_name %>"><%= render :partial => "/#{element.system_name}/index", :locals => { :element => element } %></div>
+			<% end %>
 		
 			<%= render :partial => "/comments/ui/topics" %>
 			
