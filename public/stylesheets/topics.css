@@ -37,15 +37,6 @@ div.description h3 {
 
 }
 
-div.description span {
-	display:block;
-	background:#eee;
-	border:1px solid #e7e7e7;
-	overflow:auto;
-	padding:10px;
-	margin-top:10px;
-}
-
 div.description i {
 	margin-right:10px;
 	color:#6DBE2A;
@@ -56,6 +47,23 @@ div.description textarea {
 	max-width:100%;
 	padding:5px;
 	height:70px;
+}
+
+div#show_topic div.details {
+	display:block;
+	background:#eee;
+	border:1px solid #e7e7e7;
+	overflow:auto;
+	padding:10px;
+}
+
+div#show_topic div.details a.favorite {
+	margin-right:5px;
+}
+
+div#show_topic div.details small {
+	position:relative;
+	top:5px;
 }
 
 /* Topics Followers */

@@ -13,6 +13,17 @@ class Mailer < ActionMailer::Base
 		content_type "text/html"
   end  
 	
+	#
+	# new topic notification is sent out perspective users
+	#
+	def comment_notification(subject,to,from,comment)
+		recipients   to.login
+		subject      subject
+		from         "notifications@#{DOMAIN}"
+		body         :comment => comment, :subject => subject
+		content_type "text/html"
+  end
+	
 	def mailer_name
 		""
 	end

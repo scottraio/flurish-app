@@ -22,11 +22,9 @@
 				<div class="item">
 				
 					<div class="details">
-						<h2>
-							
-								<%= link_to topic.name, topic_path(topic) %>
-								<small>added 14 days ago by <%= link_to topic.creator.name, user_path(topic.creator), :class => "created_by", :style => "background:url(#{avatar_url(topic.creator, :tiny)}) no-repeat;" %></small>
-						
+						<h2>							
+							<%= link_to topic.name, topic_path(topic) %>
+							<small>added 14 days ago by <%= link_to topic.creator.name, user_path(topic.creator), :class => "created_by", :style => "background:url(#{avatar_url(topic.creator, :tiny)}) no-repeat;" %></small>
 						</h2>
 						<%= topic.description %>
 					</div>
