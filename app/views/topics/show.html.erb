@@ -22,7 +22,15 @@
 		<div class="pane_left pane_large">
 			
 			<div class="description"> 
-				<%= @topic.description %>
+				<h3><%= @topic.description %></h3>
+				<span class="round">
+					<%= link_to image_tag('/images/icons/favorite_grey.png'), "#", :class => "metal left" %>
+					<% if @user.following? @topic %>
+						<%= link_to "Stop Following", stop_following_topic_path(@topic), :class =>  "right metal" %>
+						<% else %>
+						<%= link_to "Follow", follow_topic_path(@topic), :class =>  "right metal" %>
+					<% end %>
+				</span>
 			</div>
 			
 			<% for element in @topic.elements.left %>

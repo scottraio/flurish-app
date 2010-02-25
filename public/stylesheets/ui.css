@@ -67,7 +67,7 @@ input.find {
 /* Buttons */
 
 .button {
-	padding:5px;
+	padding:5px 7px 7px 7px;
 	border:1px solid #c9c9c9;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -84,11 +84,9 @@ input.find {
 
 
 .button a, .button input {
-	background-color:#eee;
 	font-weight:bold; 
 	display:inline-block;
 	border:0;
-	padding:3px;
 	text-shadow: #fff 0px 1px 0px;
 	color:#597B26;
 	cursor:pointer;
@@ -99,7 +97,7 @@ input.find {
 .metal {
 	background:#eee url('/images/black_gradient_bottom.png') repeat-x bottom;
 	border:1px solid #ccc;
-	padding:8px 5px 5px 5px;
+	padding:5px 5px 5px 5px;
 	text-shadow: #fff 0px 1px 0px;
 	color:#444;
 	cursor:pointer;
@@ -137,15 +135,15 @@ input.find {
 }
 
 .button .add_element {
-	background: url('/images/icons/add_element.png') no-repeat scroll 5px 3px; 
+	background: url('/images/icons/add_element.png') no-repeat scroll 5px 4px; 
 }
 
 .button .topic {
-	background:url('/images/icons/topic16x16.png') no-repeat scroll 5px 2px; 
+	background:url('/images/icons/topic16x16.png') no-repeat scroll 5px 4px; 
 }
 
 .button .users {
-	background: url('/images/icons/users.png') no-repeat scroll 5px 2px; 
+	background: url('/images/icons/users.png') no-repeat scroll 5px 4px; 
 }
 
 .created_by {
