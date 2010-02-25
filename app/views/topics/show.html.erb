@@ -13,32 +13,41 @@
 
 <div id="main">
 	<div id="show_topic">
+		
+		<%- # Right Pane -%>
 		<div class="pane_right pane_small">
+			
+			<%- # Details - contains follow/unfollow/tags/favorite -%>
+			<div class="details round">
+				<small>
+				created by: <%= link_to @topic.creator.name, user_path(@topic.creator), :class => "created_by", :style => "background:url(#{avatar_url(@topic.creator, :tiny)}) no-repeat;" %>
+				</small>
+				<%= follow_topic %>
+				<%= link_to image_tag('/images/icons/favorite_grey12x12.png'), "#", :class => "favorite right metal" %>
+			</div>
+			
+			<%- # Right Elements -%>
 			<% for element in @topic.elements.right %>
 				<div id="topic_<%= element.system_name %>"><%= render :partial => "/#{element.system_name}/index", :locals => { :element => element } %></div>
 			<% end %>
+			
 		</div>
 		
+		<%- # Left Pane -%>
 		<div class="pane_left pane_large">
 			
+			<%- # Topic Description -%>
 			<div class="description"> 
 				<h3><%= @topic.description %></h3>
-				<span class="round">
-					<%= link_to image_tag('/images/icons/favorite_grey.png'), "#", :class => "metal left" %>
-					<% if @user.following? @topic %>
-						<%= link_to "Stop Following", stop_following_topic_path(@topic), :class =>  "right metal" %>
-						<% else %>
-						<%= link_to "Follow", follow_topic_path(@topic), :class =>  "right metal" %>
-					<% end %>
-				</span>
 			</div>
 			
+			<%- # Left Elements -%>
 			<% for element in @topic.elements.left %>
 				<div id="topic_<%= element.system_name %>"><%= render :partial => "/#{element.system_name}/index", :locals => { :element => element } %></div>
 			<% end %>
 		
+			<%- # Comments -%>
 			<%= render :partial => "/comments/ui/topics" %>
-			
 		</div>
 		
 	</div>
