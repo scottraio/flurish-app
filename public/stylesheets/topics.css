@@ -58,12 +58,13 @@ div#show_topic div.details {
 }
 
 div#show_topic div.details a.favorite {
-	margin-right:5px;
+	margin-left:5px;
 }
 
 div#show_topic div.details small {
 	position:relative;
 	top:5px;
+	float:right;
 }
 
 /* Topics Followers */

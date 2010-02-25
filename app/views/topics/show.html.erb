@@ -20,10 +20,10 @@
 			<%- # Details - contains follow/unfollow/tags/favorite -%>
 			<div class="details round">
 				<small>
-				created by: <%= link_to @topic.creator.name, user_path(@topic.creator), :class => "created_by", :style => "background:url(#{avatar_url(@topic.creator, :tiny)}) no-repeat;" %>
+				created by: <%= link_to @topic.creator.name, user_path(@topic.creator) %>
 				</small>
 				<%= follow_topic %>
-				<%= link_to image_tag('/images/icons/favorite_grey12x12.png'), "#", :class => "favorite right metal" %>
+				<%# link_to image_tag('/images/icons/favorite_grey12x12.png'), "#", :class => "favorite left metal" %>
 			</div>
 			
 			<%- # Right Elements -%>
