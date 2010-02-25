@@ -53,6 +53,12 @@ class TopicsController < ApplicationController
   end
   
   def destroy 
+		if @topic.destroy
+			redirect_to topics_path
+		else
+			flash[:error] = @topic.errors
+			render :edit
+		end
   end
 
 private

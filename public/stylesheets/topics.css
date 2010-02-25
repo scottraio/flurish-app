@@ -55,6 +55,7 @@ div#show_topic div.details {
 	border:1px solid #e7e7e7;
 	overflow:auto;
 	padding:10px;
+	margin-bottom:20px;
 }
 
 div#show_topic div.details a.favorite {
@@ -77,7 +78,7 @@ div.topic_followers img {
 /* Elements */
 
 div.element_frame {
-	margin-bottom:20px;
+	margin-bottom:40px;
 	border-top:1px solid #e5e5e5;
 	padding-top:10px;
 }
@@ -275,8 +276,7 @@ div#show_topic div.comments p.new_comment textarea {
 
 /* Topics Notes */
 
-div#topic_notes {	
-
+div#topic_notes {
 }
 
 div#topic_notes div.new_notes { 
@@ -284,4 +284,20 @@ div#topic_notes div.new_notes {
 	text-align:center;
 	color:#999;
 	font-size:1.2em;
+}
+
+div#topic_notes textarea {	
+	max-width:98%;
+	width:98%;
+	border-top:1px solid #bbb;
+	border-left:1px solid #bbb;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:5px;
+}
+
+div#notes_body {
+	white-space:pre-wrap;
 }

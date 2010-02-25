@@ -3,7 +3,7 @@ class Element < ActiveRecord::Base
 	belongs_to	:topic
 	belongs_to	:element_type
 	
-	has_many		:activities
+	has_many		:activities, :dependent => :destroy
 	has_many		:attachments
 	has_many		:comments
 	has_many		:events

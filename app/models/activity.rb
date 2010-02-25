@@ -11,6 +11,10 @@ class Activity < ActiveRecord::Base
 		end
 	end
 	
+	def self.feed_for(user)
+		find(:all, :include => [:creator, {:comments => :creator}, :activible, :topic], :conditions => sql(:conditions, user), :order => "activities.created_at DESC", :limit => 30, :offset => 0)
+	end
+	
 	def self.sql(kind,user)
 		case kind
 			when :conditions then build_conditions_sql(user)

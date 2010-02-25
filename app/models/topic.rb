@@ -7,12 +7,13 @@ class Topic < ActiveRecord::Base
 	
 	has_and_belongs_to_many :users
 	
-	has_many		:comments, :as => :commentable
+	has_many		:comments, :as => :commentable, :dependent => :destroy, :order => "comments.created_at ASC"
 	
-	has_many		:elements do |element|
+	has_many		:elements, :dependent => :destroy do |element|
 		def left; self.select{|e| e.element_type.float.eql? "left" }; end
 		def right; self.select{|e| e.element_type.float.eql? "right" }; end
 	end
+	
 	has_many		:element_types, :through => :elements
 	
 	has_one			:note,				:through => :elements

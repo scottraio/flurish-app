@@ -49,13 +49,13 @@ module ActivitiesHelper
 		
 	def status_in_words(status) 
 		actions = link_to("Comment", "#", :id => "comments_#{@activity.id}", :class => "comment_link")
- 		activible stamp(status.message,actions)
+ 		activible stamp(o(status.message),actions)
 	end
 	
 	# Branch Comments
 	
 	def comment_in_words(comment) 
- 		activible stamp(link_to("@"+@activity.topic.name, topic_path(@activity.topic)) + " " + comment.message)
+ 		activible stamp(link_to("@"+@activity.topic.name, topic_path(@activity.topic)) + " " + o(comment.message))
 	end
 	
 end

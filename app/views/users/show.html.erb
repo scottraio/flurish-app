@@ -17,6 +17,7 @@
 <div id="main">   
 	<div class="pane_left">
 	<div id="feed">
+			
 			<% for activity in @activities %>
 			<%= explanation_of activity  %>
 			<%= render :partial => "comments/ui/activities", :locals => {:activity => activity} %>

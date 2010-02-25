@@ -11,6 +11,8 @@ class NotesController < ApplicationController
 	def create
 		if @note.save
 			render_index
+		else
+			render :new, :layout => false
 		end
 	end
 	

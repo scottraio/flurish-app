@@ -1,4 +1,4 @@
-<% form_for :notes, :url => topic_element_notes_path(@topic,@element), :id => "notes_form" do |f| %>
+<% form_for :note, :url => topic_element_notes_path(@topic,@element), :html => { :id => "notes_form" } do |f| %>
 	<%= f.text_area :body %>
 	<p class="full center left clear"><%= f.submit "Save Note", :class => "metal" %></p>
 <% end %>

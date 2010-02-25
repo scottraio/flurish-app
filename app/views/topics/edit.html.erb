@@ -7,26 +7,37 @@
 </div>
 
 <div id="main">
+	
+	<%- # Left pane -%>
 	<div class="pane_left pane_large">
-	  
+		
+		<%- # Tag List & Description -%>
 		<p class="field">
 			<label>Tags</label><%= f.text_field :tag_list, :style => "width:98%" %>
 		</p>
-	
 		<p class="field">
 			<label>Description</label><%= f.text_area :description %>
 		</p>
 
-		<%# These options appear when relative element is enabled %>
-		
+		<%- # These options appear when relative element is enabled -%>
 		<p class="field">
 			<label>Privacy</label>
-			<input type="radio" /> Public
-			<input type="radio" /> Private
+ 			<%= f.radio_button :public, 1 %> <%= link_to "Public", "#", :id => "public" %>
+			<%= f.radio_button :public, 0 %> <%= link_to "Private", "#", :id => "private" %>
 		</p>
+		
+		<%- # Deletion of topic -%>
+		<p class="field">
+			<label style="margin-bottom:15px">Remove Topic</label>
+			<%= link_to "Destroy this topic", topic_path(@topic), :method => :delete, :class => "metal", :confirm => "Are you sure you want to destroy this topic?" %>
+		</p>
+		
 	</div>
 	
+	<%- # Right Pane -%>
 	<div class="pane_right pane_small">
+		
+		<%- # Element Selection -%>
 		<p class="field">
 			<label>Elements</label>
 			<h4>You will NOT lose any data by removing an element. Re-add an element in the future and continue where you left off. It's not witchcraft we promise.</h4>
@@ -50,6 +61,14 @@
 
 <script>
 	$(document).ready(function(){
+		$("a#public").click(function (){
+			$("input#topic_public_1").attr("checked", true);
+		});	
+		
+		$("a#private").click(function (){
+			$("input#topic_public_0").attr("checked", true);
+		});
+		
 		$(".edit_elements a").click(function (){
 			element = $($(this).attr("rel"));
 			//options	= $($(this).attr("rel") + "_options");

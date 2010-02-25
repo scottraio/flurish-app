@@ -38,5 +38,16 @@ module ApplicationHelper
     end.to_s << '</ul>'
     error_list
   end
+
+ # The Output method o(text or html), is used to format user generated content
+
+	def o(text)
+		t = h(text)
+		if t[0..2].eql? "/me" then t = "<b class=\"me\">#{t.gsub("/me", "")}</b>"
+		end
+		
+		return auto_link(t)
+	end
+
 	
 end

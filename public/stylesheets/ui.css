@@ -1,6 +1,12 @@
 @import "jquery-ui/ui.css";
 @import "uploadify.css";
 
+/* Output Classes */
+
+b.me {
+	font-style:italic
+}
+
 /* Fields */
 
 p.field {

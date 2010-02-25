@@ -74,8 +74,8 @@ class User < ActiveRecord::Base
 	end
 	
 	def feed
-		conditions = Activity.sql(:conditions, self)
-		Activity.find(:all, :include => [:creator, {:comments => :creator}, :activible, {:element => :topic}], :conditions => conditions, :order => "activities.created_at DESC")
+		# Factory method for grabbing activities for users
+		Activity.feed_for self 
 	end
 	
 	def current_status
