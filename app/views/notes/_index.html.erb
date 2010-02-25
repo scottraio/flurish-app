@@ -9,11 +9,11 @@
 
 <script>
 	$(document).ready(function(){
-		
+		<% unless @topic.note.nil? %>
 		$("div#notes_body").dblclick(function(){
 			$("div#topic_notes").load("<%= edit_topic_element_note_path(@topic,element,@topic.note) %>")
 		})
-		
+		<% end %>
 		init();
 	})
 </script>
