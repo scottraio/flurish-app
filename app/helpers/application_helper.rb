@@ -48,6 +48,14 @@ module ApplicationHelper
 		
 		return auto_link(t)
 	end
+	
+	def b(text)
+		t = h(text)
+		t.gsub!("[code]", "<code class=\"prettyprint\">")
+		t.gsub!("[/code]", "</code>")
+		
+		return auto_link(t)
+	end
 
 	
 end
