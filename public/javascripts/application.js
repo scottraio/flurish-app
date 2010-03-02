@@ -11,5 +11,7 @@ function init() {
 	  else $.get(this.href); 
 	  return false; 
 	});
+	
+	prettyPrint();
 }
 	
