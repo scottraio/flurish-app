@@ -15,14 +15,28 @@
 </div>
 
 <div id="main">   
-	<div class="pane_left">
-	<div id="feed">
+	<div class="pane_left pane_large">
+		<div id="feed">
 			
-			<% for activity in @activities %>
-			<%= explanation_of activity  %>
-			<%= render :partial => "comments/ui/activities", :locals => {:activity => activity} %>
-		<% end %>
+				<% for activity in @activities %>
+				<%= explanation_of activity  %>
+				<%= render :partial => "comments/ui/activities", :locals => {:activity => activity} %>
+			<% end %>
+		</div>
 	</div>
+	
+	<%- # The right side is for displaying Tasks, Events, Deadlines, etc. -%>
+	
+	<div class="pane_right pane_small">
+		<h3 style="color:#555;">Tasks</h3>
+		<div class="list_box">
+			<p class="list_item with_icon_small" style="background:url('/images/icons/tasks.png') no-repeat">
+				Business Cards @ <a>Verascale Marketing</a>
+			</p>
+			<p class="list_item with_icon_small" style="background:url('/images/icons/tasks.png') no-repeat">
+				Business Cards @ <a>Verascale Marketing</a>
+			</p>
+		</div>
 	</div>
 
 </div>

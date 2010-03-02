@@ -335,7 +335,11 @@ div.list h2 small {
 	font-weight:normal;
 }
 
-.with_icon {
+.with_icon_small{
+	padding-left:20px;
+}
+
+.with_icon_large {
 	max-width:855px;
 	padding-left:60px;
 }
@@ -436,4 +440,15 @@ div#feed div.comments p.new_comment textarea {
 
 div.topic {
 	background:url('/images/icons/topics32x32.png') no-repeat;
+}
+
+/* User Page features; tasks, notifications, events, deadlines, etc. */
+
+div.list_box {
+	height:100px;
+	width:100%;
+}
+
+p.list_item {
+	margin:10px 0;
 }

@@ -29,6 +29,24 @@
 						<%= f.file_field :avatar %>
 					</div>
 				</p>
+			
+			<%- #User options -%>
+			<h3 style="width:100%; border-bottom:1px solid #ccc; margin-bottom:15px; padding-bottom:5px">Options</h3>
+				
+				<p class="field">
+					<label>Send notifications to</label>
+					<input type="checkbox">My email</input><br/>
+					<input type="checkbox">My phone</input>
+				</p>
+				<p class="field">
+					<label>I'd like to know when</label>
+					<input type="checkbox">Users add to a topic I'm following</input><br/>
+					<input type="checkbox">A user I'm following adds a Topic</input>
+				</p>
+				<p class="field">
+					<label>Following</label>
+					<input type="checkbox">Follow all topics created by people I am following</input>
+				</p>
 			</div>
 			<p class="full center left clear"><%= f.submit "Update Information", :class => "metal" %></p>
 		<% end %>
