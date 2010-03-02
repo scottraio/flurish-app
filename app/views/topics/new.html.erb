@@ -5,13 +5,14 @@
 </div>
 
 <div id="main">
-	<div id="create_topic" class="padded">
+	<%- #This section should be similar to the Topic edit page, maybe identical -%>
+	<div id="create_topic" class="pane_large pane_left">
 		<% form_for @topic do |f| %>
 		  <p class="field">
 				<label>Branch Name</label><%= f.text_field :name %>
 			</p>
 			<p class="field">
-				<label>Tags</label><%= f.text_field :tag_list, :size => 100 %>
+				<label>Tags</label><%= f.text_field :tag_list  %>
 			</p>
 			<p class="field">
 				<label>Description</label><%= f.text_area :description %>
@@ -19,4 +20,5 @@
 			<p class="full center left clear"><%= f.submit "Create Topic", :class => "metal" %></p>
 		<% end %>
 	</div>
+
 </div>
