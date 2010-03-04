@@ -6,7 +6,6 @@
 	<div class="new_notes"><%= link_to "Add", new_topic_element_note_path(@topic,element), :class => "remote", :rel => "#topic_notes" %> notes to this topic.</div>
 <% end %>
 
-
 <script>
 	$(document).ready(function(){
 		<% unless @topic.note.nil? %>
