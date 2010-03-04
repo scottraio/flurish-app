@@ -156,6 +156,12 @@ input.find {
 	background: url('/images/icons/users.png') no-repeat scroll 5px 4px; 
 }
 
+.button .add_task {
+	background:url('/images/icons/add_tasks.png') no-repeat scroll 0 1px;
+	padding-left:20px;
+	padding-top:2px;
+}
+
 .created_by {
 	padding: 2px 3px 3px 18px;
 	margin-left:2px;

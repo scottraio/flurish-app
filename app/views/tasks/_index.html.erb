@@ -1,7 +1,7 @@
-<div class="topic_tasks element_frame" rel="tasks"> 
+<div class="topic_tasks" rel="tasks"> 
 	<div class="element_header tasks_header" style="display:none">Tasks</div>
 	<p>
-    <span class="left" style="background:url('/images/icons/tasks.png') no-repeat">
+    <span class="left" style="background:url('/images/icons/tasks.png') no-repeat scroll 0 2px">
 			<%= link_to "Create business cards", "#" %>
     	<small>added 2 hours ago by Brandon Dek</small>
 		</span>
@@ -25,8 +25,19 @@
 			<%= link_to "Find quality business card printer", "#" %>
     	<small>added 2 hours ago by Brandon Dek</small>
 		</span>
-		<div class="task_controls right">
+		<div class="task_ right">
 			<%= link_to "Pick up" ,"#", :class => "metal" %>
 		</div>
   </p>
+
+<div class="task_bottom">
+	<%= link_to "All ", "#" %>
+	<%= link_to "Incomplete ", "#" %>
+	<%= link_to "Picked up ", "#" %>
+	<%= link_to "Completed ", "#" %>
+	<div class="button right">
+	<%= link_to "Add", "#", :class => "add_task" %>
+	</div>
+</div>
+
 </div>
