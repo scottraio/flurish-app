@@ -268,6 +268,16 @@ div#title h1 small {
 	top:-3px;
 }
 
+div.current_status {
+	font-size:1.4em;
+	float:right;
+	line-height:2.4em;
+}
+
+div.current_status a {
+	font-size:0.7em;
+	margin-left:10px;
+}
 
 .pane_large {
 	width:563px;

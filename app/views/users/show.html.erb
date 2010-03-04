@@ -6,8 +6,15 @@
 				
 		<% form_for :statuses, :id => "status", :url => user_statuses_path(@user) do |f| %>
 		  <p id="status">
-				<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
-				<%= f.submit("Set Status", :id => "submit_status", :class => "button", :style => "display:none;")	%>
+				<% if @user.current_status == nil? %>
+					<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
+					<%= f.submit("Set Status", :id => "submit_status", :class => "button", :style => "display:none;")	%>
+				<% else %>
+					<div class="current_status">
+						<%= @user.current_status %>
+						<%= link_to "clear", "#" %>
+					</div>
+				<% end %>
 			</p>
 		<% end %>
 		
@@ -36,7 +43,7 @@
 			<p class="list_item with_icon_small" style="background:url('/images/icons/tasks.png') no-repeat">
 				Business Cards @ <a>Verascale Marketing</a>
 			</p>
-		</div>
+		</div>		
 	</div>
 
 </div>
