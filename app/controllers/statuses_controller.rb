@@ -17,6 +17,7 @@ private
 	def set_status
 		@user 	= User.get(current_user,params)
 		@status = Status.set(@user,params)
+		@user.update_attributes(:has_status => 1)
 	end
 
 end
