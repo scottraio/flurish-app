@@ -1,7 +1,11 @@
 <div class="element_header notes_header" style="display:none">Notes</div>
 
-<% unless @topic.note.nil? or @topic.note.body.empty? %>
+<% unless @topic.note.nil? %>
+	<% if @topic.note.body.empty? %>
+	<div class="new_notes"><%= link_to "Edit", topic_element_note_path(@topic,element,@topic.note), :class => "remote", :rel => "#topic_notes" %></div>
+	<% else %>
 	<div id="notes_body"><%= b @topic.note.body %></div>
+	<% end %>
 <% else %>
 	<div class="new_notes"><%= link_to "Add", new_topic_element_note_path(@topic,element), :class => "remote", :rel => "#topic_notes" %> notes to this topic.</div>
 <% end %>
