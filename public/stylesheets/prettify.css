@@ -12,6 +12,7 @@ code.prettyprint{
 	display:block;
 	background-color:#f0f0f0;
 	border:1px solid #ccc;
+	border-left:10px solid #ccc;
 	font-family:"Courier New";
 	font-size:1em;
 	font-weight:bold;
