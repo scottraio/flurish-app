@@ -1,47 +1,8 @@
 <% form_for @note, :url => topic_element_note_path(@topic,@element,@note), :html => { :id => "notes_form" } do |f| %>
-	<%= f.text_area :body %>
+	<%= render :partial => "/notes/ui/form", :locals => {:f => f} %>
 	<p class="full center left clear"><%= f.submit "Save Note", :class => "metal" %></p>
 <% end %>
 
 
-<script src="/javascripts/tinymce/jquery.tinymce.js" type="text/javascript"></script> 
 
-<script>
-	$(document).ready(function(){
-		
-		$('textarea#note_body').tinymce({
-			script_url : '/javascripts/tinymce/tiny_mce.js',
-			// General options
-			//plugins : "syntaxhl",
-			theme : "advanced",
-			theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,undo,redo,|,removeformat,syntax",
-			theme_advanced_buttons2 : "",
-			theme_advanced_toolbar_location : "top",
-			theme_advanced_toolbar_align : "left",
-			content_css : "/stylesheets/prettify.css",
-			onchange_callback : "prettyPrint",
-			setup: function(ed) {
-			        //Custom button Code (Code Snippet Wrapper)
-			        ed.addButton('syntax', {
-			            title: 'Wrap code tags around selected text',
-			            image: 'http://mrroa.com/Content/images/code.gif',
-			            onclick: function() {
-			                ed.selection.setContent('<code class="prettyprint">' + ed.selection.getContent({ format: 'text' }) + '</code>');             
-			             }         
-			         });     
-			      }
-		})
-		
-		
-		// Ajax Comment form
-		$("form#notes_form").submit(function(){
-			$(this).ajaxSubmit({
-				success: function(data) {
-					$("#topic_notes").html(data);
-				}
-			})
-			return false;
-		});
-	});
-</script>
 

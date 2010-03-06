@@ -2,8 +2,6 @@ class Note < ActiveRecord::Base
 	
 	belongs_to	:element
 	
-	validates_presence_of 	:body
-	
 	def self.get(element,user,options={})
 		n 						= self.find(options[:id])
 		n.element 		= element
