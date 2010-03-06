@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 	has_many		:compositions, 	:class_name => "Message", 	:foreign_key 	=> "messenger_id"
 	has_many		:assignments, 	:class_name => "Task", 			:foreign_key 	=> "assigned_to"
 	
-	has_many		:statuses
+	has_many		:statuses, :order => "statuses.created_at DESC"
 	has_many		:attachments
 	has_many		:comments
 	has_many		:events
@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
 	end
 	
 	def current_status
-		status = self.statuses.find(:first, :order => "statuses.created_at DESC")
+		status = self.statuses.first
 		status.nil? ? "No current status" : status.message
 	end
 	

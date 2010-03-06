@@ -50,7 +50,7 @@ module ApplicationHelper
 	end
 	
 	def b(text)
-		t = h(text)
+		t = text
 		t.gsub!("[code]", "<code class=\"prettyprint\">")
 		t.gsub!("[/code]", "</code>")
 		

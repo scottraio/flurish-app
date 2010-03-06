@@ -3,20 +3,11 @@
 		<h1>
 			<%= image_tag(avatar_url(@user, :thumb)) %><%= current_user.first_name %> <%= current_user.last_name %><small><%= link_to "(edit)", edit_user_path(@user) %></small>
 		</h1>
-				
-		<% form_for :statuses, :id => "status", :url => user_statuses_path(@user) do |f| %>
-		  <p id="status">
-				<% if @user.has_status == "0" %>
-					<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
-					<%= f.submit("Set Status", :id => "submit_status", :class => "button", :style => "display:none;")	%>
-				<% else %>
-					<div class="current_status">
-						<label><%= @user.current_status %></label
-						<%= link_to "clear", "/clear_status" %>
-					</div>
-				<% end %>
-			</p>
-		<% end %>
+					
+	  <div id="status">
+			<%= render :partial => "/statuses/ui/new_status" unless @user.has_status? %>
+			<%= render :partial => "/statuses/ui/current_status" if @user.has_status? %>
+		</div>
 		
 	</span>
 </div>
@@ -51,18 +42,6 @@
 
 <script>
 	$("document").ready(function(){
-		
-		// Status Message
-		$("input#statuses_message").focus(function(){
-			if($(this).val() == "What are you working on?") $(this).val("");
-			$("input#submit_status").css('display', '');
-		});
-		
-		$("input#statuses_message").blur(function(){
-			if($(this).val() == "") {
-				$(this).val("What are you working on?"); $("input#submit_status").css('display', 'none');	
-			}
-		});
 		
 		// Comment links 
 		

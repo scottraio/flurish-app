@@ -1,0 +1,5 @@
+<div class="current_status">
+	<label><%= @user.statuses.first.message %></label>
+	<%= link_to "clear", status_path(@user.statuses.first), :method => :delete, :rel => "#status", :class => "remote" %>
+</div>
+

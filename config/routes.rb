@@ -37,6 +37,8 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
 	map.resources :activities, :has_many => [:comments]
+	
+	map.resources :statuses
 
 	map.resources :users, :member => [:follow, :stop_following] do |user|
 		user.resources :statuses

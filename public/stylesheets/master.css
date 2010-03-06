@@ -215,12 +215,12 @@ div#title span {
 
 /* Title - with status bar */
 
-div#title span p#status {
+div#title span div#status {
 	float:right;
 	margin-top:2px;
 }
 
-div#title span p#status input.status {
+div#title span input.status {
 	font-size:1.4em;
 	width:400px;
 	color:#999;

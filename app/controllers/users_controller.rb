@@ -15,12 +15,7 @@ class UsersController < ApplicationController
 		@user.stop_following User.find(params[:id])
 		redirect_to users_url
 	end
-	
-	def clear_status
-	  @user = User.get(current_user,params)
-	  @user.update_attributes(:has_status => 0)
-	  redirect_to root_url
-	end
+
 	
 	def index
 		@users = User.find_all_by_organization_id(current_user.organization_id, :conditions => ["users.id != ?", current_user.id])

@@ -1,0 +1,22 @@
+<% form_for :statuses, :id => "form_status", :url => user_statuses_path(@user) do |f| %>
+	<%= f.text_field :message, :class => "status", :value => "What are you working on?" %>
+	<%= f.submit("Set Status", :id => "submit_status", :class => "button", :style => "display:none;")	%>
+<% end %>
+
+<script>
+$("document").ready(function(){
+
+	// Status Message
+	$("input#statuses_message").focus(function(){
+		if($(this).val() == "What are you working on?") $(this).val("");
+		$("input#submit_status").css('display', '');
+	});
+
+	$("input#statuses_message").blur(function(){
+		if($(this).val() == "") {
+			$(this).val("What are you working on?"); $("input#submit_status").css('display', 'none');	
+		}
+	});
+
+});
+</script>
