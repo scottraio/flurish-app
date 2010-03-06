@@ -249,9 +249,10 @@ div#title h1 {
 	color:#444; 
 	font-size:2em;
 	font-weight:normal;
-	line-height:1.9em;
+	line-height:1.8em;
 	float:left;
 	text-shadow: #fff 0px 1px 0px;
+	margin-top:-2px;
 }
 
 div#title h1 img {
@@ -271,12 +272,25 @@ div#title h1 small {
 div.current_status {
 	font-size:1.4em;
 	float:right;
-	line-height:2.4em;
+	margin-top:10px;
+}
+
+div.current_status label {
+	white-space:nowrap;
+	text-overflow:ellipsis; /* for internet explorer */
+	overflow:hidden;
+	max-width:500px;
+	float:right;
+	display:block;
+	position:relative;
+	right:40px;
 }
 
 div.current_status a {
 	font-size:0.7em;
-	margin-left:10px;
+	float:right;
+	clear:both;
+	margin-top:-16px;
 }
 
 .pane_large {

@@ -11,7 +11,7 @@
 					<%= f.submit("Set Status", :id => "submit_status", :class => "button", :style => "display:none;")	%>
 				<% else %>
 					<div class="current_status">
-						<%= @user.current_status %>
+						<label><%= @user.current_status %></label
 						<%= link_to "clear", "/clear_status" %>
 					</div>
 				<% end %>
