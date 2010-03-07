@@ -44,7 +44,7 @@ div.error {
 a {
 	border:0;
 	text-decoration:none;
-	color:#677B27; 
+	color:#3E6211; 
 }
 
 a:hover {
@@ -388,6 +388,29 @@ div.item div.details {
 	text-overflow:ellipsis;
 	font-size:0.9em;
 	line-height:1.4em;
+}
+
+div.item div.details b a {
+	font-size:1.2em;
+	text-decoration:underline;
+}
+
+div.item div.count {
+	width:50px;
+	height:35px;
+	text-align:center;
+	margin-right:10px;
+	padding-top:10px;
+	line-height:0.8em;
+	font-size:1.6em;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background:#f0f0f0 url('/images/black_gradient_bottom.png') repeat-x bottom;
+}
+
+div.item div.count small {
+	font-size:0.5em;
+	
 }
 
 div.item div.follow {

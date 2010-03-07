@@ -20,18 +20,21 @@
 				<%= text_field :topics, :keyword, :class => "find", :value => "Search for a topic" %>
 				<% for topic in @topics %>
 				<div class="item">
-				
-					<div class="details">
-						<h2>							
-							<%= link_to topic.name, topic_path(topic) %>
-							<small>added 14 days ago by <%= link_to topic.creator.name, user_path(topic.creator), :class => "created_by", :style => "background:url(#{avatar_url(topic.creator, :tiny)}) no-repeat;" %></small>
-						</h2>
-						<%= topic.description %>
+					
+					<div class="count left">
+						<%= topic.users.size %>
+						<small>followers</small>
+					</div>
+					
+					<div class="left details">
+							<b><%= link_to topic.name, topic_path(topic) %></b>
+							<small>added 14 days ago by <%= link_to topic.creator.name, user_path(topic.creator) %></small>
+							<div><%= topic.description %></div>
 					</div>
 				
 					<div class="follow">
 						<% if @user.following? topic %>
-							<%= link_to "Stop Following", stop_following_topic_path(topic), :class =>  "metal" %>
+							<%= link_to "Unfollow", stop_following_topic_path(topic), :class =>  "metal" %>
 						<% else %>
 							<%= link_to "Follow", follow_topic_path(topic), :class =>  "metal" %>
 						<% end %>
