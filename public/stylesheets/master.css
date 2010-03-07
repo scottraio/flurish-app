@@ -390,6 +390,11 @@ div.item div.details {
 	line-height:1.4em;
 }
 
+div.item div.details small img {
+	width:12px;
+	height:12px;
+}
+
 div.item div.details b a {
 	font-size:1.2em;
 	text-decoration:underline;
