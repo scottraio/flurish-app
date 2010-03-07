@@ -43,7 +43,7 @@
 			
 			<%- # Left Elements -%>
 			<% for element in @topic.elements.left %>
-				<div id="topic_<%= element.system_name %>" class="element_frame" rel="<%= element.system_name %>"><%= render :partial => "/#{element.system_name}/index", :locals => { :element => element } %></div>
+					<div id="topic_<%= element.system_name %>" class="element_frame" rel="<%= element.system_name %>"><%= render :partial => "/#{element.system_name}/index", :locals => { :element => element } %></div>
 			<% end %>
 		
 			<%- # Comments -%>

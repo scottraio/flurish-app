@@ -38,6 +38,9 @@ class Topic < ActiveRecord::Base
 	
 	def after_create
 		self.users << self.creator
+		for user in [self.creator.followers, self.creator].flatten!
+			Mailer.deliver_topic_notification(self,user)
+		end
 	end
 	
 	def self.get(user,params)
