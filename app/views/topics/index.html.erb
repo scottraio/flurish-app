@@ -28,7 +28,7 @@
 					
 					<div class="left details">
 							<b><%= link_to topic.name, topic_path(topic) %></b>
-							<small>added time_ago_in_words(topic.created_at) ago by <%= link_to topic.creator.name, user_path(topic.creator) %></small>
+							<small>added <%= time_ago_in_words(topic.created_at) %> ago by <%= link_to topic.creator.name, user_path(topic.creator) %></small>
 							<div><%= topic.description %></div>
 					</div>
 				
