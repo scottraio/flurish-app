@@ -34,7 +34,7 @@ Rails::Initializer.run do |config|
 	
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
-	
+	config.action_mailer.default_url_options = { :host => 'www.getflurish.com' }
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
   config.time_zone = 'Pacific Time (US & Canada)'
@@ -63,6 +63,7 @@ end
 ActionMailer::Base.template_root 					= "#{Rails.root}/app/mailers"
 ActionMailer::Base.delivery_method 				= :smtp
 ActionMailer::Base.smtp_settings[:domain] = DOMAIN
+
 
 
 
