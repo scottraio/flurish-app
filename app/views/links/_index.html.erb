@@ -1,31 +1,33 @@
 <div class="element_header links_header" style="display:none">Links</div>
 <div class="element_sort"><a>abc</a> | <a>most recent</a> | <a>most useful</a></div>
-<p>
-	<span class="expand_link left" style="background:url('/images/icons/arrow_right.png') no-repeat"></span>
-	<a>http://onehub.com/products/</a>
-	
-	<small style="display:none" class="link_description">
-		<label>added by <%= link_to "Brandon Dek", "#", :class => "created_by", :style => "background:url('/users/avatars/3/tiny_Photo_on_2009-10-22_at_20.49.jpg') no-repeat" %></label>
-		This page shows a good example of the look and feel we're going for. Notice the colors and use of subtle gradients.
-	</small>
-</p>
-<p><span class="left" style="background:url('/images/icons/arrow_right.png') no-repeat"></span><a>http://www.iconfinder.net/search/?q=iconset:fatcow</a></p>
-<p><span class="left" style="background:url('/images/icons/arrow_right.png') no-repeat"></span><a>http://www.facebook.com</a></p>
+
+<% for link in @topic.links %>
+	<p>
+		<span class="expand_link left" rel="<%= link.id %>" style="background:url('/images/icons/arrow_right.png') no-repeat"></span>
+		<%= link_to link.url, link.url %>
+
+		<small style="display:none" class="description_<%= link.id %>">
+			<label>added by <%= link_to link.creator.name, "#", :class => "created_by", :style => "background:url('/users/avatars/3/tiny_Photo_on_2009-10-22_at_20.49.jpg') no-repeat" %></label>
+			<%= link.description %>
+		</small>
+	</p>
+<% end %>
 
 <div class="topic_footer">
-	<%= link_to "add link", "#", :class => "metal right" %>
+	<%= link_to "Add", new_topic_element_link_path(@topic,element), :class => "remote", :rel => "#topic_links" %>
 </div>
 
 
 <script>
 	$("document").ready(function(){
 		$('.expand_link').toggle(function(){
-			$('.link_description').css('display', '');
-			$('.expand_link').css('background', 'url(/images/icons/arrow_down.png)')
+			link = $(this).attr('rel');
+			$(".description_" + link).css('display', '');
+			$(this).css('background', 'url(/images/icons/arrow_down.png)')
 		},
 		function(){
-			$('.link_description').css('display', 'none');
-			$('.expand_link').css('background', 'url(/images/icons/arrow_right.png)')
+			$(".description_" + link).css('display', 'none');
+			$(this).css('background', 'url(/images/icons/arrow_right.png)')
 		});
 	})
 </script>
