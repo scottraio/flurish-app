@@ -97,7 +97,11 @@ div.element_header {
 
 div.element_sort {
 	font-size:0.8em;
-	margin-bottom:10px;
+	margin-top:-10px;
+	font-weight:bold;
+	text-transform:uppercase;
+	background:#E3FFDF;
+	padding:5px;
 }
 
 div.topic_footer {

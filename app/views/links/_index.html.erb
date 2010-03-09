@@ -1,9 +1,9 @@
 <div class="element_header links_header" style="display:none">Links</div>
-<div class="element_sort"><a>abc</a> | <a>most recent</a> | <a>most useful</a></div>
+<%-#<div class="element_sort"><a>abc</a> | <a>most recent</a> | <a>most useful</a></div> %>
 
 <% for link in @topic.links %>
 	<p>
-		<span class="expand_link left" rel="<%= link.id %>" style="background:url('/images/icons/arrow_right.png') no-repeat"></span>
+		<span class="expand_link left hidden" rel="<%= link.id %>" style="background:url('/images/icons/arrow_right.png') no-repeat"></span>
 		<%= link_to link.url, link.url %>
 
 		<small style="display:none" class="description_<%= link.id %>">
@@ -14,20 +14,23 @@
 <% end %>
 
 <div class="topic_footer">
-	<%= link_to "Add", new_topic_element_link_path(@topic,element), :class => "remote", :rel => "#topic_links" %>
+	<%= link_to "Add", new_topic_element_link_path(@topic,element), :rel => "facebox" %>
 </div>
 
 
 <script>
 	$("document").ready(function(){
-		$('.expand_link').toggle(function(){
+		$('.expand_link').click(function(){
 			link = $(this).attr('rel');
-			$(".description_" + link).css('display', '');
-			$(this).css('background', 'url(/images/icons/arrow_down.png)')
-		},
-		function(){
-			$(".description_" + link).css('display', 'none');
-			$(this).css('background', 'url(/images/icons/arrow_right.png)')
+			if($(this).hasClass('hidden')) {
+				$(".description_" + link).show('slow');
+				$(this).css('background', 'url(/images/icons/arrow_down.png)');
+				$(this).removeClass('hidden');
+			} else {
+				$(".description_" + link).hide();
+				$(this).css('background', 'url(/images/icons/arrow_right.png)');
+				$(this).addClass('hidden');
+			}
 		});
 	})
 </script>
