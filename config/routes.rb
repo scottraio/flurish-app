@@ -47,6 +47,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :topics, :member => [:follow, :stop_following], :has_many => [:comments] do |topic|
 		topic.resources :elements do |element|
 			element.resources :notes
+			element.resources :links
 		end
 	end
 
