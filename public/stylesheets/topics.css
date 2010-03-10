@@ -224,6 +224,15 @@ div#topic_links p small label {
 	margin-bottom:5px;
 }
 
+div.link_create {
+	margin:20px;
+	margin-bottom:50px;
+}
+
+div.link_create textarea {
+	max-width:300px;
+}
+
 /* Topics maps */
 
 div#topic_maps {

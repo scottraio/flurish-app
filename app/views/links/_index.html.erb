@@ -4,10 +4,10 @@
 <% for link in @topic.links %>
 	<p>
 		<span class="expand_link left hidden" rel="<%= link.id %>" style="background:url('/images/icons/arrow_right.png') no-repeat"></span>
-		<%= link_to link.url, link.url %>
+		<%= link_to link.url, link.url, :target => "_blank" %>
 
 		<small style="display:none" class="description_<%= link.id %>">
-			<label>added by <%= link_to link.creator.name, "#", :class => "created_by", :style => "background:url('/users/avatars/3/tiny_Photo_on_2009-10-22_at_20.49.jpg') no-repeat" %></label>
+			<label>added by <%= link_to link.creator.name, "#", :class => "created_by", :style => "background:url(#{avatar_url(link.creator, :tiny)}) no-repeat" %></label>
 			<%= link.description %>
 		</small>
 	</p>
@@ -23,7 +23,7 @@
 		$('.expand_link').click(function(){
 			link = $(this).attr('rel');
 			if($(this).hasClass('hidden')) {
-				$(".description_" + link).show('slow');
+				$(".description_" + link).show();
 				$(this).css('background', 'url(/images/icons/arrow_down.png)');
 				$(this).removeClass('hidden');
 			} else {
