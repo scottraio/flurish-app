@@ -1,0 +1,9 @@
+<%= display_standard_flashes %>
+
+<div class="form_create">
+	<h1>Add a Task</h1>
+	<% form_for :task, :url => topic_element_tasks_path(@topic,@element), :html => { :id => "tasks_form" } do |f| %>
+		<%= render :partial => "/tasks/ui/form", :locals => {:f => f} %>
+		<p class="full center left clear"><%= f.submit "Save Task" ,:class => "metal" %></p>
+	<% end %>
+</div

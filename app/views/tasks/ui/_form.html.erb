@@ -1,0 +1,36 @@
+<p class="field">
+	<label>Subject</label>
+	<%= f.text_field :subject %>
+</p>
+<p class="field">
+	<label>Due Date</label>
+	<%= f.text_field :due_date %>
+</p>
+<p class="field">
+	<label>Priority</label>
+	<%= f.radio_button :priority, 0, :checked => true %>Low	
+	<%= f.radio_button :priority, 1 %>Medium	
+	<%= f.radio_button :priority, 2 %>High	
+</p>
+<p class="field">
+	<label>Description</label>
+	<%= f.text_area :description %>
+</p>
+
+
+
+<script>
+$("#tasks_form").submit(function(){
+	$(this).ajaxSubmit({
+		success: function(data) {
+			$("#topic_tasks").html(data);
+			$.facebox.close();
+			init();
+		},
+		error: function(xhr,err) {
+			$("#facebox td.body").html(xhr.responseText);
+		}
+	})
+	return false;
+});
+</script>

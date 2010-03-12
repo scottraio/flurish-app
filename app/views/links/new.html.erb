@@ -1,6 +1,6 @@
 <%= display_standard_flashes %>
 
-<div class="link_create">
+<div class="form_create">
 	<h1>Add a link</h1>
 	<% form_for :link, :url => topic_element_links_path(@topic,@element), :html => { :id => "links_form" } do |f| %>
 		<%= render :partial => "/links/ui/form", :locals => {:f => f} %>

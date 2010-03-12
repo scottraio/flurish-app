@@ -5,10 +5,23 @@ class Task < ActiveRecord::Base
 	belongs_to	:element
 	 
 	
-	validates_presence_of 	:due_date
 	validates_presence_of 	:priority
 	validates_presence_of 	:subject
 	validates_presence_of 	:description
-	validates_presence_of 	:assigned_to
+	
+	def self.get(element,user,options={})
+		t 						= self.find(options[:id])
+		t.element 		= element
+		t.creator 		= user
+		t.attributes	= options[:task]
+		t
+	end
+	
+	def self.set(element,user,options={})
+		t 				= self.new(options[:task])
+		t.element = element
+		t.creator = user
+		t
+	end
 	
 end

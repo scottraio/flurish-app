@@ -1,43 +1,40 @@
 <div class="topic_tasks" rel="tasks"> 
 	<div class="element_header tasks_header" style="display:none">Tasks</div>
-	<p>
-    <span class="left" style="background:url('/images/icons/tasks.png') no-repeat scroll 0 2px">
-			<%= link_to "Create business cards", "#" %>
-    	<small>added 2 hours ago by Brandon Dek</small>
-		</span>
-		<div class="task_controls right">
-			<%= link_to "Pick up" ,"#", :class => "metal" %>
-		</div>
-  </p>
+	<% for task in @topic.tasks %>
+		<p>
+	    <span class="left" style="background:url('/images/icons/<%= task_icon task.priority %>') no-repeat scroll 0 2px">
+	
+				<%= link_to task.subject, "#", :class => "expand_task", :rel => "#{task.id}" %>
+				<small>Priority: <b><%= priority_in_words task.priority %></b></small>
+				<span class="description description_<%= task.id %>" style="display:none">
+	    		<small><%= task.description %></small>
+					<small><b>Due: <%= due_date task.due_date  %></b></small>
+				</span>
+			</span>
+			<div class="task_controls right">
+				<%= link_to "Pick up" ,"#", :class => "metal" %>
+			</div>
+	  </p>
+	<% end %>
 
-	<p>
-    <span class="left" style="background:url('/images/icons/tasks.png') no-repeat">
-			<%= link_to "Design website scope", "#" %>
-    	<small>added 2 hours ago by Brandon Dek</small>
-		</span>
-		<div class="task_controls right">
-			<%= link_to "Pick up" ,"#", :class => "metal" %>
+	<div class="task_bottom">
+		<%= link_to "All ", "#" %>
+		<%= link_to "Incomplete ", "#" %>
+		<%= link_to "Picked up ", "#" %>
+		<%= link_to "Completed ", "#" %>
+		<div class="button right">
+		<%= link_to "Add", new_topic_element_task_path(@topic,element), :class => "add_task", :rel => "facebox" %>
 		</div>
-  </p>
-
-	<p>
-    <span class="left" style="background:url('/images/icons/tasks.png') no-repeat">
-			<%= link_to "Find quality business card printer", "#" %>
-    	<small>added 2 hours ago by Brandon Dek</small>
-		</span>
-		<div class="task_ right">
-			<%= link_to "Pick up" ,"#", :class => "metal" %>
-		</div>
-  </p>
-
-<div class="task_bottom">
-	<%= link_to "All ", "#" %>
-	<%= link_to "Incomplete ", "#" %>
-	<%= link_to "Picked up ", "#" %>
-	<%= link_to "Completed ", "#" %>
-	<div class="button right">
-	<%= link_to "Add", "#", :class => "add_task" %>
 	</div>
-</div>
 
 </div>
+
+<script>
+	$("document").ready(function(){
+		$('.expand_task').click(function(){
+			task = $(this).attr('rel');
+			$('.description').hide();
+			$('.description_' + task).show();
+		});
+	})
+</script>
