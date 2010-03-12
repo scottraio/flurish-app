@@ -6,7 +6,7 @@
 	
 				<%= link_to task.subject, "#", :class => "expand_task", :rel => "#{task.id}" %>
 				<small>Priority: <b><%= priority_in_words task.priority %></b></small>
-				<span class="description description_<%= task.id %>" style="display:none">
+				<span class="description task_desc_<%= task.id %>" style="display:none">
 	    		<small><%= task.description %></small>
 					<small><b>Due: <%= due_date task.due_date  %></b></small>
 				</span>
@@ -32,9 +32,19 @@
 <script>
 	$("document").ready(function(){
 		$('.expand_task').click(function(){
+			
 			task = $(this).attr('rel');
 			$('.description').hide();
-			$('.description_' + task).show();
+			
+			if($(this).hasClass('open')) {
+				$('.task_desc_' + task).hide();
+				$('.expand_task').removeClass('open');
+			} else {
+				$('.task_desc_' + task).show();
+				$(this).addClass('open');
+			}
+		
+			
 		});
 	})
 </script>
