@@ -5,10 +5,10 @@
 	    <span class="left" style="background:url('/images/icons/<%= task_icon task.priority %>') no-repeat scroll 0 2px">
 	
 				<%= link_to task.subject, "#", :class => "expand_task", :rel => "#{task.id}" %>
-				<small>Priority: <b><%= priority_in_words task.priority %></b></small>
+				<small>Due: <%= due_date task.due_date  %></small>
 				<span class="description task_desc_<%= task.id %>" style="display:none">
+					<small>Priority: <b><%= priority_in_words task.priority %></b></small>
 	    		<small><%= task.description %></small>
-					<small><b>Due: <%= due_date task.due_date  %></b></small>
 				</span>
 			</span>
 			<div class="task_controls right">
