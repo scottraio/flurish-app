@@ -48,7 +48,7 @@ ActionController::Routing::Routes.draw do |map|
 		topic.resources :elements do |element|
 			element.resources :notes
 			element.resources :links
-			element.resources :tasks
+			element.resources :tasks, :member => [:pickup]
 		end
 	end
 

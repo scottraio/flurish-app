@@ -12,7 +12,7 @@
 				</span>
 			</span>
 			<div class="task_controls right">
-				<%= link_to "Pick up" ,"#", :class => "metal" %>
+				<%= link_to "Pick up", pickup_topic_element_task_path(@topic,element,task), :class => "metal right pickup" %>
 			</div>
 	  </p>
 	<% end %>
@@ -44,7 +44,14 @@
 				$(this).addClass('open');
 			}
 		
-			
 		});
+		
+		$('.pickup').click(function() {
+			$.get(this.href, function(data) {
+				
+			})
+			return false
+		})
+		
 	})
 </script>

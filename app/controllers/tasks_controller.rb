@@ -22,10 +22,15 @@ class TasksController < ApplicationController
   	end
 
   	def update
-  		if @task.save
-  		end
+  	  if @task.save
+  	    render_index
+  	  end
   	end
-
+  	
+  	def pickup
+  	  @task.update_attribute(:assigned_to, current_user.id)
+  	end
+  	
   	private
 
   	def render_index
