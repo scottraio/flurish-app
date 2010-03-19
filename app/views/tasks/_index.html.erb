@@ -2,17 +2,17 @@
 	<div class="element_header tasks_header" style="display:none">Tasks</div>
 	<% for task in @topic.tasks %>
 		<p>
-	    <span class="left" style="background:url('/images/icons/<%= task_icon task.priority %>') no-repeat scroll 0 2px">
+	    <span class="expand_task left" rel="<%= task.id %>" style="background:url('/images/icons/<%= task_icon task.priority %>') no-repeat scroll 0 2px;">
 	
-				<%= link_to task.subject, "#", :class => "expand_task", :rel => "#{task.id}" %>
+				<%= link_to task.subject, "#" %>
 				<small>Due: <%= due_date task.due_date  %></small>
-				<span class="description task_desc_<%= task.id %>" style="display:none">
+				<label class="description task_desc_<%= task.id %>" style="display:none">
 					<small>Priority: <b><%= priority_in_words task.priority %></b></small>
 	    		<small><%= task.description %></small>
-				</span>
+				</label>
 			</span>
 			<div class="task_controls right">
-				<%= link_to "Pick up", pickup_topic_element_task_path(@topic,element,task), :class => "metal right pickup" %>
+				<%= pickable? element, task %>
 			</div>
 	  </p>
 	<% end %>
@@ -45,13 +45,6 @@
 			}
 		
 		});
-		
-		$('.pickup').click(function() {
-			$.get(this.href, function(data) {
-				
-			})
-			return false
-		})
 		
 	})
 </script>

@@ -252,12 +252,14 @@ div#topic_tasks p span {
 	display:block;
 	width:65%;
 	padding-left:25px;
-	margin-bottom:10px;
+	margin-bottom:7px;
+	padding-bottom:7px;
+	border-bottom:1px solid #eee;
 }
 
 div#topic_tasks p small {
 	display:block;
-	color:#999;
+	color:#71B7BC;
 }
 
 div#topic_tasks div.task_controls {
@@ -272,6 +274,18 @@ div#topic_tasks div.task_controls a {
 div#topic_tasks div.task_bottom {
 	clear:both;
 	font-size:0.8em;
+}
+
+div.grabbed_by {
+	float:right;
+	color:#999;
+	font-size:0.7;
+	text-align:right;
+}
+
+div.grabbed_by small {
+	display:block;
+	color:#bbb;
 }
 
 /* Topics Comments */
