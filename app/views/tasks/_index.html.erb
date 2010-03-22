@@ -1,5 +1,6 @@
 <div class="topic_tasks" rel="tasks"> 
 	<div class="element_header tasks_header" style="display:none">Tasks</div>
+	<% unless @topic.tasks.empty? %>
 	<% for task in @topic.tasks %>
 		<p>
 	    <span class="expand_task left" rel="<%= task.id %>" style="background:url('/images/icons/<%= task_icon task.priority %>') no-repeat scroll 0 2px;">
@@ -15,6 +16,11 @@
 				<%= pickable? element, task %>
 			</div>
 	  </p>
+	<% end %>
+	<% else %>
+	
+		<div class="center" style="color:#aaa">No Tasks</div>
+	
 	<% end %>
 
 	<div class="topic_footer">

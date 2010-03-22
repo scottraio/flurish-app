@@ -30,7 +30,7 @@
 							<b><%= link_to topic.name, topic_path(topic) %></b>
 							<small>
 								added <%= time_ago_in_words(topic.created_at) %> ago by <%= link_to topic.creator.name, user_path(topic.creator) %>
-								<%= image_tag("/images/icons/tag.png") %> <%= topic.tags.collect{|tag| link_to tag.name, { :tag => tag.name }  }.join(", ") %>
+								<br/><%= image_tag("/images/icons/tag.png") %> <%= topic.tags.collect{|tag| link_to tag.name, { :tag => tag.name }  }.join(", ") %>
 							</small>
 							<div><%= topic.description %></div>
 					</div>

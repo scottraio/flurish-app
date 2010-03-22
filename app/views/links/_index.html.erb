@@ -3,8 +3,9 @@
 
 <% for link in @topic.links %>
 	<p>
-		<span class="expand_link left hidden" rel="<%= link.id %>" style="background:url('/images/icons/arrow_right.png') no-repeat"></span>
-		<%= link_to link.url, link.url, :target => "_blank" %>
+		
+		<%= link_to link.name, link.url, :target => "_blank" %>
+		<span class="expand_link left hidden" rel="<%= link.id %>" style="background:url('/images/icons/arrow_down.png') no-repeat;"></span>
 
 		<small style="display:none" class="description_<%= link.id %>">
 			<label><%= link.description %></label>
@@ -26,11 +27,11 @@
 			link = $(this).attr('rel');
 			if($(this).hasClass('hidden')) {
 				$(".description_" + link).show();
-				$(this).css('background', 'url(/images/icons/arrow_down.png)');
+				$(this).css('background', 'url(/images/icons/arrow_up.png)');
 				$(this).removeClass('hidden');
 			} else {
 				$(".description_" + link).hide();
-				$(this).css('background', 'url(/images/icons/arrow_right.png)');
+				$(this).css('background', 'url(/images/icons/arrow_down.png)');
 				$(this).addClass('hidden');
 			}
 		});

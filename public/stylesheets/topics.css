@@ -213,12 +213,12 @@ div#topic_links p span {
 	width:16px;
 	height:16px;
 	cursor:pointer;
-	margin-top:-2px;
+	float:right;
 }
 
 div#topic_links p small {
 	display:block;
-	margin-left:16px;
+	margin-left:20px;
 	margin-top:5px;
 	color:#aaa;
 }
@@ -255,6 +255,7 @@ div#topic_tasks p span {
 	margin-bottom:7px;
 	padding-bottom:7px;
 	border-bottom:1px solid #eee;
+	cursor:pointer;
 }
 
 div#topic_tasks p small {

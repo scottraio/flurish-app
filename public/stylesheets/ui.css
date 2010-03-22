@@ -48,7 +48,7 @@ p.field textarea {
 }
 
 div.edit_elements p {
-	padding:10px 0;
+	padding:10px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 }
