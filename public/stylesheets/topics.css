@@ -271,11 +271,6 @@ div#topic_tasks div.task_controls a {
 	float:right;
 }
 
-div#topic_tasks div.task_bottom {
-	clear:both;
-	font-size:0.8em;
-}
-
 div.grabbed_by {
 	float:right;
 	color:#999;

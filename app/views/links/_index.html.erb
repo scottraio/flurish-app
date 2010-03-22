@@ -7,14 +7,17 @@
 		<%= link_to link.url, link.url, :target => "_blank" %>
 
 		<small style="display:none" class="description_<%= link.id %>">
-			<label>added by <%= link_to link.creator.name, "#", :class => "created_by", :style => "background:url(#{avatar_url(link.creator, :tiny)}) no-repeat" %></label>
-			<%= link.description %>
+			<label><%= link.description %></label>
+			added by <%= link_to link.creator.name, "#", :class => "created_by", :style => "background:url(#{avatar_url(link.creator, :tiny)}) no-repeat" %>
+			
 		</small>
 	</p>
 <% end %>
 
 <div class="topic_footer">
-	<%= link_to "Add", new_topic_element_link_path(@topic,element), :rel => "facebox" %>
+	<div class="button right">
+		<%= link_to "Add", new_topic_element_link_path(@topic,element), :class => "add_link", :rel => "facebox" %>
+	</div>
 </div>
 
 <script>

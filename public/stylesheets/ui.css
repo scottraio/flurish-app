@@ -163,6 +163,12 @@ input.find {
 	padding-top:2px;
 }
 
+.button .add_link {
+	background:url('/images/icons/add_links.png') no-repeat scroll 0 1px;
+	padding-left:20px;
+	padding-top:2px;
+}
+
 .created_by {
 	padding: 2px 3px 3px 18px;
 	margin-left:2px;

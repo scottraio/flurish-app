@@ -17,11 +17,13 @@
 	  </p>
 	<% end %>
 
-	<div class="task_bottom">
-		<%= link_to "All ", "#" %>
-		<%= link_to "Incomplete ", "#" %>
-		<%= link_to "Picked up ", "#" %>
-		<%= link_to "Completed ", "#" %>
+	<div class="topic_footer">
+		<select>
+			<option><%= link_to "All ", "#" %></option>
+			<option><%= link_to "Incomplete ", "#" %></option>
+			<option><%= link_to "Picked up ", "#" %></option>
+			<option><%= link_to "Completed ", "#" %></option>
+		</select>
 		<div class="button right">
 		<%= link_to "Add", new_topic_element_task_path(@topic,element), :class => "add_task", :rel => "facebox" %>
 		</div>
