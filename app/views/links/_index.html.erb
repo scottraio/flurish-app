@@ -3,7 +3,6 @@
 
 <% for link in @topic.links %>
 	<p>
-		
 		<%= link_to link.name, link.url, :target => "_blank" %>
 		<span class="expand_link left hidden" rel="<%= link.id %>" style="background:url('/images/icons/arrow_down.png') no-repeat;"></span>
 

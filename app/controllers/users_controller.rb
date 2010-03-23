@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	before_filter :authenticated?, 	:except 	=> [:login,:logout,:reset_password,:forgot_password]
 	before_filter :set_user, 				:only 		=> [:new, :create]
 	before_filter :get_user, 				:only 		=> [:index, :follow, :stop_following, :destroy, :update, :show, :edit]
+	before_filter :get_task, :only => [:show]
 
 	def follow
 		# @user is the user who wishes to follow the user with id = params[:id]
@@ -73,6 +74,10 @@ private
 	def get_user
 		# The @user is always assumed to be the user who is logged in 
 		@user = User.get(current_user,params)
+	end
+	
+	def get_task
+		@task = Task.get(current_user,params)
 	end
 	
 end
